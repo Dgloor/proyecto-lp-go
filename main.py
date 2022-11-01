@@ -2,7 +2,31 @@ import ply.lex as lex
 
 # Reserved words
 reserved = {
-    'null': 'NULL'
+    'break': 'BREAK',
+    'case': 'CASE',
+    'chan': 'CHAN',
+    'const': 'CONST',
+    'continue': 'CONTINUE',
+    'default': 'DEFAULT',
+    'defer': 'DEFER',
+    'else': 'ELSE',
+    'fallthrough': 'FALLTHROUGH',
+    'for': 'FOR',
+    'func': 'FUNC',
+    'go': 'GO',
+    'goto': 'GOTO',
+    'if': 'IF',
+    'import': 'IMPORT',
+    'interface': 'INTERFACE',
+    'map': 'MAP',
+    'package': 'PACKAGE',
+    'range': 'RANGE',
+    'return': 'RETURN',
+    'select': 'SELECT',
+    'struct': 'STRUCT',
+    'switch': 'SWITCH',
+    'type': 'TYPE',
+    'var': 'VAR'
 }
 
 # Tokens
@@ -12,6 +36,7 @@ tokens = [
 
 # Regexs
 t_ASSIGN = r'='
+t_sum = r'\+'
 
 # Functions
 
