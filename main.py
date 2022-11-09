@@ -2,6 +2,7 @@ import ply.lex as lex
 
 # Reserved words
 reserved = {
+    # Inicio: Danny Loor
     'break': 'BREAK',
     'case': 'CASE',
     'chan': 'CHAN',
@@ -27,6 +28,7 @@ reserved = {
     'switch': 'SWITCH',
     'type': 'TYPE',
     'var': 'VAR'
+    # Fin: Danny Loor
 }
 
 # Tokens
@@ -39,25 +41,20 @@ t_ASSIGN = r'='
 t_sum = r'\+'
 
 # Functions
-
-
 def t_ID(t):
     r'[a-zA-Z_][a-zA-Z_0-9]*'
     t.type = reserved.get(t.value, 'VARIABLE')
     return t
-
 
 def t_STRING(t):
     r'["\'].*["\']'
     t.value = t.value.strip('"').strip("'")
     return t
 
-
 def t_DOUBLE(t):
     r'\d+\.\d+[e?\d+]*'
     t.value = float(t.value)
     return t
-
 
 def t_INT(t):
     r'\d+'
@@ -65,15 +62,11 @@ def t_INT(t):
     return t
 
 # New Line
-
-
 def t_newline(t):
     r'\n+'
     t.lexer.lineno += len(t.value)
 
 # Error token
-
-
 def t_error(t):
     print("Illegal character '%s'" % t.value[0])
     t.lexer.skip(1)
