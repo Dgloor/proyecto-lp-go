@@ -27,20 +27,129 @@ reserved = {
     'struct': 'STRUCT',
     'switch': 'SWITCH',
     'type': 'TYPE',
-    'var': 'VAR'
+    'var': 'VAR',
     # Fin: Danny Loor
+
+    ## Diego Arteaga
+    'bool': 'BOOL',
+    'string': 'STRING',
+    'else if': 'ELSEIF',
+    'else': 'ELSE',
+
+    ## Diego Arteaga
+    'var': 'VAR',
+    'const': 'CONST',
+    'switch': 'SWITCH',
+
 }
 
 # Tokens
 tokens = [
-    '',
+
+    # OPERADORES MATEMATICOS
+    ## Daniel Torres
+    'ADICION',
+    'RESTA',
+    ##Danny Loor
+    'MULTIPLICACION',
+    'DIVISION',
+    'MODULO',
+
+    ## Diego Arteaga
+    'INCREMENTO',
+    'DECREMENTO',
+
+    # OPERADORES DE ASIGNACIÓN
+    ## Daniel Torres
+    'ASIGNACION',
+    'ASIGNACION_ADICION',
+
+    ##Danny Loor
+    'ASIGNACION_RESTA',
+    'ASIGNACION_MULTI',
+
+    ## Diego Arteaga
+    'DECLARACION_ASIGNACION'
+    'ASIGNACION_DIVISION',
+    'ASIGNACION_MODULO',
+
+    # OPERADORES DE COMPARACIÓN
+    ## Daniel Torres
+    'MENOR_IGUAL',
+    'IGUAL',
+
+    ##Danny Loor
+    'DIFERENTE',
+    'MAYOR',
+
+    ## Diego Arteaga
+    'MENOR',
+    'MAYOR_IGUAL',
+
+    #TIPOS DE DATOS
+
+    ##Danny Loor
+    'INT',
+    'DOUBLE',
+    'STRING',
+
+    ## Diego Arteaga
+    'BOOLEAN',
+
+    # COMPONENTES
+    ## Daniel Torres
+    'DOS_PUNTOS',
+    'I_LLAVE',
+    'D_LLAVE',
+    'COMA',
+
+    ##Danny Loor
+    'I_CORCHETE',
+    'D_CORCHETE',
+    'VARIABLE',
+    'PUNTO',
+
+    ## Diego Arteaga
+    'I_PARENTESIS',
+    'D_PARENTESIS',
+
+    # OPERADORES LÓGICOS
+    ## Daniel Torres
+    'AND',
+    ##Danny Loor
+    'OR',
+
+    ## Diego Arteaga
+    'NOT',
+
 ] + list(reserved.values())
 
 # Regexs
 t_ASSIGN = r'='
 t_sum = r'\+'
 
-# Functions
+## Diego Arteaga
+
+t_INCREMENTO= r"\+\+"
+t_DECREMENTO= r"--"
+
+t_DECLARACION_ASIGNACION = r":="
+t_ASIGNACION_DIVISION= r"/="
+t_ASIGNACION_MODULO= r"%="
+
+t_MENOR= r"<"
+t_MAYOR_IGUAL= r">="
+
+t_CADENA= r'"[^"]*"'
+
+t_I_PARENTESIS= r'\('
+t_D_PARENTESIS= r'\)'
+
+# Functions Danny Loor
+def t_BOOLEAN(t):
+    r"(true|false)"
+    return t
+
 def t_ID(t):
     r'[a-zA-Z_][a-zA-Z_0-9]*'
     t.type = reserved.get(t.value, 'VARIABLE')
@@ -75,6 +184,28 @@ def t_error(t):
 # Ignore tokens
 t_ignore_COMMENT = r'\/\/.*'
 t_ignore = ' \t'
+
+
+# Test Diego Arteaga
+# data = '''
+# \\\\ Algoritmo Bubble sort
+# /*
+#  * Ordenamiento de menor a mayor
+#  * Recibe un arreglo y el número de elementos que contiene el mismo
+#  */
+# func BubbleSort(array []int) []int {
+# 	for i := 0; i < len(array)-1; i++ {
+# 		for j := 0; j < len(array)-i-1; j++ {
+# 			if array[j] > array[j+1] {
+# 				array[j], array[j+1] = array[j+1], array[j]
+# 			}
+# 		}
+# 	}
+# 	return array
+# }
+# '''
+
+
 
 # Build lexer
 lexer = lex.lex()
