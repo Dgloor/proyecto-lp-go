@@ -29,10 +29,12 @@ reserved = {
     'type': 'TYPE',
     'var': 'VAR',
     # Fin: Danny Loor
+    ## Daniel Torres
+    'int': 'INTEGER',
 
     ## Diego Arteaga
     'bool': 'BOOL',
-    'string': 'STRING',
+    'string': 'STRINGTYPE',
     'else if': 'ELSEIF',
     'else': 'ELSE',
 
@@ -63,13 +65,11 @@ tokens = [
     ## Daniel Torres
     'ASIGNACION',
     'ASIGNACION_ADICION',
-
     ##Danny Loor
     'ASIGNACION_RESTA',
     'ASIGNACION_MULTI',
-
     ## Diego Arteaga
-    'DECLARACION_ASIGNACION'
+    'DECLARACION_ASIGNACION',
     'ASIGNACION_DIVISION',
     'ASIGNACION_MODULO',
 
@@ -106,7 +106,7 @@ tokens = [
     ##Danny Loor
     'I_CORCHETE',
     'D_CORCHETE',
-    'VARIABLE',
+    'IDENTIFICADOR',
     'PUNTO',
 
     ## Diego Arteaga
@@ -124,23 +124,53 @@ tokens = [
 
 ] + list(reserved.values())
 
-# Regexs
-t_ASSIGN = r'='
-t_sum = r'\+'
+## Daniel Torres
+
+t_ADICION = r'\+'
+t_RESTA = r'-'
+
+t_ASIGNACION = r'='
+t_ASIGNACION_ADICION = r'\+='
+
+t_MENOR_IGUAL = r'<='
+t_IGUAL = r'=='
+
+t_DOS_PUNTOS = r':'
+t_I_LLAVE = r'{'
+t_D_LLAVE = r'}'
+t_COMA = r','
+
+t_AND = r'&&'
+
+## Danny Loor
+
+t_MULTIPLICACION = r'\*'
+t_DIVISION = r'/'
+t_MODULO = r'%'
+
+t_ASIGNACION_RESTA = r'-='
+t_ASIGNACION_MULTI = r'\*='
+
+t_DIFERENTE = r'!='
+t_MAYOR = r'>'
+
+t_I_CORCHETE = r'\['
+t_D_CORCHETE = r'\]'
+t_PUNTO = r'\.'
+
+t_OR = r'\|\|'
 
 ## Diego Arteaga
 
 t_INCREMENTO= r"\+\+"
 t_DECREMENTO= r"--"
 
-t_DECLARACION_ASIGNACION = r":="
-t_ASIGNACION_DIVISION= r"/="
+t_DECLARACION_ASIGNACION = r"\:="
+t_ASIGNACION_DIVISION= r"\/="
 t_ASIGNACION_MODULO= r"%="
 
 t_MENOR= r"<"
 t_MAYOR_IGUAL= r">="
-
-t_CADENA= r'"[^"]*"'
 
 t_I_PARENTESIS= r'\('
 t_D_PARENTESIS= r'\)'
@@ -152,7 +182,7 @@ def t_BOOLEAN(t):
 
 def t_ID(t):
     r'[a-zA-Z_][a-zA-Z_0-9]*'
-    t.type = reserved.get(t.value, 'VARIABLE')
+    t.type = reserved.get(t.value, 'IDENTIFICADOR')
     return t
 
 def t_STRING(t):
@@ -188,20 +218,24 @@ t_ignore = ' \t'
 
 # Test Diego Arteaga
 # data = '''
-# \\\\ Algoritmo Bubble sort
-# /*
-#  * Ordenamiento de menor a mayor
-#  * Recibe un arreglo y el número de elementos que contiene el mismo
-#  */
-# func BubbleSort(array []int) []int {
-# 	for i := 0; i < len(array)-1; i++ {
-# 		for j := 0; j < len(array)-i-1; j++ {
-# 			if array[j] > array[j+1] {
-# 				array[j], array[j+1] = array[j+1], array[j]
-# 			}
-# 		}
+# //Algoritmo Bubble sort
+# func bubbleSort(arr []int, size int) []int {
+# 	if size == 1 {
+# 		return arr
 # 	}
-# 	return array
+
+# 	var i = 0
+# 	for i < size-1 {
+# 		if arr[i] > arr[i+1] {
+# 			arr[i], arr[i+1] = arr[i+1], arr[i]
+# 		}
+
+# 		i++
+# 	}
+
+# 	bubbleSort(arr, size-1)
+
+# 	return arr
 # }
 # '''
 
@@ -210,13 +244,23 @@ t_ignore = ' \t'
 # Build lexer
 lexer = lex.lex()
 
-"""
-lexer.input(f.read())
+f = open("BubbleSort.txt", "r")
+lines = f.readlines()
+for line in lines:
+  lexer.input(line)
+  if(len(line.strip()) > 0):
+    print('Linea a tokenizar:', line.strip(), ' \n')
+  while True:
+    tok = lexer.token()
+    if not tok:
+      break
+    print(tok.type, tok.value, tok.lineno, tok.lexpos)
+  print('\n')
 
+# Tokenize
 while True:
   tok = lexer.token()
   if not tok:
-    break
-  print(tok)
-  
-"""
+    break  # No more input
+  print(tok.type, tok.value, tok.lineno, tok.lexpos)
+#print('Mi primer Lexer')
