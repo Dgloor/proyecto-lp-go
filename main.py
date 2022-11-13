@@ -22,7 +22,7 @@ reserved = {
     'switch': 'SWITCH',
     'type': 'TYPE',
     'var': 'VAR',
-    # Fin: Danny Loor
+  
     ## Daniel Torres
     'int': 'INTEGER',
     'go': 'GO',
@@ -38,12 +38,9 @@ reserved = {
     'string': 'STRINGTYPE',
     'else if': 'ELSEIF',
     'else': 'ELSE',
-
-    ## Diego Arteaga
     'var': 'VAR',
     'const': 'CONST',
     'switch': 'SWITCH',
-
 }
 
 # Tokens
