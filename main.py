@@ -14,12 +14,6 @@ reserved = {
     'fallthrough': 'FALLTHROUGH',
     'for': 'FOR',
     'func': 'FUNC',
-    'go': 'GO',
-    'goto': 'GOTO',
-    'if': 'IF',
-    'import': 'IMPORT',
-    'interface': 'INTERFACE',
-    'map': 'MAP',
     'package': 'PACKAGE',
     'range': 'RANGE',
     'return': 'RETURN',
@@ -31,6 +25,13 @@ reserved = {
     # Fin: Danny Loor
     ## Daniel Torres
     'int': 'INTEGER',
+    'go': 'GO',
+    'goto': 'GOTO',
+    'if': 'IF',
+    'import': 'IMPORT',
+    'interface': 'INTERFACE',
+    'map': 'MAP',
+    'package': 'PACKAGE',
 
     ## Diego Arteaga
     'bool': 'BOOL',
