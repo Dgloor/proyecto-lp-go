@@ -2,7 +2,7 @@ import ply.lex as lex
 
 # Reserved words
 reserved = {
-    # Inicio: Danny Loor
+    # Danny Loor
     'break': 'BREAK',
     'case': 'CASE',
     'chan': 'CHAN',
@@ -47,78 +47,57 @@ reserved = {
 tokens = [
 
     # OPERADORES MATEMATICOS
-    ## Daniel Torres
     'ADICION',
     'RESTA',
-    ##Danny Loor
     'MULTIPLICACION',
     'DIVISION',
     'MODULO',
-
-    ## Diego Arteaga
     'INCREMENTO',
     'DECREMENTO',
 
     # OPERADORES DE ASIGNACIÓN
-    ## Daniel Torres
     'ASIGNACION',
     'ASIGNACION_ADICION',
-    ##Danny Loor
     'ASIGNACION_RESTA',
     'ASIGNACION_MULTI',
-    ## Diego Arteaga
     'DECLARACION_ASIGNACION',
     'ASIGNACION_DIVISION',
     'ASIGNACION_MODULO',
 
     # OPERADORES DE COMPARACIÓN
-    ## Daniel Torres
     'MENOR_IGUAL',
     'IGUAL',
-
-    ##Danny Loor
     'DIFERENTE',
     'MAYOR',
-
-    ## Diego Arteaga
     'MENOR',
     'MAYOR_IGUAL',
 
     #TIPOS DE DATOS
 
-    ##Danny Loor
     'INT',
     'DOUBLE',
     'STRING',
-
-    ## Diego Arteaga
     'BOOLEAN',
 
     # COMPONENTES
-    ## Daniel Torres
     'DOS_PUNTOS',
     'I_LLAVE',
     'D_LLAVE',
     'COMA',
-
-    ##Danny Loor
     'I_CORCHETE',
     'D_CORCHETE',
     'IDENTIFICADOR',
     'PUNTO',
-
-    ## Diego Arteaga
     'I_PARENTESIS',
     'D_PARENTESIS',
 
     # OPERADORES LÓGICOS
-    ## Daniel Torres
     'AND',
-    ##Danny Loor
     'OR',
-
-    ## Diego Arteaga
     'NOT',
+
+    # IDs
+    'ID_VARIABLE',
 
 ] + list(reserved.values())
 
@@ -178,9 +157,9 @@ def t_BOOLEAN(t):
     r"(true|false)"
     return t
 
-def t_ID(t):
+def t_ID_VARIABLE(t):
     r'[a-zA-Z_][a-zA-Z_0-9]*'
-    t.type = reserved.get(t.value, 'IDENTIFICADOR')
+    t.type = reserved.get(t.value, 'ID_VARIABLE')
     return t
 
 def t_STRING(t):
@@ -241,8 +220,20 @@ t_ignore = ' \t'
 
 # Build lexer
 lexer = lex.lex()
+"""
+f_dl = open('source.txt')
+lexer.input(f_dl.read())
 
-f = open("BubbleSort.txt", "r")
+while True:
+  tok = lexer.token()
+  if not tok:
+    break
+  print(tok)
+  
+f_dl.close()
+"""  
+
+f = open("test-dt.txt", "r")
 lines = f.readlines()
 for line in lines:
   lexer.input(line)
@@ -262,3 +253,4 @@ while True:
     break  # No more input
   print(tok.type, tok.value, tok.lineno, tok.lexpos)
 #print('Mi primer Lexer')
+
