@@ -36,7 +36,7 @@ reserved = {
   ## Diego Arteaga
   'bool': 'BOOL',
   'string': 'STRINGTYPE',
-  'else if': 'ELSEIF',
+  # 'else if': 'ELSEIF',
   'else': 'ELSE',
   'var': 'VAR',
   'const': 'CONST',
@@ -80,6 +80,7 @@ tokens = [
 
   # COMPONENTES
   'DOS_PUNTOS',
+  'PUNTO_COMA',
   'I_LLAVE',
   'D_LLAVE',
   'COMA',
@@ -97,6 +98,10 @@ tokens = [
 
   # IDs
   'ID_VARIABLE',
+
+  # FUNCTIONS
+  'ELSEIF',
+  
 ] + list(reserved.values())
 
 ## Daniel Torres
@@ -111,6 +116,7 @@ t_MENOR_IGUAL = r'<='
 t_IGUAL = r'=='
 
 t_DOS_PUNTOS = r':'
+t_PUNTO_COMA = r';'
 t_I_LLAVE = r'{'
 t_D_LLAVE = r'}'
 t_COMA = r','
@@ -152,6 +158,10 @@ t_D_PARENTESIS = r'\)'
 
 
 # Functions Danny Loor
+def t_ELSEIF(t):
+  r"else\sif"
+  return t
+  
 def t_BOOLEAN(t):
   r"(true|false)"
   return t
