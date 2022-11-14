@@ -3,6 +3,12 @@ import ply.lex as lex
 # Reserved words
 reserved = {
   # Danny Loor
+  'Print': 'PRINT',
+  'Println': 'PRINTLN',
+  'Printf': 'PRINTF',
+  'Scan': 'SCAN',
+  'Scanln': 'SCANLN',
+  'Scanf': 'SCANF',
   'break': 'BREAK',
   'case': 'CASE',
   'chan': 'CHAN',
