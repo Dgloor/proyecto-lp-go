@@ -1,6 +1,6 @@
 // Diego Arteaga
 func calcMat(x, y int) int {
-	int res = (x + y) - 20 + 23.6
+	var res int = (x + y) - 20 + 23.6
 	
 	if(res > 20){
 		return (res-10)
