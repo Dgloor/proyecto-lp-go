@@ -1,4 +1,8 @@
 // Danny Loor
+import (
+  "fmt"
+)
+
 func main() {
     strs := []string{"c", "a", "b"}
     sort.Strings(strs)

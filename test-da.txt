@@ -1,5 +1,4 @@
-//Algoritmo Calculo matematico
-
+// Diego Arteaga
 func calcMat(x, y int) int {
 	int res = (x + y) - 20 + 23.6
 	
@@ -8,5 +7,4 @@ func calcMat(x, y int) int {
 	}else{
 		return res
 	}
-	
 }

@@ -36,7 +36,6 @@ reserved = {
   ## Diego Arteaga
   'bool': 'BOOL',
   'string': 'STRINGTYPE',
-  # 'else if': 'ELSEIF',
   'else': 'ELSE',
   'var': 'VAR',
   'const': 'CONST',
@@ -72,7 +71,7 @@ tokens = [
   'MENOR',
   'MAYOR_IGUAL',
 
-  #TIPOS DE DATOS
+  # TIPOS DE DATOS
   'INT',
   'DOUBLE',
   'STRING',
@@ -97,15 +96,13 @@ tokens = [
   'NOT',
 
   # IDs
-  'ID_VARIABLE',
+  'ID',
 
-  # FUNCTIONS
+  # Auxiliar
   'ELSEIF',
-  
 ] + list(reserved.values())
 
 ## Daniel Torres
-
 t_ADICION = r'\+'
 t_RESTA = r'-'
 
@@ -124,7 +121,6 @@ t_COMA = r','
 t_AND = r'&&'
 
 ## Danny Loor
-
 t_MULTIPLICACION = r'\*'
 t_DIVISION = r'/'
 t_MODULO = r'%'
@@ -142,7 +138,6 @@ t_PUNTO = r'\.'
 t_OR = r'\|\|'
 
 ## Diego Arteaga
-
 t_INCREMENTO = r"\+\+"
 t_DECREMENTO = r"--"
 
@@ -157,19 +152,20 @@ t_I_PARENTESIS = r'\('
 t_D_PARENTESIS = r'\)'
 
 
-# Functions Danny Loor
+# Funciones
 def t_ELSEIF(t):
-  r"else\sif"
+  r'else\sif'
   return t
-  
+
+
 def t_BOOLEAN(t):
-  r"(true|false)"
+  r'(true|false)'
   return t
 
 
-def t_ID_VARIABLE(t):
+def t_ID(t):
   r'[a-zA-Z_][a-zA-Z_0-9]*'
-  t.type = reserved.get(t.value, 'ID_VARIABLE')
+  t.type = reserved.get(t.value, 'ID')
   return t
 
 
@@ -235,7 +231,7 @@ f_dl.seek(0, 0)
 for line in f_dl.readlines():
   print(line.strip('\n'))
 print()
-  
+
 while True:
   tok = lexer.token()
   if not tok:
@@ -252,7 +248,7 @@ f_da.seek(0, 0)
 for line in f_da.readlines():
   print(line.strip('\n'))
 print()
-  
+
 while True:
   tok = lexer.token()
   if not tok:
