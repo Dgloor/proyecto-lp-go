@@ -11,7 +11,6 @@ Unused terminals:
     CONTINUE
     DEFAULT
     DEFER
-    DOS_PUNTOS
     ELSE
     ELSEIF
     FALLTHROUGH
@@ -23,7 +22,6 @@ Unused terminals:
     IF
     IMPORT
     INTERFACE
-    MAP
     NOT
     OR
     PACKAGE
@@ -38,863 +36,992 @@ Unused terminals:
 
 Grammar
 
-Rule 0     S' -> instruccion
-Rule 1     instruccion -> print I_PARENTESIS valores D_PARENTESIS
-Rule 2     instruccion -> VAR ID type ASIGNACION valor
-Rule 3     instruccion -> ID asignacion valor
-Rule 4     instruccion -> ID operador_matematico
-Rule 5     instruccion -> I_CORCHETE D_CORCHETE type I_LLAVE D_LLAVE
-Rule 6     instruccion -> I_CORCHETE INT D_CORCHETE type I_LLAVE D_LLAVE
-Rule 7     instruccion -> I_CORCHETE D_CORCHETE type I_LLAVE valores D_LLAVE
-Rule 8     instruccion -> I_CORCHETE INT D_CORCHETE type I_LLAVE valores D_LLAVE
-Rule 9     valores -> valor
-Rule 10    valores -> valor COMA valores
-Rule 11    valor -> valor operacion_binaria valor
-Rule 12    print -> PRINTLN
-Rule 13    print -> PRINTF
-Rule 14    print -> PRINT
-Rule 15    type -> BOOL
-Rule 16    type -> STRINGTYPE
-Rule 17    type -> INTEGER
-Rule 18    type -> FLOAT32
-Rule 19    type -> FLOAT64
-Rule 20    operador_matematico -> INCREMENTO
-Rule 21    operador_matematico -> DECREMENTO
-Rule 22    asignacion -> ASIGNACION
-Rule 23    asignacion -> ASIGNACION_ADICION
-Rule 24    asignacion -> ASIGNACION_RESTA
-Rule 25    asignacion -> ASIGNACION_MULTI
-Rule 26    asignacion -> DECLARACION_ASIGNACION
-Rule 27    asignacion -> ASIGNACION_DIVISION
-Rule 28    asignacion -> ASIGNACION_MODULO
-Rule 29    operacion_binaria -> ADICION
-Rule 30    operacion_binaria -> RESTA
-Rule 31    operacion_binaria -> MULTIPLICACION
-Rule 32    operacion_binaria -> DIVISION
-Rule 33    operacion_binaria -> MODULO
-Rule 34    operacion_binaria -> MENOR_IGUAL
-Rule 35    operacion_binaria -> IGUAL
-Rule 36    operacion_binaria -> DIFERENTE
-Rule 37    operacion_binaria -> MAYOR
-Rule 38    operacion_binaria -> MAYOR_IGUAL
-Rule 39    operacion_binaria -> MENOR
-Rule 40    valor -> INT
-Rule 41    valor -> DOUBLE
-Rule 42    valor -> STRING
-Rule 43    valor -> ID
+Rule 0     S' -> body
+Rule 1     body -> instruccion
+Rule 2     instruccion -> print I_PARENTESIS valores D_PARENTESIS
+Rule 3     instruccion -> VAR ID type ASIGNACION valor
+Rule 4     instruccion -> ID asignacion valor
+Rule 5     instruccion -> ID operador_matematico
+Rule 6     instruccion -> I_CORCHETE D_CORCHETE type I_LLAVE D_LLAVE
+Rule 7     instruccion -> I_CORCHETE INT D_CORCHETE type I_LLAVE D_LLAVE
+Rule 8     instruccion -> I_CORCHETE D_CORCHETE type I_LLAVE valores D_LLAVE
+Rule 9     instruccion -> I_CORCHETE INT D_CORCHETE type I_LLAVE valores D_LLAVE
+Rule 10    instruccion -> MAP I_CORCHETE type D_CORCHETE type I_LLAVE D_LLAVE
+Rule 11    instruccion -> MAKE I_PARENTESIS MAP I_CORCHETE type D_CORCHETE type D_PARENTESIS
+Rule 12    instruccion -> MAP I_CORCHETE type D_CORCHETE type I_LLAVE claves_valores D_LLAVE
+Rule 13    clave_valor -> valor DOS_PUNTOS valor
+Rule 14    claves_valores -> clave_valor
+Rule 15    claves_valores -> clave_valor COMA claves_valores
+Rule 16    valores -> valor
+Rule 17    valores -> valor COMA valores
+Rule 18    valor -> valor operacion_binaria valor
+Rule 19    print -> PRINTLN
+Rule 20    print -> PRINTF
+Rule 21    print -> PRINT
+Rule 22    type -> BOOL
+Rule 23    type -> STRINGTYPE
+Rule 24    type -> INTEGER
+Rule 25    type -> FLOAT32
+Rule 26    type -> FLOAT64
+Rule 27    operador_matematico -> INCREMENTO
+Rule 28    operador_matematico -> DECREMENTO
+Rule 29    asignacion -> ASIGNACION
+Rule 30    asignacion -> ASIGNACION_ADICION
+Rule 31    asignacion -> ASIGNACION_RESTA
+Rule 32    asignacion -> ASIGNACION_MULTI
+Rule 33    asignacion -> DECLARACION_ASIGNACION
+Rule 34    asignacion -> ASIGNACION_DIVISION
+Rule 35    asignacion -> ASIGNACION_MODULO
+Rule 36    operacion_binaria -> ADICION
+Rule 37    operacion_binaria -> RESTA
+Rule 38    operacion_binaria -> MULTIPLICACION
+Rule 39    operacion_binaria -> DIVISION
+Rule 40    operacion_binaria -> MODULO
+Rule 41    operacion_binaria -> MENOR_IGUAL
+Rule 42    operacion_binaria -> IGUAL
+Rule 43    operacion_binaria -> DIFERENTE
+Rule 44    operacion_binaria -> MAYOR
+Rule 45    operacion_binaria -> MAYOR_IGUAL
+Rule 46    operacion_binaria -> MENOR
+Rule 47    valor -> INT
+Rule 48    valor -> DOUBLE
+Rule 49    valor -> STRING
+Rule 50    valor -> ID
 
 Terminals, with rules where they appear
 
-ADICION              : 29
+ADICION              : 36
 AND                  : 
-ASIGNACION           : 2 22
-ASIGNACION_ADICION   : 23
-ASIGNACION_DIVISION  : 27
-ASIGNACION_MODULO    : 28
-ASIGNACION_MULTI     : 25
-ASIGNACION_RESTA     : 24
-BOOL                 : 15
+ASIGNACION           : 3 29
+ASIGNACION_ADICION   : 30
+ASIGNACION_DIVISION  : 34
+ASIGNACION_MODULO    : 35
+ASIGNACION_MULTI     : 32
+ASIGNACION_RESTA     : 31
+BOOL                 : 22
 BOOLEAN              : 
 BREAK                : 
 CASE                 : 
 CHAN                 : 
-COMA                 : 10
+COMA                 : 15 17
 CONST                : 
 CONTINUE             : 
-DECLARACION_ASIGNACION : 26
-DECREMENTO           : 21
+DECLARACION_ASIGNACION : 33
+DECREMENTO           : 28
 DEFAULT              : 
 DEFER                : 
-DIFERENTE            : 36
-DIVISION             : 32
-DOS_PUNTOS           : 
-DOUBLE               : 41
-D_CORCHETE           : 5 6 7 8
-D_LLAVE              : 5 6 7 8
-D_PARENTESIS         : 1
+DIFERENTE            : 43
+DIVISION             : 39
+DOS_PUNTOS           : 13
+DOUBLE               : 48
+D_CORCHETE           : 6 7 8 9 10 11 12
+D_LLAVE              : 6 7 8 9 10 12
+D_PARENTESIS         : 2 11
 ELSE                 : 
 ELSEIF               : 
 FALLTHROUGH          : 
-FLOAT32              : 18
-FLOAT64              : 19
+FLOAT32              : 25
+FLOAT64              : 26
 FOR                  : 
 FUNC                 : 
 GO                   : 
 GOTO                 : 
-ID                   : 2 3 4 43
+ID                   : 3 4 5 50
 IDENTIFICADOR        : 
 IF                   : 
-IGUAL                : 35
+IGUAL                : 42
 IMPORT               : 
-INCREMENTO           : 20
-INT                  : 6 8 40
-INTEGER              : 17
+INCREMENTO           : 27
+INT                  : 7 9 47
+INTEGER              : 24
 INTERFACE            : 
-I_CORCHETE           : 5 6 7 8
-I_LLAVE              : 5 6 7 8
-I_PARENTESIS         : 1
-MAP                  : 
-MAYOR                : 37
-MAYOR_IGUAL          : 38
-MENOR                : 39
-MENOR_IGUAL          : 34
-MODULO               : 33
-MULTIPLICACION       : 31
+I_CORCHETE           : 6 7 8 9 10 11 12
+I_LLAVE              : 6 7 8 9 10 12
+I_PARENTESIS         : 2 11
+MAKE                 : 11
+MAP                  : 10 11 12
+MAYOR                : 44
+MAYOR_IGUAL          : 45
+MENOR                : 46
+MENOR_IGUAL          : 41
+MODULO               : 40
+MULTIPLICACION       : 38
 NOT                  : 
 OR                   : 
 PACKAGE              : 
-PRINT                : 14
-PRINTF               : 13
-PRINTLN              : 12
+PRINT                : 21
+PRINTF               : 20
+PRINTLN              : 19
 PUNTO                : 
 PUNTO_COMA           : 
 RANGE                : 
-RESTA                : 30
+RESTA                : 37
 RETURN               : 
 SELECT               : 
-STRING               : 42
-STRINGTYPE           : 16
+STRING               : 49
+STRINGTYPE           : 23
 STRUCT               : 
 SWITCH               : 
 TYPE                 : 
-VAR                  : 2
+VAR                  : 3
 error                : 
 
 Nonterminals, with rules where they appear
 
-asignacion           : 3
-instruccion          : 0
-operacion_binaria    : 11
-operador_matematico  : 4
-print                : 1
-type                 : 2 5 6 7 8
-valor                : 2 3 9 10 11 11
-valores              : 1 7 8 10
+asignacion           : 4
+body                 : 0
+clave_valor          : 14 15
+claves_valores       : 12 15
+instruccion          : 1
+operacion_binaria    : 18
+operador_matematico  : 5
+print                : 2
+type                 : 3 6 7 8 9 10 10 11 11 12 12
+valor                : 3 4 13 13 16 17 18 18
+valores              : 2 8 9 17
 
 Parsing method: LALR
 
 state 0
 
-    (0) S' -> . instruccion
-    (1) instruccion -> . print I_PARENTESIS valores D_PARENTESIS
-    (2) instruccion -> . VAR ID type ASIGNACION valor
-    (3) instruccion -> . ID asignacion valor
-    (4) instruccion -> . ID operador_matematico
-    (5) instruccion -> . I_CORCHETE D_CORCHETE type I_LLAVE D_LLAVE
-    (6) instruccion -> . I_CORCHETE INT D_CORCHETE type I_LLAVE D_LLAVE
-    (7) instruccion -> . I_CORCHETE D_CORCHETE type I_LLAVE valores D_LLAVE
-    (8) instruccion -> . I_CORCHETE INT D_CORCHETE type I_LLAVE valores D_LLAVE
-    (12) print -> . PRINTLN
-    (13) print -> . PRINTF
-    (14) print -> . PRINT
+    (0) S' -> . body
+    (1) body -> . instruccion
+    (2) instruccion -> . print I_PARENTESIS valores D_PARENTESIS
+    (3) instruccion -> . VAR ID type ASIGNACION valor
+    (4) instruccion -> . ID asignacion valor
+    (5) instruccion -> . ID operador_matematico
+    (6) instruccion -> . I_CORCHETE D_CORCHETE type I_LLAVE D_LLAVE
+    (7) instruccion -> . I_CORCHETE INT D_CORCHETE type I_LLAVE D_LLAVE
+    (8) instruccion -> . I_CORCHETE D_CORCHETE type I_LLAVE valores D_LLAVE
+    (9) instruccion -> . I_CORCHETE INT D_CORCHETE type I_LLAVE valores D_LLAVE
+    (10) instruccion -> . MAP I_CORCHETE type D_CORCHETE type I_LLAVE D_LLAVE
+    (11) instruccion -> . MAKE I_PARENTESIS MAP I_CORCHETE type D_CORCHETE type D_PARENTESIS
+    (12) instruccion -> . MAP I_CORCHETE type D_CORCHETE type I_LLAVE claves_valores D_LLAVE
+    (19) print -> . PRINTLN
+    (20) print -> . PRINTF
+    (21) print -> . PRINT
 
-    VAR             shift and go to state 3
-    ID              shift and go to state 4
-    I_CORCHETE      shift and go to state 5
-    PRINTLN         shift and go to state 6
-    PRINTF          shift and go to state 7
-    PRINT           shift and go to state 8
+    VAR             shift and go to state 4
+    ID              shift and go to state 5
+    I_CORCHETE      shift and go to state 6
+    MAP             shift and go to state 7
+    MAKE            shift and go to state 8
+    PRINTLN         shift and go to state 9
+    PRINTF          shift and go to state 10
+    PRINT           shift and go to state 11
 
-    instruccion                    shift and go to state 1
-    print                          shift and go to state 2
+    body                           shift and go to state 1
+    instruccion                    shift and go to state 2
+    print                          shift and go to state 3
 
 state 1
 
-    (0) S' -> instruccion .
+    (0) S' -> body .
 
 
 
 state 2
 
-    (1) instruccion -> print . I_PARENTESIS valores D_PARENTESIS
+    (1) body -> instruccion .
 
-    I_PARENTESIS    shift and go to state 9
+    $end            reduce using rule 1 (body -> instruccion .)
 
 
 state 3
 
-    (2) instruccion -> VAR . ID type ASIGNACION valor
+    (2) instruccion -> print . I_PARENTESIS valores D_PARENTESIS
 
-    ID              shift and go to state 10
+    I_PARENTESIS    shift and go to state 12
 
 
 state 4
 
-    (3) instruccion -> ID . asignacion valor
-    (4) instruccion -> ID . operador_matematico
-    (22) asignacion -> . ASIGNACION
-    (23) asignacion -> . ASIGNACION_ADICION
-    (24) asignacion -> . ASIGNACION_RESTA
-    (25) asignacion -> . ASIGNACION_MULTI
-    (26) asignacion -> . DECLARACION_ASIGNACION
-    (27) asignacion -> . ASIGNACION_DIVISION
-    (28) asignacion -> . ASIGNACION_MODULO
-    (20) operador_matematico -> . INCREMENTO
-    (21) operador_matematico -> . DECREMENTO
+    (3) instruccion -> VAR . ID type ASIGNACION valor
 
-    ASIGNACION      shift and go to state 13
-    ASIGNACION_ADICION shift and go to state 14
-    ASIGNACION_RESTA shift and go to state 15
-    ASIGNACION_MULTI shift and go to state 16
-    DECLARACION_ASIGNACION shift and go to state 17
-    ASIGNACION_DIVISION shift and go to state 18
-    ASIGNACION_MODULO shift and go to state 19
-    INCREMENTO      shift and go to state 20
-    DECREMENTO      shift and go to state 21
+    ID              shift and go to state 13
 
-    asignacion                     shift and go to state 11
-    operador_matematico            shift and go to state 12
 
 state 5
 
-    (5) instruccion -> I_CORCHETE . D_CORCHETE type I_LLAVE D_LLAVE
-    (6) instruccion -> I_CORCHETE . INT D_CORCHETE type I_LLAVE D_LLAVE
-    (7) instruccion -> I_CORCHETE . D_CORCHETE type I_LLAVE valores D_LLAVE
-    (8) instruccion -> I_CORCHETE . INT D_CORCHETE type I_LLAVE valores D_LLAVE
+    (4) instruccion -> ID . asignacion valor
+    (5) instruccion -> ID . operador_matematico
+    (29) asignacion -> . ASIGNACION
+    (30) asignacion -> . ASIGNACION_ADICION
+    (31) asignacion -> . ASIGNACION_RESTA
+    (32) asignacion -> . ASIGNACION_MULTI
+    (33) asignacion -> . DECLARACION_ASIGNACION
+    (34) asignacion -> . ASIGNACION_DIVISION
+    (35) asignacion -> . ASIGNACION_MODULO
+    (27) operador_matematico -> . INCREMENTO
+    (28) operador_matematico -> . DECREMENTO
 
-    D_CORCHETE      shift and go to state 22
-    INT             shift and go to state 23
+    ASIGNACION      shift and go to state 16
+    ASIGNACION_ADICION shift and go to state 17
+    ASIGNACION_RESTA shift and go to state 18
+    ASIGNACION_MULTI shift and go to state 19
+    DECLARACION_ASIGNACION shift and go to state 20
+    ASIGNACION_DIVISION shift and go to state 21
+    ASIGNACION_MODULO shift and go to state 22
+    INCREMENTO      shift and go to state 23
+    DECREMENTO      shift and go to state 24
 
+    asignacion                     shift and go to state 14
+    operador_matematico            shift and go to state 15
 
 state 6
 
-    (12) print -> PRINTLN .
+    (6) instruccion -> I_CORCHETE . D_CORCHETE type I_LLAVE D_LLAVE
+    (7) instruccion -> I_CORCHETE . INT D_CORCHETE type I_LLAVE D_LLAVE
+    (8) instruccion -> I_CORCHETE . D_CORCHETE type I_LLAVE valores D_LLAVE
+    (9) instruccion -> I_CORCHETE . INT D_CORCHETE type I_LLAVE valores D_LLAVE
 
-    I_PARENTESIS    reduce using rule 12 (print -> PRINTLN .)
+    D_CORCHETE      shift and go to state 25
+    INT             shift and go to state 26
 
 
 state 7
 
-    (13) print -> PRINTF .
+    (10) instruccion -> MAP . I_CORCHETE type D_CORCHETE type I_LLAVE D_LLAVE
+    (12) instruccion -> MAP . I_CORCHETE type D_CORCHETE type I_LLAVE claves_valores D_LLAVE
 
-    I_PARENTESIS    reduce using rule 13 (print -> PRINTF .)
+    I_CORCHETE      shift and go to state 27
 
 
 state 8
 
-    (14) print -> PRINT .
+    (11) instruccion -> MAKE . I_PARENTESIS MAP I_CORCHETE type D_CORCHETE type D_PARENTESIS
 
-    I_PARENTESIS    reduce using rule 14 (print -> PRINT .)
+    I_PARENTESIS    shift and go to state 28
 
 
 state 9
 
-    (1) instruccion -> print I_PARENTESIS . valores D_PARENTESIS
-    (9) valores -> . valor
-    (10) valores -> . valor COMA valores
-    (11) valor -> . valor operacion_binaria valor
-    (40) valor -> . INT
-    (41) valor -> . DOUBLE
-    (42) valor -> . STRING
-    (43) valor -> . ID
+    (19) print -> PRINTLN .
 
-    INT             shift and go to state 26
-    DOUBLE          shift and go to state 27
-    STRING          shift and go to state 28
-    ID              shift and go to state 29
+    I_PARENTESIS    reduce using rule 19 (print -> PRINTLN .)
 
-    valores                        shift and go to state 24
-    valor                          shift and go to state 25
 
 state 10
 
-    (2) instruccion -> VAR ID . type ASIGNACION valor
-    (15) type -> . BOOL
-    (16) type -> . STRINGTYPE
-    (17) type -> . INTEGER
-    (18) type -> . FLOAT32
-    (19) type -> . FLOAT64
+    (20) print -> PRINTF .
 
-    BOOL            shift and go to state 31
-    STRINGTYPE      shift and go to state 32
-    INTEGER         shift and go to state 33
-    FLOAT32         shift and go to state 34
-    FLOAT64         shift and go to state 35
+    I_PARENTESIS    reduce using rule 20 (print -> PRINTF .)
 
-    type                           shift and go to state 30
 
 state 11
 
-    (3) instruccion -> ID asignacion . valor
-    (11) valor -> . valor operacion_binaria valor
-    (40) valor -> . INT
-    (41) valor -> . DOUBLE
-    (42) valor -> . STRING
-    (43) valor -> . ID
+    (21) print -> PRINT .
 
-    INT             shift and go to state 26
-    DOUBLE          shift and go to state 27
-    STRING          shift and go to state 28
-    ID              shift and go to state 29
+    I_PARENTESIS    reduce using rule 21 (print -> PRINT .)
 
-    valor                          shift and go to state 36
 
 state 12
 
-    (4) instruccion -> ID operador_matematico .
+    (2) instruccion -> print I_PARENTESIS . valores D_PARENTESIS
+    (16) valores -> . valor
+    (17) valores -> . valor COMA valores
+    (18) valor -> . valor operacion_binaria valor
+    (47) valor -> . INT
+    (48) valor -> . DOUBLE
+    (49) valor -> . STRING
+    (50) valor -> . ID
 
-    $end            reduce using rule 4 (instruccion -> ID operador_matematico .)
+    INT             shift and go to state 31
+    DOUBLE          shift and go to state 32
+    STRING          shift and go to state 33
+    ID              shift and go to state 34
 
+    valores                        shift and go to state 29
+    valor                          shift and go to state 30
 
 state 13
 
-    (22) asignacion -> ASIGNACION .
+    (3) instruccion -> VAR ID . type ASIGNACION valor
+    (22) type -> . BOOL
+    (23) type -> . STRINGTYPE
+    (24) type -> . INTEGER
+    (25) type -> . FLOAT32
+    (26) type -> . FLOAT64
 
-    INT             reduce using rule 22 (asignacion -> ASIGNACION .)
-    DOUBLE          reduce using rule 22 (asignacion -> ASIGNACION .)
-    STRING          reduce using rule 22 (asignacion -> ASIGNACION .)
-    ID              reduce using rule 22 (asignacion -> ASIGNACION .)
+    BOOL            shift and go to state 36
+    STRINGTYPE      shift and go to state 37
+    INTEGER         shift and go to state 38
+    FLOAT32         shift and go to state 39
+    FLOAT64         shift and go to state 40
 
+    type                           shift and go to state 35
 
 state 14
 
-    (23) asignacion -> ASIGNACION_ADICION .
+    (4) instruccion -> ID asignacion . valor
+    (18) valor -> . valor operacion_binaria valor
+    (47) valor -> . INT
+    (48) valor -> . DOUBLE
+    (49) valor -> . STRING
+    (50) valor -> . ID
 
-    INT             reduce using rule 23 (asignacion -> ASIGNACION_ADICION .)
-    DOUBLE          reduce using rule 23 (asignacion -> ASIGNACION_ADICION .)
-    STRING          reduce using rule 23 (asignacion -> ASIGNACION_ADICION .)
-    ID              reduce using rule 23 (asignacion -> ASIGNACION_ADICION .)
+    INT             shift and go to state 31
+    DOUBLE          shift and go to state 32
+    STRING          shift and go to state 33
+    ID              shift and go to state 34
 
+    valor                          shift and go to state 41
 
 state 15
 
-    (24) asignacion -> ASIGNACION_RESTA .
+    (5) instruccion -> ID operador_matematico .
 
-    INT             reduce using rule 24 (asignacion -> ASIGNACION_RESTA .)
-    DOUBLE          reduce using rule 24 (asignacion -> ASIGNACION_RESTA .)
-    STRING          reduce using rule 24 (asignacion -> ASIGNACION_RESTA .)
-    ID              reduce using rule 24 (asignacion -> ASIGNACION_RESTA .)
+    $end            reduce using rule 5 (instruccion -> ID operador_matematico .)
 
 
 state 16
 
-    (25) asignacion -> ASIGNACION_MULTI .
+    (29) asignacion -> ASIGNACION .
 
-    INT             reduce using rule 25 (asignacion -> ASIGNACION_MULTI .)
-    DOUBLE          reduce using rule 25 (asignacion -> ASIGNACION_MULTI .)
-    STRING          reduce using rule 25 (asignacion -> ASIGNACION_MULTI .)
-    ID              reduce using rule 25 (asignacion -> ASIGNACION_MULTI .)
+    INT             reduce using rule 29 (asignacion -> ASIGNACION .)
+    DOUBLE          reduce using rule 29 (asignacion -> ASIGNACION .)
+    STRING          reduce using rule 29 (asignacion -> ASIGNACION .)
+    ID              reduce using rule 29 (asignacion -> ASIGNACION .)
 
 
 state 17
 
-    (26) asignacion -> DECLARACION_ASIGNACION .
+    (30) asignacion -> ASIGNACION_ADICION .
 
-    INT             reduce using rule 26 (asignacion -> DECLARACION_ASIGNACION .)
-    DOUBLE          reduce using rule 26 (asignacion -> DECLARACION_ASIGNACION .)
-    STRING          reduce using rule 26 (asignacion -> DECLARACION_ASIGNACION .)
-    ID              reduce using rule 26 (asignacion -> DECLARACION_ASIGNACION .)
+    INT             reduce using rule 30 (asignacion -> ASIGNACION_ADICION .)
+    DOUBLE          reduce using rule 30 (asignacion -> ASIGNACION_ADICION .)
+    STRING          reduce using rule 30 (asignacion -> ASIGNACION_ADICION .)
+    ID              reduce using rule 30 (asignacion -> ASIGNACION_ADICION .)
 
 
 state 18
 
-    (27) asignacion -> ASIGNACION_DIVISION .
+    (31) asignacion -> ASIGNACION_RESTA .
 
-    INT             reduce using rule 27 (asignacion -> ASIGNACION_DIVISION .)
-    DOUBLE          reduce using rule 27 (asignacion -> ASIGNACION_DIVISION .)
-    STRING          reduce using rule 27 (asignacion -> ASIGNACION_DIVISION .)
-    ID              reduce using rule 27 (asignacion -> ASIGNACION_DIVISION .)
+    INT             reduce using rule 31 (asignacion -> ASIGNACION_RESTA .)
+    DOUBLE          reduce using rule 31 (asignacion -> ASIGNACION_RESTA .)
+    STRING          reduce using rule 31 (asignacion -> ASIGNACION_RESTA .)
+    ID              reduce using rule 31 (asignacion -> ASIGNACION_RESTA .)
 
 
 state 19
 
-    (28) asignacion -> ASIGNACION_MODULO .
+    (32) asignacion -> ASIGNACION_MULTI .
 
-    INT             reduce using rule 28 (asignacion -> ASIGNACION_MODULO .)
-    DOUBLE          reduce using rule 28 (asignacion -> ASIGNACION_MODULO .)
-    STRING          reduce using rule 28 (asignacion -> ASIGNACION_MODULO .)
-    ID              reduce using rule 28 (asignacion -> ASIGNACION_MODULO .)
+    INT             reduce using rule 32 (asignacion -> ASIGNACION_MULTI .)
+    DOUBLE          reduce using rule 32 (asignacion -> ASIGNACION_MULTI .)
+    STRING          reduce using rule 32 (asignacion -> ASIGNACION_MULTI .)
+    ID              reduce using rule 32 (asignacion -> ASIGNACION_MULTI .)
 
 
 state 20
 
-    (20) operador_matematico -> INCREMENTO .
+    (33) asignacion -> DECLARACION_ASIGNACION .
 
-    $end            reduce using rule 20 (operador_matematico -> INCREMENTO .)
+    INT             reduce using rule 33 (asignacion -> DECLARACION_ASIGNACION .)
+    DOUBLE          reduce using rule 33 (asignacion -> DECLARACION_ASIGNACION .)
+    STRING          reduce using rule 33 (asignacion -> DECLARACION_ASIGNACION .)
+    ID              reduce using rule 33 (asignacion -> DECLARACION_ASIGNACION .)
 
 
 state 21
 
-    (21) operador_matematico -> DECREMENTO .
+    (34) asignacion -> ASIGNACION_DIVISION .
 
-    $end            reduce using rule 21 (operador_matematico -> DECREMENTO .)
+    INT             reduce using rule 34 (asignacion -> ASIGNACION_DIVISION .)
+    DOUBLE          reduce using rule 34 (asignacion -> ASIGNACION_DIVISION .)
+    STRING          reduce using rule 34 (asignacion -> ASIGNACION_DIVISION .)
+    ID              reduce using rule 34 (asignacion -> ASIGNACION_DIVISION .)
 
 
 state 22
 
-    (5) instruccion -> I_CORCHETE D_CORCHETE . type I_LLAVE D_LLAVE
-    (7) instruccion -> I_CORCHETE D_CORCHETE . type I_LLAVE valores D_LLAVE
-    (15) type -> . BOOL
-    (16) type -> . STRINGTYPE
-    (17) type -> . INTEGER
-    (18) type -> . FLOAT32
-    (19) type -> . FLOAT64
+    (35) asignacion -> ASIGNACION_MODULO .
 
-    BOOL            shift and go to state 31
-    STRINGTYPE      shift and go to state 32
-    INTEGER         shift and go to state 33
-    FLOAT32         shift and go to state 34
-    FLOAT64         shift and go to state 35
+    INT             reduce using rule 35 (asignacion -> ASIGNACION_MODULO .)
+    DOUBLE          reduce using rule 35 (asignacion -> ASIGNACION_MODULO .)
+    STRING          reduce using rule 35 (asignacion -> ASIGNACION_MODULO .)
+    ID              reduce using rule 35 (asignacion -> ASIGNACION_MODULO .)
 
-    type                           shift and go to state 37
 
 state 23
 
-    (6) instruccion -> I_CORCHETE INT . D_CORCHETE type I_LLAVE D_LLAVE
-    (8) instruccion -> I_CORCHETE INT . D_CORCHETE type I_LLAVE valores D_LLAVE
+    (27) operador_matematico -> INCREMENTO .
 
-    D_CORCHETE      shift and go to state 38
+    $end            reduce using rule 27 (operador_matematico -> INCREMENTO .)
 
 
 state 24
 
-    (1) instruccion -> print I_PARENTESIS valores . D_PARENTESIS
+    (28) operador_matematico -> DECREMENTO .
 
-    D_PARENTESIS    shift and go to state 39
+    $end            reduce using rule 28 (operador_matematico -> DECREMENTO .)
 
 
 state 25
 
-    (9) valores -> valor .
-    (10) valores -> valor . COMA valores
-    (11) valor -> valor . operacion_binaria valor
-    (29) operacion_binaria -> . ADICION
-    (30) operacion_binaria -> . RESTA
-    (31) operacion_binaria -> . MULTIPLICACION
-    (32) operacion_binaria -> . DIVISION
-    (33) operacion_binaria -> . MODULO
-    (34) operacion_binaria -> . MENOR_IGUAL
-    (35) operacion_binaria -> . IGUAL
-    (36) operacion_binaria -> . DIFERENTE
-    (37) operacion_binaria -> . MAYOR
-    (38) operacion_binaria -> . MAYOR_IGUAL
-    (39) operacion_binaria -> . MENOR
+    (6) instruccion -> I_CORCHETE D_CORCHETE . type I_LLAVE D_LLAVE
+    (8) instruccion -> I_CORCHETE D_CORCHETE . type I_LLAVE valores D_LLAVE
+    (22) type -> . BOOL
+    (23) type -> . STRINGTYPE
+    (24) type -> . INTEGER
+    (25) type -> . FLOAT32
+    (26) type -> . FLOAT64
 
-    D_PARENTESIS    reduce using rule 9 (valores -> valor .)
-    D_LLAVE         reduce using rule 9 (valores -> valor .)
-    COMA            shift and go to state 40
-    ADICION         shift and go to state 42
-    RESTA           shift and go to state 43
-    MULTIPLICACION  shift and go to state 44
-    DIVISION        shift and go to state 45
-    MODULO          shift and go to state 46
-    MENOR_IGUAL     shift and go to state 47
-    IGUAL           shift and go to state 48
-    DIFERENTE       shift and go to state 49
-    MAYOR           shift and go to state 50
-    MAYOR_IGUAL     shift and go to state 51
-    MENOR           shift and go to state 52
+    BOOL            shift and go to state 36
+    STRINGTYPE      shift and go to state 37
+    INTEGER         shift and go to state 38
+    FLOAT32         shift and go to state 39
+    FLOAT64         shift and go to state 40
 
-    operacion_binaria              shift and go to state 41
+    type                           shift and go to state 42
 
 state 26
 
-    (40) valor -> INT .
+    (7) instruccion -> I_CORCHETE INT . D_CORCHETE type I_LLAVE D_LLAVE
+    (9) instruccion -> I_CORCHETE INT . D_CORCHETE type I_LLAVE valores D_LLAVE
 
-    COMA            reduce using rule 40 (valor -> INT .)
-    ADICION         reduce using rule 40 (valor -> INT .)
-    RESTA           reduce using rule 40 (valor -> INT .)
-    MULTIPLICACION  reduce using rule 40 (valor -> INT .)
-    DIVISION        reduce using rule 40 (valor -> INT .)
-    MODULO          reduce using rule 40 (valor -> INT .)
-    MENOR_IGUAL     reduce using rule 40 (valor -> INT .)
-    IGUAL           reduce using rule 40 (valor -> INT .)
-    DIFERENTE       reduce using rule 40 (valor -> INT .)
-    MAYOR           reduce using rule 40 (valor -> INT .)
-    MAYOR_IGUAL     reduce using rule 40 (valor -> INT .)
-    MENOR           reduce using rule 40 (valor -> INT .)
-    D_PARENTESIS    reduce using rule 40 (valor -> INT .)
-    $end            reduce using rule 40 (valor -> INT .)
-    D_LLAVE         reduce using rule 40 (valor -> INT .)
+    D_CORCHETE      shift and go to state 43
 
 
 state 27
 
-    (41) valor -> DOUBLE .
+    (10) instruccion -> MAP I_CORCHETE . type D_CORCHETE type I_LLAVE D_LLAVE
+    (12) instruccion -> MAP I_CORCHETE . type D_CORCHETE type I_LLAVE claves_valores D_LLAVE
+    (22) type -> . BOOL
+    (23) type -> . STRINGTYPE
+    (24) type -> . INTEGER
+    (25) type -> . FLOAT32
+    (26) type -> . FLOAT64
 
-    COMA            reduce using rule 41 (valor -> DOUBLE .)
-    ADICION         reduce using rule 41 (valor -> DOUBLE .)
-    RESTA           reduce using rule 41 (valor -> DOUBLE .)
-    MULTIPLICACION  reduce using rule 41 (valor -> DOUBLE .)
-    DIVISION        reduce using rule 41 (valor -> DOUBLE .)
-    MODULO          reduce using rule 41 (valor -> DOUBLE .)
-    MENOR_IGUAL     reduce using rule 41 (valor -> DOUBLE .)
-    IGUAL           reduce using rule 41 (valor -> DOUBLE .)
-    DIFERENTE       reduce using rule 41 (valor -> DOUBLE .)
-    MAYOR           reduce using rule 41 (valor -> DOUBLE .)
-    MAYOR_IGUAL     reduce using rule 41 (valor -> DOUBLE .)
-    MENOR           reduce using rule 41 (valor -> DOUBLE .)
-    D_PARENTESIS    reduce using rule 41 (valor -> DOUBLE .)
-    $end            reduce using rule 41 (valor -> DOUBLE .)
-    D_LLAVE         reduce using rule 41 (valor -> DOUBLE .)
+    BOOL            shift and go to state 36
+    STRINGTYPE      shift and go to state 37
+    INTEGER         shift and go to state 38
+    FLOAT32         shift and go to state 39
+    FLOAT64         shift and go to state 40
 
+    type                           shift and go to state 44
 
 state 28
 
-    (42) valor -> STRING .
+    (11) instruccion -> MAKE I_PARENTESIS . MAP I_CORCHETE type D_CORCHETE type D_PARENTESIS
 
-    COMA            reduce using rule 42 (valor -> STRING .)
-    ADICION         reduce using rule 42 (valor -> STRING .)
-    RESTA           reduce using rule 42 (valor -> STRING .)
-    MULTIPLICACION  reduce using rule 42 (valor -> STRING .)
-    DIVISION        reduce using rule 42 (valor -> STRING .)
-    MODULO          reduce using rule 42 (valor -> STRING .)
-    MENOR_IGUAL     reduce using rule 42 (valor -> STRING .)
-    IGUAL           reduce using rule 42 (valor -> STRING .)
-    DIFERENTE       reduce using rule 42 (valor -> STRING .)
-    MAYOR           reduce using rule 42 (valor -> STRING .)
-    MAYOR_IGUAL     reduce using rule 42 (valor -> STRING .)
-    MENOR           reduce using rule 42 (valor -> STRING .)
-    D_PARENTESIS    reduce using rule 42 (valor -> STRING .)
-    $end            reduce using rule 42 (valor -> STRING .)
-    D_LLAVE         reduce using rule 42 (valor -> STRING .)
+    MAP             shift and go to state 45
 
 
 state 29
 
-    (43) valor -> ID .
+    (2) instruccion -> print I_PARENTESIS valores . D_PARENTESIS
 
-    COMA            reduce using rule 43 (valor -> ID .)
-    ADICION         reduce using rule 43 (valor -> ID .)
-    RESTA           reduce using rule 43 (valor -> ID .)
-    MULTIPLICACION  reduce using rule 43 (valor -> ID .)
-    DIVISION        reduce using rule 43 (valor -> ID .)
-    MODULO          reduce using rule 43 (valor -> ID .)
-    MENOR_IGUAL     reduce using rule 43 (valor -> ID .)
-    IGUAL           reduce using rule 43 (valor -> ID .)
-    DIFERENTE       reduce using rule 43 (valor -> ID .)
-    MAYOR           reduce using rule 43 (valor -> ID .)
-    MAYOR_IGUAL     reduce using rule 43 (valor -> ID .)
-    MENOR           reduce using rule 43 (valor -> ID .)
-    D_PARENTESIS    reduce using rule 43 (valor -> ID .)
-    $end            reduce using rule 43 (valor -> ID .)
-    D_LLAVE         reduce using rule 43 (valor -> ID .)
+    D_PARENTESIS    shift and go to state 46
 
 
 state 30
 
-    (2) instruccion -> VAR ID type . ASIGNACION valor
+    (16) valores -> valor .
+    (17) valores -> valor . COMA valores
+    (18) valor -> valor . operacion_binaria valor
+    (36) operacion_binaria -> . ADICION
+    (37) operacion_binaria -> . RESTA
+    (38) operacion_binaria -> . MULTIPLICACION
+    (39) operacion_binaria -> . DIVISION
+    (40) operacion_binaria -> . MODULO
+    (41) operacion_binaria -> . MENOR_IGUAL
+    (42) operacion_binaria -> . IGUAL
+    (43) operacion_binaria -> . DIFERENTE
+    (44) operacion_binaria -> . MAYOR
+    (45) operacion_binaria -> . MAYOR_IGUAL
+    (46) operacion_binaria -> . MENOR
 
-    ASIGNACION      shift and go to state 53
+    D_PARENTESIS    reduce using rule 16 (valores -> valor .)
+    D_LLAVE         reduce using rule 16 (valores -> valor .)
+    COMA            shift and go to state 47
+    ADICION         shift and go to state 49
+    RESTA           shift and go to state 50
+    MULTIPLICACION  shift and go to state 51
+    DIVISION        shift and go to state 52
+    MODULO          shift and go to state 53
+    MENOR_IGUAL     shift and go to state 54
+    IGUAL           shift and go to state 55
+    DIFERENTE       shift and go to state 56
+    MAYOR           shift and go to state 57
+    MAYOR_IGUAL     shift and go to state 58
+    MENOR           shift and go to state 59
 
+    operacion_binaria              shift and go to state 48
 
 state 31
 
-    (15) type -> BOOL .
+    (47) valor -> INT .
 
-    ASIGNACION      reduce using rule 15 (type -> BOOL .)
-    I_LLAVE         reduce using rule 15 (type -> BOOL .)
+    COMA            reduce using rule 47 (valor -> INT .)
+    ADICION         reduce using rule 47 (valor -> INT .)
+    RESTA           reduce using rule 47 (valor -> INT .)
+    MULTIPLICACION  reduce using rule 47 (valor -> INT .)
+    DIVISION        reduce using rule 47 (valor -> INT .)
+    MODULO          reduce using rule 47 (valor -> INT .)
+    MENOR_IGUAL     reduce using rule 47 (valor -> INT .)
+    IGUAL           reduce using rule 47 (valor -> INT .)
+    DIFERENTE       reduce using rule 47 (valor -> INT .)
+    MAYOR           reduce using rule 47 (valor -> INT .)
+    MAYOR_IGUAL     reduce using rule 47 (valor -> INT .)
+    MENOR           reduce using rule 47 (valor -> INT .)
+    D_PARENTESIS    reduce using rule 47 (valor -> INT .)
+    $end            reduce using rule 47 (valor -> INT .)
+    D_LLAVE         reduce using rule 47 (valor -> INT .)
+    DOS_PUNTOS      reduce using rule 47 (valor -> INT .)
 
 
 state 32
 
-    (16) type -> STRINGTYPE .
+    (48) valor -> DOUBLE .
 
-    ASIGNACION      reduce using rule 16 (type -> STRINGTYPE .)
-    I_LLAVE         reduce using rule 16 (type -> STRINGTYPE .)
+    COMA            reduce using rule 48 (valor -> DOUBLE .)
+    ADICION         reduce using rule 48 (valor -> DOUBLE .)
+    RESTA           reduce using rule 48 (valor -> DOUBLE .)
+    MULTIPLICACION  reduce using rule 48 (valor -> DOUBLE .)
+    DIVISION        reduce using rule 48 (valor -> DOUBLE .)
+    MODULO          reduce using rule 48 (valor -> DOUBLE .)
+    MENOR_IGUAL     reduce using rule 48 (valor -> DOUBLE .)
+    IGUAL           reduce using rule 48 (valor -> DOUBLE .)
+    DIFERENTE       reduce using rule 48 (valor -> DOUBLE .)
+    MAYOR           reduce using rule 48 (valor -> DOUBLE .)
+    MAYOR_IGUAL     reduce using rule 48 (valor -> DOUBLE .)
+    MENOR           reduce using rule 48 (valor -> DOUBLE .)
+    D_PARENTESIS    reduce using rule 48 (valor -> DOUBLE .)
+    $end            reduce using rule 48 (valor -> DOUBLE .)
+    D_LLAVE         reduce using rule 48 (valor -> DOUBLE .)
+    DOS_PUNTOS      reduce using rule 48 (valor -> DOUBLE .)
 
 
 state 33
 
-    (17) type -> INTEGER .
+    (49) valor -> STRING .
 
-    ASIGNACION      reduce using rule 17 (type -> INTEGER .)
-    I_LLAVE         reduce using rule 17 (type -> INTEGER .)
+    COMA            reduce using rule 49 (valor -> STRING .)
+    ADICION         reduce using rule 49 (valor -> STRING .)
+    RESTA           reduce using rule 49 (valor -> STRING .)
+    MULTIPLICACION  reduce using rule 49 (valor -> STRING .)
+    DIVISION        reduce using rule 49 (valor -> STRING .)
+    MODULO          reduce using rule 49 (valor -> STRING .)
+    MENOR_IGUAL     reduce using rule 49 (valor -> STRING .)
+    IGUAL           reduce using rule 49 (valor -> STRING .)
+    DIFERENTE       reduce using rule 49 (valor -> STRING .)
+    MAYOR           reduce using rule 49 (valor -> STRING .)
+    MAYOR_IGUAL     reduce using rule 49 (valor -> STRING .)
+    MENOR           reduce using rule 49 (valor -> STRING .)
+    D_PARENTESIS    reduce using rule 49 (valor -> STRING .)
+    $end            reduce using rule 49 (valor -> STRING .)
+    D_LLAVE         reduce using rule 49 (valor -> STRING .)
+    DOS_PUNTOS      reduce using rule 49 (valor -> STRING .)
 
 
 state 34
 
-    (18) type -> FLOAT32 .
+    (50) valor -> ID .
 
-    ASIGNACION      reduce using rule 18 (type -> FLOAT32 .)
-    I_LLAVE         reduce using rule 18 (type -> FLOAT32 .)
+    COMA            reduce using rule 50 (valor -> ID .)
+    ADICION         reduce using rule 50 (valor -> ID .)
+    RESTA           reduce using rule 50 (valor -> ID .)
+    MULTIPLICACION  reduce using rule 50 (valor -> ID .)
+    DIVISION        reduce using rule 50 (valor -> ID .)
+    MODULO          reduce using rule 50 (valor -> ID .)
+    MENOR_IGUAL     reduce using rule 50 (valor -> ID .)
+    IGUAL           reduce using rule 50 (valor -> ID .)
+    DIFERENTE       reduce using rule 50 (valor -> ID .)
+    MAYOR           reduce using rule 50 (valor -> ID .)
+    MAYOR_IGUAL     reduce using rule 50 (valor -> ID .)
+    MENOR           reduce using rule 50 (valor -> ID .)
+    D_PARENTESIS    reduce using rule 50 (valor -> ID .)
+    $end            reduce using rule 50 (valor -> ID .)
+    D_LLAVE         reduce using rule 50 (valor -> ID .)
+    DOS_PUNTOS      reduce using rule 50 (valor -> ID .)
 
 
 state 35
 
-    (19) type -> FLOAT64 .
+    (3) instruccion -> VAR ID type . ASIGNACION valor
 
-    ASIGNACION      reduce using rule 19 (type -> FLOAT64 .)
-    I_LLAVE         reduce using rule 19 (type -> FLOAT64 .)
+    ASIGNACION      shift and go to state 60
 
 
 state 36
 
-    (3) instruccion -> ID asignacion valor .
-    (11) valor -> valor . operacion_binaria valor
-    (29) operacion_binaria -> . ADICION
-    (30) operacion_binaria -> . RESTA
-    (31) operacion_binaria -> . MULTIPLICACION
-    (32) operacion_binaria -> . DIVISION
-    (33) operacion_binaria -> . MODULO
-    (34) operacion_binaria -> . MENOR_IGUAL
-    (35) operacion_binaria -> . IGUAL
-    (36) operacion_binaria -> . DIFERENTE
-    (37) operacion_binaria -> . MAYOR
-    (38) operacion_binaria -> . MAYOR_IGUAL
-    (39) operacion_binaria -> . MENOR
+    (22) type -> BOOL .
 
-    $end            reduce using rule 3 (instruccion -> ID asignacion valor .)
-    ADICION         shift and go to state 42
-    RESTA           shift and go to state 43
-    MULTIPLICACION  shift and go to state 44
-    DIVISION        shift and go to state 45
-    MODULO          shift and go to state 46
-    MENOR_IGUAL     shift and go to state 47
-    IGUAL           shift and go to state 48
-    DIFERENTE       shift and go to state 49
-    MAYOR           shift and go to state 50
-    MAYOR_IGUAL     shift and go to state 51
-    MENOR           shift and go to state 52
+    ASIGNACION      reduce using rule 22 (type -> BOOL .)
+    I_LLAVE         reduce using rule 22 (type -> BOOL .)
+    D_CORCHETE      reduce using rule 22 (type -> BOOL .)
+    D_PARENTESIS    reduce using rule 22 (type -> BOOL .)
 
-    operacion_binaria              shift and go to state 41
 
 state 37
 
-    (5) instruccion -> I_CORCHETE D_CORCHETE type . I_LLAVE D_LLAVE
-    (7) instruccion -> I_CORCHETE D_CORCHETE type . I_LLAVE valores D_LLAVE
+    (23) type -> STRINGTYPE .
 
-    I_LLAVE         shift and go to state 54
+    ASIGNACION      reduce using rule 23 (type -> STRINGTYPE .)
+    I_LLAVE         reduce using rule 23 (type -> STRINGTYPE .)
+    D_CORCHETE      reduce using rule 23 (type -> STRINGTYPE .)
+    D_PARENTESIS    reduce using rule 23 (type -> STRINGTYPE .)
 
 
 state 38
 
-    (6) instruccion -> I_CORCHETE INT D_CORCHETE . type I_LLAVE D_LLAVE
-    (8) instruccion -> I_CORCHETE INT D_CORCHETE . type I_LLAVE valores D_LLAVE
-    (15) type -> . BOOL
-    (16) type -> . STRINGTYPE
-    (17) type -> . INTEGER
-    (18) type -> . FLOAT32
-    (19) type -> . FLOAT64
+    (24) type -> INTEGER .
 
-    BOOL            shift and go to state 31
-    STRINGTYPE      shift and go to state 32
-    INTEGER         shift and go to state 33
-    FLOAT32         shift and go to state 34
-    FLOAT64         shift and go to state 35
+    ASIGNACION      reduce using rule 24 (type -> INTEGER .)
+    I_LLAVE         reduce using rule 24 (type -> INTEGER .)
+    D_CORCHETE      reduce using rule 24 (type -> INTEGER .)
+    D_PARENTESIS    reduce using rule 24 (type -> INTEGER .)
 
-    type                           shift and go to state 55
 
 state 39
 
-    (1) instruccion -> print I_PARENTESIS valores D_PARENTESIS .
+    (25) type -> FLOAT32 .
 
-    $end            reduce using rule 1 (instruccion -> print I_PARENTESIS valores D_PARENTESIS .)
+    ASIGNACION      reduce using rule 25 (type -> FLOAT32 .)
+    I_LLAVE         reduce using rule 25 (type -> FLOAT32 .)
+    D_CORCHETE      reduce using rule 25 (type -> FLOAT32 .)
+    D_PARENTESIS    reduce using rule 25 (type -> FLOAT32 .)
 
 
 state 40
 
-    (10) valores -> valor COMA . valores
-    (9) valores -> . valor
-    (10) valores -> . valor COMA valores
-    (11) valor -> . valor operacion_binaria valor
-    (40) valor -> . INT
-    (41) valor -> . DOUBLE
-    (42) valor -> . STRING
-    (43) valor -> . ID
+    (26) type -> FLOAT64 .
 
-    INT             shift and go to state 26
-    DOUBLE          shift and go to state 27
-    STRING          shift and go to state 28
-    ID              shift and go to state 29
+    ASIGNACION      reduce using rule 26 (type -> FLOAT64 .)
+    I_LLAVE         reduce using rule 26 (type -> FLOAT64 .)
+    D_CORCHETE      reduce using rule 26 (type -> FLOAT64 .)
+    D_PARENTESIS    reduce using rule 26 (type -> FLOAT64 .)
 
-    valor                          shift and go to state 25
-    valores                        shift and go to state 56
 
 state 41
 
-    (11) valor -> valor operacion_binaria . valor
-    (11) valor -> . valor operacion_binaria valor
-    (40) valor -> . INT
-    (41) valor -> . DOUBLE
-    (42) valor -> . STRING
-    (43) valor -> . ID
+    (4) instruccion -> ID asignacion valor .
+    (18) valor -> valor . operacion_binaria valor
+    (36) operacion_binaria -> . ADICION
+    (37) operacion_binaria -> . RESTA
+    (38) operacion_binaria -> . MULTIPLICACION
+    (39) operacion_binaria -> . DIVISION
+    (40) operacion_binaria -> . MODULO
+    (41) operacion_binaria -> . MENOR_IGUAL
+    (42) operacion_binaria -> . IGUAL
+    (43) operacion_binaria -> . DIFERENTE
+    (44) operacion_binaria -> . MAYOR
+    (45) operacion_binaria -> . MAYOR_IGUAL
+    (46) operacion_binaria -> . MENOR
 
-    INT             shift and go to state 26
-    DOUBLE          shift and go to state 27
-    STRING          shift and go to state 28
-    ID              shift and go to state 29
+    $end            reduce using rule 4 (instruccion -> ID asignacion valor .)
+    ADICION         shift and go to state 49
+    RESTA           shift and go to state 50
+    MULTIPLICACION  shift and go to state 51
+    DIVISION        shift and go to state 52
+    MODULO          shift and go to state 53
+    MENOR_IGUAL     shift and go to state 54
+    IGUAL           shift and go to state 55
+    DIFERENTE       shift and go to state 56
+    MAYOR           shift and go to state 57
+    MAYOR_IGUAL     shift and go to state 58
+    MENOR           shift and go to state 59
 
-    valor                          shift and go to state 57
+    operacion_binaria              shift and go to state 48
 
 state 42
 
-    (29) operacion_binaria -> ADICION .
-
-    INT             reduce using rule 29 (operacion_binaria -> ADICION .)
-    DOUBLE          reduce using rule 29 (operacion_binaria -> ADICION .)
-    STRING          reduce using rule 29 (operacion_binaria -> ADICION .)
-    ID              reduce using rule 29 (operacion_binaria -> ADICION .)
-
-
-state 43
-
-    (30) operacion_binaria -> RESTA .
-
-    INT             reduce using rule 30 (operacion_binaria -> RESTA .)
-    DOUBLE          reduce using rule 30 (operacion_binaria -> RESTA .)
-    STRING          reduce using rule 30 (operacion_binaria -> RESTA .)
-    ID              reduce using rule 30 (operacion_binaria -> RESTA .)
-
-
-state 44
-
-    (31) operacion_binaria -> MULTIPLICACION .
-
-    INT             reduce using rule 31 (operacion_binaria -> MULTIPLICACION .)
-    DOUBLE          reduce using rule 31 (operacion_binaria -> MULTIPLICACION .)
-    STRING          reduce using rule 31 (operacion_binaria -> MULTIPLICACION .)
-    ID              reduce using rule 31 (operacion_binaria -> MULTIPLICACION .)
-
-
-state 45
-
-    (32) operacion_binaria -> DIVISION .
-
-    INT             reduce using rule 32 (operacion_binaria -> DIVISION .)
-    DOUBLE          reduce using rule 32 (operacion_binaria -> DIVISION .)
-    STRING          reduce using rule 32 (operacion_binaria -> DIVISION .)
-    ID              reduce using rule 32 (operacion_binaria -> DIVISION .)
-
-
-state 46
-
-    (33) operacion_binaria -> MODULO .
-
-    INT             reduce using rule 33 (operacion_binaria -> MODULO .)
-    DOUBLE          reduce using rule 33 (operacion_binaria -> MODULO .)
-    STRING          reduce using rule 33 (operacion_binaria -> MODULO .)
-    ID              reduce using rule 33 (operacion_binaria -> MODULO .)
-
-
-state 47
-
-    (34) operacion_binaria -> MENOR_IGUAL .
-
-    INT             reduce using rule 34 (operacion_binaria -> MENOR_IGUAL .)
-    DOUBLE          reduce using rule 34 (operacion_binaria -> MENOR_IGUAL .)
-    STRING          reduce using rule 34 (operacion_binaria -> MENOR_IGUAL .)
-    ID              reduce using rule 34 (operacion_binaria -> MENOR_IGUAL .)
-
-
-state 48
-
-    (35) operacion_binaria -> IGUAL .
-
-    INT             reduce using rule 35 (operacion_binaria -> IGUAL .)
-    DOUBLE          reduce using rule 35 (operacion_binaria -> IGUAL .)
-    STRING          reduce using rule 35 (operacion_binaria -> IGUAL .)
-    ID              reduce using rule 35 (operacion_binaria -> IGUAL .)
-
-
-state 49
-
-    (36) operacion_binaria -> DIFERENTE .
-
-    INT             reduce using rule 36 (operacion_binaria -> DIFERENTE .)
-    DOUBLE          reduce using rule 36 (operacion_binaria -> DIFERENTE .)
-    STRING          reduce using rule 36 (operacion_binaria -> DIFERENTE .)
-    ID              reduce using rule 36 (operacion_binaria -> DIFERENTE .)
-
-
-state 50
-
-    (37) operacion_binaria -> MAYOR .
-
-    INT             reduce using rule 37 (operacion_binaria -> MAYOR .)
-    DOUBLE          reduce using rule 37 (operacion_binaria -> MAYOR .)
-    STRING          reduce using rule 37 (operacion_binaria -> MAYOR .)
-    ID              reduce using rule 37 (operacion_binaria -> MAYOR .)
-
-
-state 51
-
-    (38) operacion_binaria -> MAYOR_IGUAL .
-
-    INT             reduce using rule 38 (operacion_binaria -> MAYOR_IGUAL .)
-    DOUBLE          reduce using rule 38 (operacion_binaria -> MAYOR_IGUAL .)
-    STRING          reduce using rule 38 (operacion_binaria -> MAYOR_IGUAL .)
-    ID              reduce using rule 38 (operacion_binaria -> MAYOR_IGUAL .)
-
-
-state 52
-
-    (39) operacion_binaria -> MENOR .
-
-    INT             reduce using rule 39 (operacion_binaria -> MENOR .)
-    DOUBLE          reduce using rule 39 (operacion_binaria -> MENOR .)
-    STRING          reduce using rule 39 (operacion_binaria -> MENOR .)
-    ID              reduce using rule 39 (operacion_binaria -> MENOR .)
-
-
-state 53
-
-    (2) instruccion -> VAR ID type ASIGNACION . valor
-    (11) valor -> . valor operacion_binaria valor
-    (40) valor -> . INT
-    (41) valor -> . DOUBLE
-    (42) valor -> . STRING
-    (43) valor -> . ID
-
-    INT             shift and go to state 26
-    DOUBLE          shift and go to state 27
-    STRING          shift and go to state 28
-    ID              shift and go to state 29
-
-    valor                          shift and go to state 58
-
-state 54
-
-    (5) instruccion -> I_CORCHETE D_CORCHETE type I_LLAVE . D_LLAVE
-    (7) instruccion -> I_CORCHETE D_CORCHETE type I_LLAVE . valores D_LLAVE
-    (9) valores -> . valor
-    (10) valores -> . valor COMA valores
-    (11) valor -> . valor operacion_binaria valor
-    (40) valor -> . INT
-    (41) valor -> . DOUBLE
-    (42) valor -> . STRING
-    (43) valor -> . ID
-
-    D_LLAVE         shift and go to state 59
-    INT             shift and go to state 26
-    DOUBLE          shift and go to state 27
-    STRING          shift and go to state 28
-    ID              shift and go to state 29
-
-    valores                        shift and go to state 60
-    valor                          shift and go to state 25
-
-state 55
-
-    (6) instruccion -> I_CORCHETE INT D_CORCHETE type . I_LLAVE D_LLAVE
-    (8) instruccion -> I_CORCHETE INT D_CORCHETE type . I_LLAVE valores D_LLAVE
+    (6) instruccion -> I_CORCHETE D_CORCHETE type . I_LLAVE D_LLAVE
+    (8) instruccion -> I_CORCHETE D_CORCHETE type . I_LLAVE valores D_LLAVE
 
     I_LLAVE         shift and go to state 61
 
 
+state 43
+
+    (7) instruccion -> I_CORCHETE INT D_CORCHETE . type I_LLAVE D_LLAVE
+    (9) instruccion -> I_CORCHETE INT D_CORCHETE . type I_LLAVE valores D_LLAVE
+    (22) type -> . BOOL
+    (23) type -> . STRINGTYPE
+    (24) type -> . INTEGER
+    (25) type -> . FLOAT32
+    (26) type -> . FLOAT64
+
+    BOOL            shift and go to state 36
+    STRINGTYPE      shift and go to state 37
+    INTEGER         shift and go to state 38
+    FLOAT32         shift and go to state 39
+    FLOAT64         shift and go to state 40
+
+    type                           shift and go to state 62
+
+state 44
+
+    (10) instruccion -> MAP I_CORCHETE type . D_CORCHETE type I_LLAVE D_LLAVE
+    (12) instruccion -> MAP I_CORCHETE type . D_CORCHETE type I_LLAVE claves_valores D_LLAVE
+
+    D_CORCHETE      shift and go to state 63
+
+
+state 45
+
+    (11) instruccion -> MAKE I_PARENTESIS MAP . I_CORCHETE type D_CORCHETE type D_PARENTESIS
+
+    I_CORCHETE      shift and go to state 64
+
+
+state 46
+
+    (2) instruccion -> print I_PARENTESIS valores D_PARENTESIS .
+
+    $end            reduce using rule 2 (instruccion -> print I_PARENTESIS valores D_PARENTESIS .)
+
+
+state 47
+
+    (17) valores -> valor COMA . valores
+    (16) valores -> . valor
+    (17) valores -> . valor COMA valores
+    (18) valor -> . valor operacion_binaria valor
+    (47) valor -> . INT
+    (48) valor -> . DOUBLE
+    (49) valor -> . STRING
+    (50) valor -> . ID
+
+    INT             shift and go to state 31
+    DOUBLE          shift and go to state 32
+    STRING          shift and go to state 33
+    ID              shift and go to state 34
+
+    valor                          shift and go to state 30
+    valores                        shift and go to state 65
+
+state 48
+
+    (18) valor -> valor operacion_binaria . valor
+    (18) valor -> . valor operacion_binaria valor
+    (47) valor -> . INT
+    (48) valor -> . DOUBLE
+    (49) valor -> . STRING
+    (50) valor -> . ID
+
+    INT             shift and go to state 31
+    DOUBLE          shift and go to state 32
+    STRING          shift and go to state 33
+    ID              shift and go to state 34
+
+    valor                          shift and go to state 66
+
+state 49
+
+    (36) operacion_binaria -> ADICION .
+
+    INT             reduce using rule 36 (operacion_binaria -> ADICION .)
+    DOUBLE          reduce using rule 36 (operacion_binaria -> ADICION .)
+    STRING          reduce using rule 36 (operacion_binaria -> ADICION .)
+    ID              reduce using rule 36 (operacion_binaria -> ADICION .)
+
+
+state 50
+
+    (37) operacion_binaria -> RESTA .
+
+    INT             reduce using rule 37 (operacion_binaria -> RESTA .)
+    DOUBLE          reduce using rule 37 (operacion_binaria -> RESTA .)
+    STRING          reduce using rule 37 (operacion_binaria -> RESTA .)
+    ID              reduce using rule 37 (operacion_binaria -> RESTA .)
+
+
+state 51
+
+    (38) operacion_binaria -> MULTIPLICACION .
+
+    INT             reduce using rule 38 (operacion_binaria -> MULTIPLICACION .)
+    DOUBLE          reduce using rule 38 (operacion_binaria -> MULTIPLICACION .)
+    STRING          reduce using rule 38 (operacion_binaria -> MULTIPLICACION .)
+    ID              reduce using rule 38 (operacion_binaria -> MULTIPLICACION .)
+
+
+state 52
+
+    (39) operacion_binaria -> DIVISION .
+
+    INT             reduce using rule 39 (operacion_binaria -> DIVISION .)
+    DOUBLE          reduce using rule 39 (operacion_binaria -> DIVISION .)
+    STRING          reduce using rule 39 (operacion_binaria -> DIVISION .)
+    ID              reduce using rule 39 (operacion_binaria -> DIVISION .)
+
+
+state 53
+
+    (40) operacion_binaria -> MODULO .
+
+    INT             reduce using rule 40 (operacion_binaria -> MODULO .)
+    DOUBLE          reduce using rule 40 (operacion_binaria -> MODULO .)
+    STRING          reduce using rule 40 (operacion_binaria -> MODULO .)
+    ID              reduce using rule 40 (operacion_binaria -> MODULO .)
+
+
+state 54
+
+    (41) operacion_binaria -> MENOR_IGUAL .
+
+    INT             reduce using rule 41 (operacion_binaria -> MENOR_IGUAL .)
+    DOUBLE          reduce using rule 41 (operacion_binaria -> MENOR_IGUAL .)
+    STRING          reduce using rule 41 (operacion_binaria -> MENOR_IGUAL .)
+    ID              reduce using rule 41 (operacion_binaria -> MENOR_IGUAL .)
+
+
+state 55
+
+    (42) operacion_binaria -> IGUAL .
+
+    INT             reduce using rule 42 (operacion_binaria -> IGUAL .)
+    DOUBLE          reduce using rule 42 (operacion_binaria -> IGUAL .)
+    STRING          reduce using rule 42 (operacion_binaria -> IGUAL .)
+    ID              reduce using rule 42 (operacion_binaria -> IGUAL .)
+
+
 state 56
 
-    (10) valores -> valor COMA valores .
+    (43) operacion_binaria -> DIFERENTE .
 
-    D_PARENTESIS    reduce using rule 10 (valores -> valor COMA valores .)
-    D_LLAVE         reduce using rule 10 (valores -> valor COMA valores .)
+    INT             reduce using rule 43 (operacion_binaria -> DIFERENTE .)
+    DOUBLE          reduce using rule 43 (operacion_binaria -> DIFERENTE .)
+    STRING          reduce using rule 43 (operacion_binaria -> DIFERENTE .)
+    ID              reduce using rule 43 (operacion_binaria -> DIFERENTE .)
 
 
 state 57
 
-    (11) valor -> valor operacion_binaria valor .
-    (11) valor -> valor . operacion_binaria valor
-    (29) operacion_binaria -> . ADICION
-    (30) operacion_binaria -> . RESTA
-    (31) operacion_binaria -> . MULTIPLICACION
-    (32) operacion_binaria -> . DIVISION
-    (33) operacion_binaria -> . MODULO
-    (34) operacion_binaria -> . MENOR_IGUAL
-    (35) operacion_binaria -> . IGUAL
-    (36) operacion_binaria -> . DIFERENTE
-    (37) operacion_binaria -> . MAYOR
-    (38) operacion_binaria -> . MAYOR_IGUAL
-    (39) operacion_binaria -> . MENOR
+    (44) operacion_binaria -> MAYOR .
+
+    INT             reduce using rule 44 (operacion_binaria -> MAYOR .)
+    DOUBLE          reduce using rule 44 (operacion_binaria -> MAYOR .)
+    STRING          reduce using rule 44 (operacion_binaria -> MAYOR .)
+    ID              reduce using rule 44 (operacion_binaria -> MAYOR .)
+
+
+state 58
+
+    (45) operacion_binaria -> MAYOR_IGUAL .
+
+    INT             reduce using rule 45 (operacion_binaria -> MAYOR_IGUAL .)
+    DOUBLE          reduce using rule 45 (operacion_binaria -> MAYOR_IGUAL .)
+    STRING          reduce using rule 45 (operacion_binaria -> MAYOR_IGUAL .)
+    ID              reduce using rule 45 (operacion_binaria -> MAYOR_IGUAL .)
+
+
+state 59
+
+    (46) operacion_binaria -> MENOR .
+
+    INT             reduce using rule 46 (operacion_binaria -> MENOR .)
+    DOUBLE          reduce using rule 46 (operacion_binaria -> MENOR .)
+    STRING          reduce using rule 46 (operacion_binaria -> MENOR .)
+    ID              reduce using rule 46 (operacion_binaria -> MENOR .)
+
+
+state 60
+
+    (3) instruccion -> VAR ID type ASIGNACION . valor
+    (18) valor -> . valor operacion_binaria valor
+    (47) valor -> . INT
+    (48) valor -> . DOUBLE
+    (49) valor -> . STRING
+    (50) valor -> . ID
+
+    INT             shift and go to state 31
+    DOUBLE          shift and go to state 32
+    STRING          shift and go to state 33
+    ID              shift and go to state 34
+
+    valor                          shift and go to state 67
+
+state 61
+
+    (6) instruccion -> I_CORCHETE D_CORCHETE type I_LLAVE . D_LLAVE
+    (8) instruccion -> I_CORCHETE D_CORCHETE type I_LLAVE . valores D_LLAVE
+    (16) valores -> . valor
+    (17) valores -> . valor COMA valores
+    (18) valor -> . valor operacion_binaria valor
+    (47) valor -> . INT
+    (48) valor -> . DOUBLE
+    (49) valor -> . STRING
+    (50) valor -> . ID
+
+    D_LLAVE         shift and go to state 68
+    INT             shift and go to state 31
+    DOUBLE          shift and go to state 32
+    STRING          shift and go to state 33
+    ID              shift and go to state 34
+
+    valores                        shift and go to state 69
+    valor                          shift and go to state 30
+
+state 62
+
+    (7) instruccion -> I_CORCHETE INT D_CORCHETE type . I_LLAVE D_LLAVE
+    (9) instruccion -> I_CORCHETE INT D_CORCHETE type . I_LLAVE valores D_LLAVE
+
+    I_LLAVE         shift and go to state 70
+
+
+state 63
+
+    (10) instruccion -> MAP I_CORCHETE type D_CORCHETE . type I_LLAVE D_LLAVE
+    (12) instruccion -> MAP I_CORCHETE type D_CORCHETE . type I_LLAVE claves_valores D_LLAVE
+    (22) type -> . BOOL
+    (23) type -> . STRINGTYPE
+    (24) type -> . INTEGER
+    (25) type -> . FLOAT32
+    (26) type -> . FLOAT64
+
+    BOOL            shift and go to state 36
+    STRINGTYPE      shift and go to state 37
+    INTEGER         shift and go to state 38
+    FLOAT32         shift and go to state 39
+    FLOAT64         shift and go to state 40
+
+    type                           shift and go to state 71
+
+state 64
+
+    (11) instruccion -> MAKE I_PARENTESIS MAP I_CORCHETE . type D_CORCHETE type D_PARENTESIS
+    (22) type -> . BOOL
+    (23) type -> . STRINGTYPE
+    (24) type -> . INTEGER
+    (25) type -> . FLOAT32
+    (26) type -> . FLOAT64
+
+    BOOL            shift and go to state 36
+    STRINGTYPE      shift and go to state 37
+    INTEGER         shift and go to state 38
+    FLOAT32         shift and go to state 39
+    FLOAT64         shift and go to state 40
+
+    type                           shift and go to state 72
+
+state 65
+
+    (17) valores -> valor COMA valores .
+
+    D_PARENTESIS    reduce using rule 17 (valores -> valor COMA valores .)
+    D_LLAVE         reduce using rule 17 (valores -> valor COMA valores .)
+
+
+state 66
+
+    (18) valor -> valor operacion_binaria valor .
+    (18) valor -> valor . operacion_binaria valor
+    (36) operacion_binaria -> . ADICION
+    (37) operacion_binaria -> . RESTA
+    (38) operacion_binaria -> . MULTIPLICACION
+    (39) operacion_binaria -> . DIVISION
+    (40) operacion_binaria -> . MODULO
+    (41) operacion_binaria -> . MENOR_IGUAL
+    (42) operacion_binaria -> . IGUAL
+    (43) operacion_binaria -> . DIFERENTE
+    (44) operacion_binaria -> . MAYOR
+    (45) operacion_binaria -> . MAYOR_IGUAL
+    (46) operacion_binaria -> . MENOR
 
   ! shift/reduce conflict for ADICION resolved as shift
   ! shift/reduce conflict for RESTA resolved as shift
@@ -907,140 +1034,347 @@ state 57
   ! shift/reduce conflict for MAYOR resolved as shift
   ! shift/reduce conflict for MAYOR_IGUAL resolved as shift
   ! shift/reduce conflict for MENOR resolved as shift
-    COMA            reduce using rule 11 (valor -> valor operacion_binaria valor .)
-    D_PARENTESIS    reduce using rule 11 (valor -> valor operacion_binaria valor .)
-    $end            reduce using rule 11 (valor -> valor operacion_binaria valor .)
-    D_LLAVE         reduce using rule 11 (valor -> valor operacion_binaria valor .)
-    ADICION         shift and go to state 42
-    RESTA           shift and go to state 43
-    MULTIPLICACION  shift and go to state 44
-    DIVISION        shift and go to state 45
-    MODULO          shift and go to state 46
-    MENOR_IGUAL     shift and go to state 47
-    IGUAL           shift and go to state 48
-    DIFERENTE       shift and go to state 49
-    MAYOR           shift and go to state 50
-    MAYOR_IGUAL     shift and go to state 51
-    MENOR           shift and go to state 52
+    COMA            reduce using rule 18 (valor -> valor operacion_binaria valor .)
+    D_PARENTESIS    reduce using rule 18 (valor -> valor operacion_binaria valor .)
+    $end            reduce using rule 18 (valor -> valor operacion_binaria valor .)
+    D_LLAVE         reduce using rule 18 (valor -> valor operacion_binaria valor .)
+    DOS_PUNTOS      reduce using rule 18 (valor -> valor operacion_binaria valor .)
+    ADICION         shift and go to state 49
+    RESTA           shift and go to state 50
+    MULTIPLICACION  shift and go to state 51
+    DIVISION        shift and go to state 52
+    MODULO          shift and go to state 53
+    MENOR_IGUAL     shift and go to state 54
+    IGUAL           shift and go to state 55
+    DIFERENTE       shift and go to state 56
+    MAYOR           shift and go to state 57
+    MAYOR_IGUAL     shift and go to state 58
+    MENOR           shift and go to state 59
 
-  ! ADICION         [ reduce using rule 11 (valor -> valor operacion_binaria valor .) ]
-  ! RESTA           [ reduce using rule 11 (valor -> valor operacion_binaria valor .) ]
-  ! MULTIPLICACION  [ reduce using rule 11 (valor -> valor operacion_binaria valor .) ]
-  ! DIVISION        [ reduce using rule 11 (valor -> valor operacion_binaria valor .) ]
-  ! MODULO          [ reduce using rule 11 (valor -> valor operacion_binaria valor .) ]
-  ! MENOR_IGUAL     [ reduce using rule 11 (valor -> valor operacion_binaria valor .) ]
-  ! IGUAL           [ reduce using rule 11 (valor -> valor operacion_binaria valor .) ]
-  ! DIFERENTE       [ reduce using rule 11 (valor -> valor operacion_binaria valor .) ]
-  ! MAYOR           [ reduce using rule 11 (valor -> valor operacion_binaria valor .) ]
-  ! MAYOR_IGUAL     [ reduce using rule 11 (valor -> valor operacion_binaria valor .) ]
-  ! MENOR           [ reduce using rule 11 (valor -> valor operacion_binaria valor .) ]
+  ! ADICION         [ reduce using rule 18 (valor -> valor operacion_binaria valor .) ]
+  ! RESTA           [ reduce using rule 18 (valor -> valor operacion_binaria valor .) ]
+  ! MULTIPLICACION  [ reduce using rule 18 (valor -> valor operacion_binaria valor .) ]
+  ! DIVISION        [ reduce using rule 18 (valor -> valor operacion_binaria valor .) ]
+  ! MODULO          [ reduce using rule 18 (valor -> valor operacion_binaria valor .) ]
+  ! MENOR_IGUAL     [ reduce using rule 18 (valor -> valor operacion_binaria valor .) ]
+  ! IGUAL           [ reduce using rule 18 (valor -> valor operacion_binaria valor .) ]
+  ! DIFERENTE       [ reduce using rule 18 (valor -> valor operacion_binaria valor .) ]
+  ! MAYOR           [ reduce using rule 18 (valor -> valor operacion_binaria valor .) ]
+  ! MAYOR_IGUAL     [ reduce using rule 18 (valor -> valor operacion_binaria valor .) ]
+  ! MENOR           [ reduce using rule 18 (valor -> valor operacion_binaria valor .) ]
 
-    operacion_binaria              shift and go to state 41
+    operacion_binaria              shift and go to state 48
 
-state 58
+state 67
 
-    (2) instruccion -> VAR ID type ASIGNACION valor .
-    (11) valor -> valor . operacion_binaria valor
-    (29) operacion_binaria -> . ADICION
-    (30) operacion_binaria -> . RESTA
-    (31) operacion_binaria -> . MULTIPLICACION
-    (32) operacion_binaria -> . DIVISION
-    (33) operacion_binaria -> . MODULO
-    (34) operacion_binaria -> . MENOR_IGUAL
-    (35) operacion_binaria -> . IGUAL
-    (36) operacion_binaria -> . DIFERENTE
-    (37) operacion_binaria -> . MAYOR
-    (38) operacion_binaria -> . MAYOR_IGUAL
-    (39) operacion_binaria -> . MENOR
+    (3) instruccion -> VAR ID type ASIGNACION valor .
+    (18) valor -> valor . operacion_binaria valor
+    (36) operacion_binaria -> . ADICION
+    (37) operacion_binaria -> . RESTA
+    (38) operacion_binaria -> . MULTIPLICACION
+    (39) operacion_binaria -> . DIVISION
+    (40) operacion_binaria -> . MODULO
+    (41) operacion_binaria -> . MENOR_IGUAL
+    (42) operacion_binaria -> . IGUAL
+    (43) operacion_binaria -> . DIFERENTE
+    (44) operacion_binaria -> . MAYOR
+    (45) operacion_binaria -> . MAYOR_IGUAL
+    (46) operacion_binaria -> . MENOR
 
-    $end            reduce using rule 2 (instruccion -> VAR ID type ASIGNACION valor .)
-    ADICION         shift and go to state 42
-    RESTA           shift and go to state 43
-    MULTIPLICACION  shift and go to state 44
-    DIVISION        shift and go to state 45
-    MODULO          shift and go to state 46
-    MENOR_IGUAL     shift and go to state 47
-    IGUAL           shift and go to state 48
-    DIFERENTE       shift and go to state 49
-    MAYOR           shift and go to state 50
-    MAYOR_IGUAL     shift and go to state 51
-    MENOR           shift and go to state 52
+    $end            reduce using rule 3 (instruccion -> VAR ID type ASIGNACION valor .)
+    ADICION         shift and go to state 49
+    RESTA           shift and go to state 50
+    MULTIPLICACION  shift and go to state 51
+    DIVISION        shift and go to state 52
+    MODULO          shift and go to state 53
+    MENOR_IGUAL     shift and go to state 54
+    IGUAL           shift and go to state 55
+    DIFERENTE       shift and go to state 56
+    MAYOR           shift and go to state 57
+    MAYOR_IGUAL     shift and go to state 58
+    MENOR           shift and go to state 59
 
-    operacion_binaria              shift and go to state 41
+    operacion_binaria              shift and go to state 48
 
-state 59
+state 68
 
-    (5) instruccion -> I_CORCHETE D_CORCHETE type I_LLAVE D_LLAVE .
+    (6) instruccion -> I_CORCHETE D_CORCHETE type I_LLAVE D_LLAVE .
 
-    $end            reduce using rule 5 (instruccion -> I_CORCHETE D_CORCHETE type I_LLAVE D_LLAVE .)
-
-
-state 60
-
-    (7) instruccion -> I_CORCHETE D_CORCHETE type I_LLAVE valores . D_LLAVE
-
-    D_LLAVE         shift and go to state 62
+    $end            reduce using rule 6 (instruccion -> I_CORCHETE D_CORCHETE type I_LLAVE D_LLAVE .)
 
 
-state 61
+state 69
 
-    (6) instruccion -> I_CORCHETE INT D_CORCHETE type I_LLAVE . D_LLAVE
-    (8) instruccion -> I_CORCHETE INT D_CORCHETE type I_LLAVE . valores D_LLAVE
-    (9) valores -> . valor
-    (10) valores -> . valor COMA valores
-    (11) valor -> . valor operacion_binaria valor
-    (40) valor -> . INT
-    (41) valor -> . DOUBLE
-    (42) valor -> . STRING
-    (43) valor -> . ID
+    (8) instruccion -> I_CORCHETE D_CORCHETE type I_LLAVE valores . D_LLAVE
 
-    D_LLAVE         shift and go to state 63
-    INT             shift and go to state 26
-    DOUBLE          shift and go to state 27
-    STRING          shift and go to state 28
-    ID              shift and go to state 29
-
-    valores                        shift and go to state 64
-    valor                          shift and go to state 25
-
-state 62
-
-    (7) instruccion -> I_CORCHETE D_CORCHETE type I_LLAVE valores D_LLAVE .
-
-    $end            reduce using rule 7 (instruccion -> I_CORCHETE D_CORCHETE type I_LLAVE valores D_LLAVE .)
+    D_LLAVE         shift and go to state 73
 
 
-state 63
+state 70
 
-    (6) instruccion -> I_CORCHETE INT D_CORCHETE type I_LLAVE D_LLAVE .
+    (7) instruccion -> I_CORCHETE INT D_CORCHETE type I_LLAVE . D_LLAVE
+    (9) instruccion -> I_CORCHETE INT D_CORCHETE type I_LLAVE . valores D_LLAVE
+    (16) valores -> . valor
+    (17) valores -> . valor COMA valores
+    (18) valor -> . valor operacion_binaria valor
+    (47) valor -> . INT
+    (48) valor -> . DOUBLE
+    (49) valor -> . STRING
+    (50) valor -> . ID
 
-    $end            reduce using rule 6 (instruccion -> I_CORCHETE INT D_CORCHETE type I_LLAVE D_LLAVE .)
+    D_LLAVE         shift and go to state 74
+    INT             shift and go to state 31
+    DOUBLE          shift and go to state 32
+    STRING          shift and go to state 33
+    ID              shift and go to state 34
+
+    valores                        shift and go to state 75
+    valor                          shift and go to state 30
+
+state 71
+
+    (10) instruccion -> MAP I_CORCHETE type D_CORCHETE type . I_LLAVE D_LLAVE
+    (12) instruccion -> MAP I_CORCHETE type D_CORCHETE type . I_LLAVE claves_valores D_LLAVE
+
+    I_LLAVE         shift and go to state 76
 
 
-state 64
+state 72
 
-    (8) instruccion -> I_CORCHETE INT D_CORCHETE type I_LLAVE valores . D_LLAVE
+    (11) instruccion -> MAKE I_PARENTESIS MAP I_CORCHETE type . D_CORCHETE type D_PARENTESIS
 
-    D_LLAVE         shift and go to state 65
+    D_CORCHETE      shift and go to state 77
 
 
-state 65
+state 73
 
-    (8) instruccion -> I_CORCHETE INT D_CORCHETE type I_LLAVE valores D_LLAVE .
+    (8) instruccion -> I_CORCHETE D_CORCHETE type I_LLAVE valores D_LLAVE .
 
-    $end            reduce using rule 8 (instruccion -> I_CORCHETE INT D_CORCHETE type I_LLAVE valores D_LLAVE .)
+    $end            reduce using rule 8 (instruccion -> I_CORCHETE D_CORCHETE type I_LLAVE valores D_LLAVE .)
 
+
+state 74
+
+    (7) instruccion -> I_CORCHETE INT D_CORCHETE type I_LLAVE D_LLAVE .
+
+    $end            reduce using rule 7 (instruccion -> I_CORCHETE INT D_CORCHETE type I_LLAVE D_LLAVE .)
+
+
+state 75
+
+    (9) instruccion -> I_CORCHETE INT D_CORCHETE type I_LLAVE valores . D_LLAVE
+
+    D_LLAVE         shift and go to state 78
+
+
+state 76
+
+    (10) instruccion -> MAP I_CORCHETE type D_CORCHETE type I_LLAVE . D_LLAVE
+    (12) instruccion -> MAP I_CORCHETE type D_CORCHETE type I_LLAVE . claves_valores D_LLAVE
+    (14) claves_valores -> . clave_valor
+    (15) claves_valores -> . clave_valor COMA claves_valores
+    (13) clave_valor -> . valor DOS_PUNTOS valor
+    (18) valor -> . valor operacion_binaria valor
+    (47) valor -> . INT
+    (48) valor -> . DOUBLE
+    (49) valor -> . STRING
+    (50) valor -> . ID
+
+    D_LLAVE         shift and go to state 79
+    INT             shift and go to state 31
+    DOUBLE          shift and go to state 32
+    STRING          shift and go to state 33
+    ID              shift and go to state 34
+
+    claves_valores                 shift and go to state 80
+    clave_valor                    shift and go to state 81
+    valor                          shift and go to state 82
+
+state 77
+
+    (11) instruccion -> MAKE I_PARENTESIS MAP I_CORCHETE type D_CORCHETE . type D_PARENTESIS
+    (22) type -> . BOOL
+    (23) type -> . STRINGTYPE
+    (24) type -> . INTEGER
+    (25) type -> . FLOAT32
+    (26) type -> . FLOAT64
+
+    BOOL            shift and go to state 36
+    STRINGTYPE      shift and go to state 37
+    INTEGER         shift and go to state 38
+    FLOAT32         shift and go to state 39
+    FLOAT64         shift and go to state 40
+
+    type                           shift and go to state 83
+
+state 78
+
+    (9) instruccion -> I_CORCHETE INT D_CORCHETE type I_LLAVE valores D_LLAVE .
+
+    $end            reduce using rule 9 (instruccion -> I_CORCHETE INT D_CORCHETE type I_LLAVE valores D_LLAVE .)
+
+
+state 79
+
+    (10) instruccion -> MAP I_CORCHETE type D_CORCHETE type I_LLAVE D_LLAVE .
+
+    $end            reduce using rule 10 (instruccion -> MAP I_CORCHETE type D_CORCHETE type I_LLAVE D_LLAVE .)
+
+
+state 80
+
+    (12) instruccion -> MAP I_CORCHETE type D_CORCHETE type I_LLAVE claves_valores . D_LLAVE
+
+    D_LLAVE         shift and go to state 84
+
+
+state 81
+
+    (14) claves_valores -> clave_valor .
+    (15) claves_valores -> clave_valor . COMA claves_valores
+
+    D_LLAVE         reduce using rule 14 (claves_valores -> clave_valor .)
+    COMA            shift and go to state 85
+
+
+state 82
+
+    (13) clave_valor -> valor . DOS_PUNTOS valor
+    (18) valor -> valor . operacion_binaria valor
+    (36) operacion_binaria -> . ADICION
+    (37) operacion_binaria -> . RESTA
+    (38) operacion_binaria -> . MULTIPLICACION
+    (39) operacion_binaria -> . DIVISION
+    (40) operacion_binaria -> . MODULO
+    (41) operacion_binaria -> . MENOR_IGUAL
+    (42) operacion_binaria -> . IGUAL
+    (43) operacion_binaria -> . DIFERENTE
+    (44) operacion_binaria -> . MAYOR
+    (45) operacion_binaria -> . MAYOR_IGUAL
+    (46) operacion_binaria -> . MENOR
+
+    DOS_PUNTOS      shift and go to state 86
+    ADICION         shift and go to state 49
+    RESTA           shift and go to state 50
+    MULTIPLICACION  shift and go to state 51
+    DIVISION        shift and go to state 52
+    MODULO          shift and go to state 53
+    MENOR_IGUAL     shift and go to state 54
+    IGUAL           shift and go to state 55
+    DIFERENTE       shift and go to state 56
+    MAYOR           shift and go to state 57
+    MAYOR_IGUAL     shift and go to state 58
+    MENOR           shift and go to state 59
+
+    operacion_binaria              shift and go to state 48
+
+state 83
+
+    (11) instruccion -> MAKE I_PARENTESIS MAP I_CORCHETE type D_CORCHETE type . D_PARENTESIS
+
+    D_PARENTESIS    shift and go to state 87
+
+
+state 84
+
+    (12) instruccion -> MAP I_CORCHETE type D_CORCHETE type I_LLAVE claves_valores D_LLAVE .
+
+    $end            reduce using rule 12 (instruccion -> MAP I_CORCHETE type D_CORCHETE type I_LLAVE claves_valores D_LLAVE .)
+
+
+state 85
+
+    (15) claves_valores -> clave_valor COMA . claves_valores
+    (14) claves_valores -> . clave_valor
+    (15) claves_valores -> . clave_valor COMA claves_valores
+    (13) clave_valor -> . valor DOS_PUNTOS valor
+    (18) valor -> . valor operacion_binaria valor
+    (47) valor -> . INT
+    (48) valor -> . DOUBLE
+    (49) valor -> . STRING
+    (50) valor -> . ID
+
+    INT             shift and go to state 31
+    DOUBLE          shift and go to state 32
+    STRING          shift and go to state 33
+    ID              shift and go to state 34
+
+    clave_valor                    shift and go to state 81
+    claves_valores                 shift and go to state 88
+    valor                          shift and go to state 82
+
+state 86
+
+    (13) clave_valor -> valor DOS_PUNTOS . valor
+    (18) valor -> . valor operacion_binaria valor
+    (47) valor -> . INT
+    (48) valor -> . DOUBLE
+    (49) valor -> . STRING
+    (50) valor -> . ID
+
+    INT             shift and go to state 31
+    DOUBLE          shift and go to state 32
+    STRING          shift and go to state 33
+    ID              shift and go to state 34
+
+    valor                          shift and go to state 89
+
+state 87
+
+    (11) instruccion -> MAKE I_PARENTESIS MAP I_CORCHETE type D_CORCHETE type D_PARENTESIS .
+
+    $end            reduce using rule 11 (instruccion -> MAKE I_PARENTESIS MAP I_CORCHETE type D_CORCHETE type D_PARENTESIS .)
+
+
+state 88
+
+    (15) claves_valores -> clave_valor COMA claves_valores .
+
+    D_LLAVE         reduce using rule 15 (claves_valores -> clave_valor COMA claves_valores .)
+
+
+state 89
+
+    (13) clave_valor -> valor DOS_PUNTOS valor .
+    (18) valor -> valor . operacion_binaria valor
+    (36) operacion_binaria -> . ADICION
+    (37) operacion_binaria -> . RESTA
+    (38) operacion_binaria -> . MULTIPLICACION
+    (39) operacion_binaria -> . DIVISION
+    (40) operacion_binaria -> . MODULO
+    (41) operacion_binaria -> . MENOR_IGUAL
+    (42) operacion_binaria -> . IGUAL
+    (43) operacion_binaria -> . DIFERENTE
+    (44) operacion_binaria -> . MAYOR
+    (45) operacion_binaria -> . MAYOR_IGUAL
+    (46) operacion_binaria -> . MENOR
+
+    COMA            reduce using rule 13 (clave_valor -> valor DOS_PUNTOS valor .)
+    D_LLAVE         reduce using rule 13 (clave_valor -> valor DOS_PUNTOS valor .)
+    ADICION         shift and go to state 49
+    RESTA           shift and go to state 50
+    MULTIPLICACION  shift and go to state 51
+    DIVISION        shift and go to state 52
+    MODULO          shift and go to state 53
+    MENOR_IGUAL     shift and go to state 54
+    IGUAL           shift and go to state 55
+    DIFERENTE       shift and go to state 56
+    MAYOR           shift and go to state 57
+    MAYOR_IGUAL     shift and go to state 58
+    MENOR           shift and go to state 59
+
+    operacion_binaria              shift and go to state 48
 WARNING: 
 WARNING: Conflicts:
 WARNING: 
-WARNING: shift/reduce conflict for ADICION in state 57 resolved as shift
-WARNING: shift/reduce conflict for RESTA in state 57 resolved as shift
-WARNING: shift/reduce conflict for MULTIPLICACION in state 57 resolved as shift
-WARNING: shift/reduce conflict for DIVISION in state 57 resolved as shift
-WARNING: shift/reduce conflict for MODULO in state 57 resolved as shift
-WARNING: shift/reduce conflict for MENOR_IGUAL in state 57 resolved as shift
-WARNING: shift/reduce conflict for IGUAL in state 57 resolved as shift
-WARNING: shift/reduce conflict for DIFERENTE in state 57 resolved as shift
-WARNING: shift/reduce conflict for MAYOR in state 57 resolved as shift
-WARNING: shift/reduce conflict for MAYOR_IGUAL in state 57 resolved as shift
-WARNING: shift/reduce conflict for MENOR in state 57 resolved as shift
+WARNING: shift/reduce conflict for ADICION in state 66 resolved as shift
+WARNING: shift/reduce conflict for RESTA in state 66 resolved as shift
+WARNING: shift/reduce conflict for MULTIPLICACION in state 66 resolved as shift
+WARNING: shift/reduce conflict for DIVISION in state 66 resolved as shift
+WARNING: shift/reduce conflict for MODULO in state 66 resolved as shift
+WARNING: shift/reduce conflict for MENOR_IGUAL in state 66 resolved as shift
+WARNING: shift/reduce conflict for IGUAL in state 66 resolved as shift
+WARNING: shift/reduce conflict for DIFERENTE in state 66 resolved as shift
+WARNING: shift/reduce conflict for MAYOR in state 66 resolved as shift
+WARNING: shift/reduce conflict for MAYOR_IGUAL in state 66 resolved as shift
+WARNING: shift/reduce conflict for MENOR in state 66 resolved as shift

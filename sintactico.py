@@ -5,7 +5,7 @@ from lexico import tokens
 #   '''instruccion : asignacion
 #                     | impresion '''
 
-def body(p):
+def p_body(p):
   '''body : instruccion'''
 
 def p_impresion(p):
@@ -31,6 +31,22 @@ def p_array_con_valores(p):
 
 def p_array_length_con_valores(p):
   'instruccion : I_CORCHETE INT D_CORCHETE type I_LLAVE valores D_LLAVE'
+
+def p_map(p):
+  'instruccion : MAP I_CORCHETE type D_CORCHETE type I_LLAVE D_LLAVE'
+
+def p_map_make(p):
+  'instruccion : MAKE I_PARENTESIS MAP I_CORCHETE type D_CORCHETE type D_PARENTESIS'
+
+def p_map_valores(p):
+  'instruccion : MAP I_CORCHETE type D_CORCHETE type I_LLAVE claves_valores D_LLAVE'
+
+def p_clave_valor(p):
+  '''clave_valor : valor DOS_PUNTOS valor'''
+
+def p_multiple_clave_valor(p):
+  '''claves_valores : clave_valor 
+          | clave_valor COMA claves_valores'''
 
 # def p_def_func(p):
 #   'func : FUNC ID I_PARENTESIS argfunc D_PARENTESIS'

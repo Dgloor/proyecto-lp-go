@@ -22,6 +22,7 @@ reserved = {
   'switch': 'SWITCH',
   'type': 'TYPE',
   'var': 'VAR',
+  'make': 'MAKE',
 
   ## Daniel Torres
   'int': 'INTEGER',
