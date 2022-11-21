@@ -20,6 +20,28 @@ def p_asignacion(p):
 def p_incremento_decremento(p):
   'instruccion : ID operador_matematico'
 
+#Estructuras de Control
+
+def p_if_condicion(p):
+  'instruccion : IF condicion I_LLAVE body D_LLAVE'
+
+def p_else_condicion(p):
+  'instruccion : ELSE I_LLAVE body D_LLAVE'
+
+def p_if_else_condicion(p):
+  'instruccion : ELSEIF condicion I_LLAVE body D_LLAVE'
+
+def p_for_each(p):
+  'instruccion : FOR ID DECLARACION_ASIGNACION RANGE ID I_LLAVE body D_LLAVE'
+
+def p_for_condicion(p):
+  'instruccion : FOR instruccion PUNTO_COMA valor PUNTO_COMA ID operador_matematico I_LLAVE body D_LLAVE'
+
+def p_for_map(p):
+  'instruccion : FOR ID COMA ID DECLARACION_ASIGNACION RANGE ID I_LLAVE body D_LLAVE'
+
+#Estructuras de Datos
+
 def p_array(p):
   'instruccion : I_CORCHETE D_CORCHETE type I_LLAVE D_LLAVE'
   
@@ -48,6 +70,11 @@ def p_multiple_clave_valor(p):
   '''claves_valores : clave_valor 
           | clave_valor COMA claves_valores'''
 
+def p_condicion(p):
+  'condicion : valor'
+
+def p_iteracion_for(p):
+  'iteracion_for : ID '
 # def p_def_func(p):
 #   'func : FUNC ID I_PARENTESIS argfunc D_PARENTESIS'
 
