@@ -6,9 +6,9 @@ _tabversion = '3.10'
 
 _lr_method = 'LALR'
 
-_lr_signature = 'ADICION AND ASIGNACION ASIGNACION_ADICION ASIGNACION_DIVISION ASIGNACION_MODULO ASIGNACION_MULTI ASIGNACION_RESTA BOOL BOOLEAN BREAK CASE CHAN COMA CONST CONTINUE DECLARACION_ASIGNACION DECREMENTO DEFAULT DEFER DIFERENTE DIVISION DOS_PUNTOS DOUBLE D_CORCHETE D_LLAVE D_PARENTESIS ELSE ELSEIF FALLTHROUGH FLOAT32 FLOAT64 FOR FUNC GO GOTO ID IDENTIFICADOR IF IGUAL IMPORT INCREMENTO INT INTEGER INTERFACE I_CORCHETE I_LLAVE I_PARENTESIS MAP MAYOR MAYOR_IGUAL MENOR MENOR_IGUAL MODULO MULTIPLICACION NOT OR PACKAGE PRINT PRINTF PRINTLN PUNTO PUNTO_COMA RANGE RESTA RETURN SELECT STRING STRINGTYPE STRUCT SWITCH TYPE VARinstruccion : print I_PARENTESIS arg D_PARENTESISinstruccion : VAR type ID ASIGNACION valorvalor : valor operacion_mat valorarg : valor\n          | valor COMA valorprint : PRINTLN \n          | PRINTF\n          | PRINTtype : BOOL\n          | STRINGTYPE\n          | INTEGERoperacion_mat : ADICION\n          | RESTA\n          | MULTIPLICACION\n          | DIVISION\n          | MODULOvalor : INT\n          | DOUBLE\n          | STRINGvalor : ID'
+_lr_signature = 'ADICION AND ASIGNACION ASIGNACION_ADICION ASIGNACION_DIVISION ASIGNACION_MODULO ASIGNACION_MULTI ASIGNACION_RESTA BOOL BOOLEAN BREAK CASE CHAN COMA CONST CONTINUE DECLARACION_ASIGNACION DECREMENTO DEFAULT DEFER DIFERENTE DIVISION DOS_PUNTOS DOUBLE D_CORCHETE D_LLAVE D_PARENTESIS ELSE ELSEIF FALLTHROUGH FLOAT32 FLOAT64 FOR FUNC GO GOTO ID IDENTIFICADOR IF IGUAL IMPORT INCREMENTO INT INTEGER INTERFACE I_CORCHETE I_LLAVE I_PARENTESIS MAP MAYOR MAYOR_IGUAL MENOR MENOR_IGUAL MODULO MULTIPLICACION NOT OR PACKAGE PRINT PRINTF PRINTLN PUNTO PUNTO_COMA RANGE RESTA RETURN SELECT STRING STRINGTYPE STRUCT SWITCH TYPE VARinstruccion : print I_PARENTESIS arg D_PARENTESISinstruccion : VAR type ID ASIGNACION valorvalor : valor operacion_binaria valorarg : valor\n          | valor COMA valorprint : PRINTLN \n          | PRINTF\n          | PRINTtype : BOOL\n          | STRINGTYPE\n          | INTEGER\n          | FLOAT32\n          | FLOAT64operacion_binaria : ADICION\n          | RESTA\n          | MULTIPLICACION\n          | DIVISION\n          | MODULOoperacion_binaria : MENOR_IGUAL\n          | IGUAL\n          | DIFERENTE\n          | MAYOR\n          | MAYOR_IGUAL\n          | MENORvalor : INT\n          | DOUBLE\n          | STRINGvalor : ID'
     
-_lr_action_items = {'VAR':([0,],[3,]),'PRINTLN':([0,],[4,]),'PRINTF':([0,],[5,]),'PRINT':([0,],[6,]),'$end':([1,14,15,16,17,19,29,30,],[0,-17,-18,-19,-20,-1,-3,-2,]),'I_PARENTESIS':([2,4,5,6,],[7,-6,-7,-8,]),'BOOL':([3,],[9,]),'STRINGTYPE':([3,],[10,]),'INTEGER':([3,],[11,]),'INT':([7,20,21,22,23,24,25,26,27,],[14,14,14,-12,-13,-14,-15,-16,14,]),'DOUBLE':([7,20,21,22,23,24,25,26,27,],[15,15,15,-12,-13,-14,-15,-16,15,]),'STRING':([7,20,21,22,23,24,25,26,27,],[16,16,16,-12,-13,-14,-15,-16,16,]),'ID':([7,8,9,10,11,20,21,22,23,24,25,26,27,],[17,18,-9,-10,-11,17,17,-12,-13,-14,-15,-16,17,]),'D_PARENTESIS':([12,13,14,15,16,17,28,29,],[19,-4,-17,-18,-19,-20,-5,-3,]),'COMA':([13,14,15,16,17,29,],[20,-17,-18,-19,-20,-3,]),'ADICION':([13,14,15,16,17,28,29,30,],[22,-17,-18,-19,-20,22,22,22,]),'RESTA':([13,14,15,16,17,28,29,30,],[23,-17,-18,-19,-20,23,23,23,]),'MULTIPLICACION':([13,14,15,16,17,28,29,30,],[24,-17,-18,-19,-20,24,24,24,]),'DIVISION':([13,14,15,16,17,28,29,30,],[25,-17,-18,-19,-20,25,25,25,]),'MODULO':([13,14,15,16,17,28,29,30,],[26,-17,-18,-19,-20,26,26,26,]),'ASIGNACION':([18,],[27,]),}
+_lr_action_items = {'VAR':([0,],[3,]),'PRINTLN':([0,],[4,]),'PRINTF':([0,],[5,]),'PRINT':([0,],[6,]),'$end':([1,16,17,18,19,21,37,38,],[0,-25,-26,-27,-28,-1,-3,-2,]),'I_PARENTESIS':([2,4,5,6,],[7,-6,-7,-8,]),'BOOL':([3,],[9,]),'STRINGTYPE':([3,],[10,]),'INTEGER':([3,],[11,]),'FLOAT32':([3,],[12,]),'FLOAT64':([3,],[13,]),'INT':([7,22,23,24,25,26,27,28,29,30,31,32,33,34,35,],[16,16,16,-14,-15,-16,-17,-18,-19,-20,-21,-22,-23,-24,16,]),'DOUBLE':([7,22,23,24,25,26,27,28,29,30,31,32,33,34,35,],[17,17,17,-14,-15,-16,-17,-18,-19,-20,-21,-22,-23,-24,17,]),'STRING':([7,22,23,24,25,26,27,28,29,30,31,32,33,34,35,],[18,18,18,-14,-15,-16,-17,-18,-19,-20,-21,-22,-23,-24,18,]),'ID':([7,8,9,10,11,12,13,22,23,24,25,26,27,28,29,30,31,32,33,34,35,],[19,20,-9,-10,-11,-12,-13,19,19,-14,-15,-16,-17,-18,-19,-20,-21,-22,-23,-24,19,]),'D_PARENTESIS':([14,15,16,17,18,19,36,37,],[21,-4,-25,-26,-27,-28,-5,-3,]),'COMA':([15,16,17,18,19,37,],[22,-25,-26,-27,-28,-3,]),'ADICION':([15,16,17,18,19,36,37,38,],[24,-25,-26,-27,-28,24,24,24,]),'RESTA':([15,16,17,18,19,36,37,38,],[25,-25,-26,-27,-28,25,25,25,]),'MULTIPLICACION':([15,16,17,18,19,36,37,38,],[26,-25,-26,-27,-28,26,26,26,]),'DIVISION':([15,16,17,18,19,36,37,38,],[27,-25,-26,-27,-28,27,27,27,]),'MODULO':([15,16,17,18,19,36,37,38,],[28,-25,-26,-27,-28,28,28,28,]),'MENOR_IGUAL':([15,16,17,18,19,36,37,38,],[29,-25,-26,-27,-28,29,29,29,]),'IGUAL':([15,16,17,18,19,36,37,38,],[30,-25,-26,-27,-28,30,30,30,]),'DIFERENTE':([15,16,17,18,19,36,37,38,],[31,-25,-26,-27,-28,31,31,31,]),'MAYOR':([15,16,17,18,19,36,37,38,],[32,-25,-26,-27,-28,32,32,32,]),'MAYOR_IGUAL':([15,16,17,18,19,36,37,38,],[33,-25,-26,-27,-28,33,33,33,]),'MENOR':([15,16,17,18,19,36,37,38,],[34,-25,-26,-27,-28,34,34,34,]),'ASIGNACION':([20,],[35,]),}
 
 _lr_action = {}
 for _k, _v in _lr_action_items.items():
@@ -17,7 +17,7 @@ for _k, _v in _lr_action_items.items():
       _lr_action[_x][_k] = _y
 del _lr_action_items
 
-_lr_goto_items = {'instruccion':([0,],[1,]),'print':([0,],[2,]),'type':([3,],[8,]),'arg':([7,],[12,]),'valor':([7,20,21,27,],[13,28,29,30,]),'operacion_mat':([13,28,29,30,],[21,21,21,21,]),}
+_lr_goto_items = {'instruccion':([0,],[1,]),'print':([0,],[2,]),'type':([3,],[8,]),'arg':([7,],[14,]),'valor':([7,22,23,35,],[15,36,37,38,]),'operacion_binaria':([15,36,37,38,],[23,23,23,23,]),}
 
 _lr_goto = {}
 for _k, _v in _lr_goto_items.items():
@@ -29,7 +29,7 @@ _lr_productions = [
   ("S' -> instruccion","S'",1,None,None,None),
   ('instruccion -> print I_PARENTESIS arg D_PARENTESIS','instruccion',4,'p_impresion','sintactico.py',14),
   ('instruccion -> VAR type ID ASIGNACION valor','instruccion',5,'p_asignacion','sintactico.py',18),
-  ('valor -> valor operacion_mat valor','valor',3,'p_operacion_mat','sintactico.py',27),
+  ('valor -> valor operacion_binaria valor','valor',3,'p_operacion_mat','sintactico.py',27),
   ('arg -> valor','arg',1,'p_argumento','sintactico.py',30),
   ('arg -> valor COMA valor','arg',3,'p_argumento','sintactico.py',31),
   ('print -> PRINTLN','print',1,'p_print_options','sintactico.py',35),
@@ -38,13 +38,21 @@ _lr_productions = [
   ('type -> BOOL','type',1,'p_tipo','sintactico.py',41),
   ('type -> STRINGTYPE','type',1,'p_tipo','sintactico.py',42),
   ('type -> INTEGER','type',1,'p_tipo','sintactico.py',43),
-  ('operacion_mat -> ADICION','operacion_mat',1,'p_operacion_mat_simbolos','sintactico.py',46),
-  ('operacion_mat -> RESTA','operacion_mat',1,'p_operacion_mat_simbolos','sintactico.py',47),
-  ('operacion_mat -> MULTIPLICACION','operacion_mat',1,'p_operacion_mat_simbolos','sintactico.py',48),
-  ('operacion_mat -> DIVISION','operacion_mat',1,'p_operacion_mat_simbolos','sintactico.py',49),
-  ('operacion_mat -> MODULO','operacion_mat',1,'p_operacion_mat_simbolos','sintactico.py',50),
-  ('valor -> INT','valor',1,'p_valores','sintactico.py',53),
-  ('valor -> DOUBLE','valor',1,'p_valores','sintactico.py',54),
-  ('valor -> STRING','valor',1,'p_valores','sintactico.py',55),
-  ('valor -> ID','valor',1,'p_valor_variable','sintactico.py',58),
+  ('type -> FLOAT32','type',1,'p_tipo','sintactico.py',44),
+  ('type -> FLOAT64','type',1,'p_tipo','sintactico.py',45),
+  ('operacion_binaria -> ADICION','operacion_binaria',1,'p_operacion_mat_simbolos','sintactico.py',48),
+  ('operacion_binaria -> RESTA','operacion_binaria',1,'p_operacion_mat_simbolos','sintactico.py',49),
+  ('operacion_binaria -> MULTIPLICACION','operacion_binaria',1,'p_operacion_mat_simbolos','sintactico.py',50),
+  ('operacion_binaria -> DIVISION','operacion_binaria',1,'p_operacion_mat_simbolos','sintactico.py',51),
+  ('operacion_binaria -> MODULO','operacion_binaria',1,'p_operacion_mat_simbolos','sintactico.py',52),
+  ('operacion_binaria -> MENOR_IGUAL','operacion_binaria',1,'p_operacion_comp_simbolos','sintactico.py',55),
+  ('operacion_binaria -> IGUAL','operacion_binaria',1,'p_operacion_comp_simbolos','sintactico.py',56),
+  ('operacion_binaria -> DIFERENTE','operacion_binaria',1,'p_operacion_comp_simbolos','sintactico.py',57),
+  ('operacion_binaria -> MAYOR','operacion_binaria',1,'p_operacion_comp_simbolos','sintactico.py',58),
+  ('operacion_binaria -> MAYOR_IGUAL','operacion_binaria',1,'p_operacion_comp_simbolos','sintactico.py',59),
+  ('operacion_binaria -> MENOR','operacion_binaria',1,'p_operacion_comp_simbolos','sintactico.py',60),
+  ('valor -> INT','valor',1,'p_valores','sintactico.py',63),
+  ('valor -> DOUBLE','valor',1,'p_valores','sintactico.py',64),
+  ('valor -> STRING','valor',1,'p_valores','sintactico.py',65),
+  ('valor -> ID','valor',1,'p_valor_variable','sintactico.py',68),
 ]

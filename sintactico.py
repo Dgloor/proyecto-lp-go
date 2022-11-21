@@ -24,7 +24,7 @@ def p_asignacion(p):  #puede reconocer a=20
 #   '''argfunc : type ID'''
 
 def p_operacion_mat(p):
-  'valor : valor operacion_mat valor'
+  'valor : valor operacion_binaria valor'
 
 def p_argumento(p):
   '''arg : valor
@@ -40,7 +40,9 @@ def p_print_options(p):
 def p_tipo(p):
   '''type : BOOL
           | STRINGTYPE
-          | INTEGER'''
+          | INTEGER
+          | FLOAT32
+          | FLOAT64'''
 
 def p_operacion_mat_simbolos(p):
   '''operacion_binaria : ADICION
@@ -48,6 +50,14 @@ def p_operacion_mat_simbolos(p):
           | MULTIPLICACION
           | DIVISION
           | MODULO'''
+
+def p_operacion_comp_simbolos(p):
+  '''operacion_binaria : MENOR_IGUAL
+          | IGUAL
+          | DIFERENTE
+          | MAYOR
+          | MAYOR_IGUAL
+          | MENOR'''
 
 def p_valores(p):
   '''valor : INT
