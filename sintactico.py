@@ -20,6 +20,9 @@ def p_declaracion(p):  #puede reconocer a=20
 def p_asignacion(p):
   'instruccion : ID asignacion valor'
 
+def p_incremento_decremento(p):
+  'instruccion : ID operador_matematico'
+
 # def p_def_func(p):
 #   'func : FUNC ID I_PARENTESIS argfunc D_PARENTESIS'
 
@@ -45,6 +48,10 @@ def p_tipo(p):
           | INTEGER
           | FLOAT32
           | FLOAT64'''
+
+def p_operacion_mat_var(p):
+  '''operador_matematico : INCREMENTO
+          | DECREMENTO'''
 
 def p_operadores_asignacion(p):
   '''asignacion : ASIGNACION
