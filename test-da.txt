@@ -1,5 +1,5 @@
 // Diego Arteaga
-func calcMat(x, y int) int {
+func calcMat(x int, y int) int {
 	var res int = (x + y) - 20 + 23.6
 	
 	if(res > 20){
@@ -7,4 +7,8 @@ func calcMat(x, y int) int {
 	}else{
 		return res
 	}
+
+	for i := 1 ; i <= n; i++ {
+    	sum += i 
+  	}
 }
