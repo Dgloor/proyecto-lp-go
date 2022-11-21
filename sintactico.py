@@ -5,14 +5,11 @@ from lexico import tokens
 #   '''instruccion : asignacion
 #                     | impresion '''
 
-
 def body(p):
   '''body : instruccion'''
 
-
 def p_impresion(p):
-  'instruccion : print I_PARENTESIS arg D_PARENTESIS'
-
+  'instruccion : print I_PARENTESIS valores D_PARENTESIS'
 
 def p_declaracion(p):  #puede reconocer a=20
   'instruccion : VAR ID type ASIGNACION valor'
@@ -23,24 +20,35 @@ def p_asignacion(p):
 def p_incremento_decremento(p):
   'instruccion : ID operador_matematico'
 
+def p_array(p):
+  'instruccion : I_CORCHETE D_CORCHETE type I_LLAVE D_LLAVE'
+  
+def p_array_length(p):
+  'instruccion : I_CORCHETE INT D_CORCHETE type I_LLAVE D_LLAVE'
+
+def p_array_con_valores(p):
+  'instruccion : I_CORCHETE D_CORCHETE type I_LLAVE valores D_LLAVE'
+
+def p_array_length_con_valores(p):
+  'instruccion : I_CORCHETE INT D_CORCHETE type I_LLAVE valores D_LLAVE'
+
 # def p_def_func(p):
 #   'func : FUNC ID I_PARENTESIS argfunc D_PARENTESIS'
 
 # def p_argumento_definicion(p):
 #   '''argfunc : type ID'''
 
+def p_multiples_valores(p):
+  '''valores : valor 
+          | valor COMA valores'''
+  
 def p_operacion_mat(p):
   'valor : valor operacion_binaria valor'
-
-def p_argumento(p):
-  '''arg : valor
-          | valor COMA valor'''
 
 def p_print_options(p):
   '''print : PRINTLN 
           | PRINTF
           | PRINT'''
-
 
 def p_tipo(p):
   '''type : BOOL
@@ -80,11 +88,8 @@ def p_operacion_comp_simbolos(p):
 def p_valores(p):
   '''valor : INT
           | DOUBLE
-          | STRING'''
-
-def p_valor_variable(p):
-  '''valor : ID'''
-
+          | STRING
+          | ID'''
 
 # Error rule for syntax errors
 def p_error(p):
