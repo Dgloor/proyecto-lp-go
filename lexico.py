@@ -97,14 +97,15 @@ tokens = [
   'OR',
   'NOT',
 
+  'PRINTLN',
+  'PRINTF',
+  'PRINT',
+
   # IDs
   'ID',
 
   # Auxiliar
   'ELSEIF',
-  'PRINTLN',
-  'PRINTF',
-  'PRINT',
 ] + list(reserved.values())
 
 ## Daniel Torres

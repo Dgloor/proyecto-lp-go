@@ -23,6 +23,8 @@ def p_asignacion(p):  #puede reconocer a=20
 # def p_argumento_definicion(p):
 #   '''argfunc : type ID'''
 
+def p_operacion_mat(p):
+  'valor : valor operacion_mat valor'
 
 def p_argumento(p):
   '''arg : valor
@@ -40,11 +42,20 @@ def p_tipo(p):
           | STRINGTYPE
           | INTEGER'''
 
+def p_operacion_mat_simbolos(p):
+  '''operacion_binaria : ADICION
+          | RESTA
+          | MULTIPLICACION
+          | DIVISION
+          | MODULO'''
+
 def p_valores(p):
   '''valor : INT
           | DOUBLE
-          | STRING
-          | ID'''
+          | STRING'''
+
+def p_valor_variable(p):
+  '''valor : ID'''
 
 
 # Error rule for syntax errors

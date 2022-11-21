@@ -2,7 +2,6 @@ Created by PLY version 3.11 (http://www.dabeaz.com/ply)
 
 Unused terminals:
 
-    ADICION
     AND
     ASIGNACION_ADICION
     ASIGNACION_DIVISION
@@ -20,7 +19,6 @@ Unused terminals:
     DEFAULT
     DEFER
     DIFERENTE
-    DIVISION
     DOS_PUNTOS
     D_CORCHETE
     D_LLAVE
@@ -46,15 +44,12 @@ Unused terminals:
     MAYOR_IGUAL
     MENOR
     MENOR_IGUAL
-    MODULO
-    MULTIPLICACION
     NOT
     OR
     PACKAGE
     PUNTO
     PUNTO_COMA
     RANGE
-    RESTA
     RETURN
     SELECT
     STRUCT
@@ -66,22 +61,28 @@ Grammar
 Rule 0     S' -> instruccion
 Rule 1     instruccion -> print I_PARENTESIS arg D_PARENTESIS
 Rule 2     instruccion -> VAR type ID ASIGNACION valor
-Rule 3     arg -> valor
-Rule 4     arg -> valor COMA valor
-Rule 5     print -> PRINTLN
-Rule 6     print -> PRINTF
-Rule 7     print -> PRINT
-Rule 8     type -> BOOL
-Rule 9     type -> STRINGTYPE
-Rule 10    type -> INTEGER
-Rule 11    valor -> INT
-Rule 12    valor -> DOUBLE
-Rule 13    valor -> STRING
-Rule 14    valor -> ID
+Rule 3     valor -> valor operacion_mat valor
+Rule 4     arg -> valor
+Rule 5     arg -> valor COMA valor
+Rule 6     print -> PRINTLN
+Rule 7     print -> PRINTF
+Rule 8     print -> PRINT
+Rule 9     type -> BOOL
+Rule 10    type -> STRINGTYPE
+Rule 11    type -> INTEGER
+Rule 12    operacion_mat -> ADICION
+Rule 13    operacion_mat -> RESTA
+Rule 14    operacion_mat -> MULTIPLICACION
+Rule 15    operacion_mat -> DIVISION
+Rule 16    operacion_mat -> MODULO
+Rule 17    valor -> INT
+Rule 18    valor -> DOUBLE
+Rule 19    valor -> STRING
+Rule 20    valor -> ID
 
 Terminals, with rules where they appear
 
-ADICION              : 
+ADICION              : 12
 AND                  : 
 ASIGNACION           : 2
 ASIGNACION_ADICION   : 
@@ -89,12 +90,12 @@ ASIGNACION_DIVISION  :
 ASIGNACION_MODULO    : 
 ASIGNACION_MULTI     : 
 ASIGNACION_RESTA     : 
-BOOL                 : 8
+BOOL                 : 9
 BOOLEAN              : 
 BREAK                : 
 CASE                 : 
 CHAN                 : 
-COMA                 : 4
+COMA                 : 5
 CONST                : 
 CONTINUE             : 
 DECLARACION_ASIGNACION : 
@@ -102,9 +103,9 @@ DECREMENTO           :
 DEFAULT              : 
 DEFER                : 
 DIFERENTE            : 
-DIVISION             : 
+DIVISION             : 15
 DOS_PUNTOS           : 
-DOUBLE               : 12
+DOUBLE               : 18
 D_CORCHETE           : 
 D_LLAVE              : 
 D_PARENTESIS         : 1
@@ -117,14 +118,14 @@ FOR                  :
 FUNC                 : 
 GO                   : 
 GOTO                 : 
-ID                   : 2 14
+ID                   : 2 20
 IDENTIFICADOR        : 
 IF                   : 
 IGUAL                : 
 IMPORT               : 
 INCREMENTO           : 
-INT                  : 11
-INTEGER              : 10
+INT                  : 17
+INTEGER              : 11
 INTERFACE            : 
 I_CORCHETE           : 
 I_LLAVE              : 
@@ -134,22 +135,22 @@ MAYOR                :
 MAYOR_IGUAL          : 
 MENOR                : 
 MENOR_IGUAL          : 
-MODULO               : 
-MULTIPLICACION       : 
+MODULO               : 16
+MULTIPLICACION       : 14
 NOT                  : 
 OR                   : 
 PACKAGE              : 
-PRINT                : 7
-PRINTF               : 6
-PRINTLN              : 5
+PRINT                : 8
+PRINTF               : 7
+PRINTLN              : 6
 PUNTO                : 
 PUNTO_COMA           : 
 RANGE                : 
-RESTA                : 
+RESTA                : 13
 RETURN               : 
 SELECT               : 
-STRING               : 13
-STRINGTYPE           : 9
+STRING               : 19
+STRINGTYPE           : 10
 STRUCT               : 
 SWITCH               : 
 TYPE                 : 
@@ -160,9 +161,10 @@ Nonterminals, with rules where they appear
 
 arg                  : 1
 instruccion          : 0
+operacion_mat        : 3
 print                : 1
 type                 : 2
-valor                : 2 3 4 4
+valor                : 2 3 3 4 5 5
 
 Parsing method: LALR
 
@@ -171,9 +173,9 @@ state 0
     (0) S' -> . instruccion
     (1) instruccion -> . print I_PARENTESIS arg D_PARENTESIS
     (2) instruccion -> . VAR type ID ASIGNACION valor
-    (5) print -> . PRINTLN
-    (6) print -> . PRINTF
-    (7) print -> . PRINT
+    (6) print -> . PRINTLN
+    (7) print -> . PRINTF
+    (8) print -> . PRINT
 
     VAR             shift and go to state 3
     PRINTLN         shift and go to state 4
@@ -199,9 +201,9 @@ state 2
 state 3
 
     (2) instruccion -> VAR . type ID ASIGNACION valor
-    (8) type -> . BOOL
-    (9) type -> . STRINGTYPE
-    (10) type -> . INTEGER
+    (9) type -> . BOOL
+    (10) type -> . STRINGTYPE
+    (11) type -> . INTEGER
 
     BOOL            shift and go to state 9
     STRINGTYPE      shift and go to state 10
@@ -211,34 +213,35 @@ state 3
 
 state 4
 
-    (5) print -> PRINTLN .
+    (6) print -> PRINTLN .
 
-    I_PARENTESIS    reduce using rule 5 (print -> PRINTLN .)
+    I_PARENTESIS    reduce using rule 6 (print -> PRINTLN .)
 
 
 state 5
 
-    (6) print -> PRINTF .
+    (7) print -> PRINTF .
 
-    I_PARENTESIS    reduce using rule 6 (print -> PRINTF .)
+    I_PARENTESIS    reduce using rule 7 (print -> PRINTF .)
 
 
 state 6
 
-    (7) print -> PRINT .
+    (8) print -> PRINT .
 
-    I_PARENTESIS    reduce using rule 7 (print -> PRINT .)
+    I_PARENTESIS    reduce using rule 8 (print -> PRINT .)
 
 
 state 7
 
     (1) instruccion -> print I_PARENTESIS . arg D_PARENTESIS
-    (3) arg -> . valor
-    (4) arg -> . valor COMA valor
-    (11) valor -> . INT
-    (12) valor -> . DOUBLE
-    (13) valor -> . STRING
-    (14) valor -> . ID
+    (4) arg -> . valor
+    (5) arg -> . valor COMA valor
+    (3) valor -> . valor operacion_mat valor
+    (17) valor -> . INT
+    (18) valor -> . DOUBLE
+    (19) valor -> . STRING
+    (20) valor -> . ID
 
     INT             shift and go to state 14
     DOUBLE          shift and go to state 15
@@ -257,23 +260,23 @@ state 8
 
 state 9
 
-    (8) type -> BOOL .
+    (9) type -> BOOL .
 
-    ID              reduce using rule 8 (type -> BOOL .)
+    ID              reduce using rule 9 (type -> BOOL .)
 
 
 state 10
 
-    (9) type -> STRINGTYPE .
+    (10) type -> STRINGTYPE .
 
-    ID              reduce using rule 9 (type -> STRINGTYPE .)
+    ID              reduce using rule 10 (type -> STRINGTYPE .)
 
 
 state 11
 
-    (10) type -> INTEGER .
+    (11) type -> INTEGER .
 
-    ID              reduce using rule 10 (type -> INTEGER .)
+    ID              reduce using rule 11 (type -> INTEGER .)
 
 
 state 12
@@ -285,54 +288,86 @@ state 12
 
 state 13
 
-    (3) arg -> valor .
-    (4) arg -> valor . COMA valor
+    (4) arg -> valor .
+    (5) arg -> valor . COMA valor
+    (3) valor -> valor . operacion_mat valor
+    (12) operacion_mat -> . ADICION
+    (13) operacion_mat -> . RESTA
+    (14) operacion_mat -> . MULTIPLICACION
+    (15) operacion_mat -> . DIVISION
+    (16) operacion_mat -> . MODULO
 
-    D_PARENTESIS    reduce using rule 3 (arg -> valor .)
+    D_PARENTESIS    reduce using rule 4 (arg -> valor .)
     COMA            shift and go to state 20
+    ADICION         shift and go to state 22
+    RESTA           shift and go to state 23
+    MULTIPLICACION  shift and go to state 24
+    DIVISION        shift and go to state 25
+    MODULO          shift and go to state 26
 
+    operacion_mat                  shift and go to state 21
 
 state 14
 
-    (11) valor -> INT .
+    (17) valor -> INT .
 
-    COMA            reduce using rule 11 (valor -> INT .)
-    D_PARENTESIS    reduce using rule 11 (valor -> INT .)
-    $end            reduce using rule 11 (valor -> INT .)
+    COMA            reduce using rule 17 (valor -> INT .)
+    ADICION         reduce using rule 17 (valor -> INT .)
+    RESTA           reduce using rule 17 (valor -> INT .)
+    MULTIPLICACION  reduce using rule 17 (valor -> INT .)
+    DIVISION        reduce using rule 17 (valor -> INT .)
+    MODULO          reduce using rule 17 (valor -> INT .)
+    D_PARENTESIS    reduce using rule 17 (valor -> INT .)
+    $end            reduce using rule 17 (valor -> INT .)
 
 
 state 15
 
-    (12) valor -> DOUBLE .
+    (18) valor -> DOUBLE .
 
-    COMA            reduce using rule 12 (valor -> DOUBLE .)
-    D_PARENTESIS    reduce using rule 12 (valor -> DOUBLE .)
-    $end            reduce using rule 12 (valor -> DOUBLE .)
+    COMA            reduce using rule 18 (valor -> DOUBLE .)
+    ADICION         reduce using rule 18 (valor -> DOUBLE .)
+    RESTA           reduce using rule 18 (valor -> DOUBLE .)
+    MULTIPLICACION  reduce using rule 18 (valor -> DOUBLE .)
+    DIVISION        reduce using rule 18 (valor -> DOUBLE .)
+    MODULO          reduce using rule 18 (valor -> DOUBLE .)
+    D_PARENTESIS    reduce using rule 18 (valor -> DOUBLE .)
+    $end            reduce using rule 18 (valor -> DOUBLE .)
 
 
 state 16
 
-    (13) valor -> STRING .
+    (19) valor -> STRING .
 
-    COMA            reduce using rule 13 (valor -> STRING .)
-    D_PARENTESIS    reduce using rule 13 (valor -> STRING .)
-    $end            reduce using rule 13 (valor -> STRING .)
+    COMA            reduce using rule 19 (valor -> STRING .)
+    ADICION         reduce using rule 19 (valor -> STRING .)
+    RESTA           reduce using rule 19 (valor -> STRING .)
+    MULTIPLICACION  reduce using rule 19 (valor -> STRING .)
+    DIVISION        reduce using rule 19 (valor -> STRING .)
+    MODULO          reduce using rule 19 (valor -> STRING .)
+    D_PARENTESIS    reduce using rule 19 (valor -> STRING .)
+    $end            reduce using rule 19 (valor -> STRING .)
 
 
 state 17
 
-    (14) valor -> ID .
+    (20) valor -> ID .
 
-    COMA            reduce using rule 14 (valor -> ID .)
-    D_PARENTESIS    reduce using rule 14 (valor -> ID .)
-    $end            reduce using rule 14 (valor -> ID .)
+    COMA            reduce using rule 20 (valor -> ID .)
+    ADICION         reduce using rule 20 (valor -> ID .)
+    RESTA           reduce using rule 20 (valor -> ID .)
+    MULTIPLICACION  reduce using rule 20 (valor -> ID .)
+    DIVISION        reduce using rule 20 (valor -> ID .)
+    MODULO          reduce using rule 20 (valor -> ID .)
+    D_PARENTESIS    reduce using rule 20 (valor -> ID .)
+    $end            reduce using rule 20 (valor -> ID .)
 
 
 state 18
 
     (2) instruccion -> VAR type ID . ASIGNACION valor
 
-    ASIGNACION      shift and go to state 21
+    ASIGNACION      shift and go to state 27
 
 
 state 19
@@ -344,44 +379,176 @@ state 19
 
 state 20
 
-    (4) arg -> valor COMA . valor
-    (11) valor -> . INT
-    (12) valor -> . DOUBLE
-    (13) valor -> . STRING
-    (14) valor -> . ID
+    (5) arg -> valor COMA . valor
+    (3) valor -> . valor operacion_mat valor
+    (17) valor -> . INT
+    (18) valor -> . DOUBLE
+    (19) valor -> . STRING
+    (20) valor -> . ID
 
     INT             shift and go to state 14
     DOUBLE          shift and go to state 15
     STRING          shift and go to state 16
     ID              shift and go to state 17
 
-    valor                          shift and go to state 22
+    valor                          shift and go to state 28
 
 state 21
 
-    (2) instruccion -> VAR type ID ASIGNACION . valor
-    (11) valor -> . INT
-    (12) valor -> . DOUBLE
-    (13) valor -> . STRING
-    (14) valor -> . ID
+    (3) valor -> valor operacion_mat . valor
+    (3) valor -> . valor operacion_mat valor
+    (17) valor -> . INT
+    (18) valor -> . DOUBLE
+    (19) valor -> . STRING
+    (20) valor -> . ID
 
     INT             shift and go to state 14
     DOUBLE          shift and go to state 15
     STRING          shift and go to state 16
     ID              shift and go to state 17
 
-    valor                          shift and go to state 23
+    valor                          shift and go to state 29
 
 state 22
 
-    (4) arg -> valor COMA valor .
+    (12) operacion_mat -> ADICION .
 
-    D_PARENTESIS    reduce using rule 4 (arg -> valor COMA valor .)
+    INT             reduce using rule 12 (operacion_mat -> ADICION .)
+    DOUBLE          reduce using rule 12 (operacion_mat -> ADICION .)
+    STRING          reduce using rule 12 (operacion_mat -> ADICION .)
+    ID              reduce using rule 12 (operacion_mat -> ADICION .)
 
 
 state 23
 
+    (13) operacion_mat -> RESTA .
+
+    INT             reduce using rule 13 (operacion_mat -> RESTA .)
+    DOUBLE          reduce using rule 13 (operacion_mat -> RESTA .)
+    STRING          reduce using rule 13 (operacion_mat -> RESTA .)
+    ID              reduce using rule 13 (operacion_mat -> RESTA .)
+
+
+state 24
+
+    (14) operacion_mat -> MULTIPLICACION .
+
+    INT             reduce using rule 14 (operacion_mat -> MULTIPLICACION .)
+    DOUBLE          reduce using rule 14 (operacion_mat -> MULTIPLICACION .)
+    STRING          reduce using rule 14 (operacion_mat -> MULTIPLICACION .)
+    ID              reduce using rule 14 (operacion_mat -> MULTIPLICACION .)
+
+
+state 25
+
+    (15) operacion_mat -> DIVISION .
+
+    INT             reduce using rule 15 (operacion_mat -> DIVISION .)
+    DOUBLE          reduce using rule 15 (operacion_mat -> DIVISION .)
+    STRING          reduce using rule 15 (operacion_mat -> DIVISION .)
+    ID              reduce using rule 15 (operacion_mat -> DIVISION .)
+
+
+state 26
+
+    (16) operacion_mat -> MODULO .
+
+    INT             reduce using rule 16 (operacion_mat -> MODULO .)
+    DOUBLE          reduce using rule 16 (operacion_mat -> MODULO .)
+    STRING          reduce using rule 16 (operacion_mat -> MODULO .)
+    ID              reduce using rule 16 (operacion_mat -> MODULO .)
+
+
+state 27
+
+    (2) instruccion -> VAR type ID ASIGNACION . valor
+    (3) valor -> . valor operacion_mat valor
+    (17) valor -> . INT
+    (18) valor -> . DOUBLE
+    (19) valor -> . STRING
+    (20) valor -> . ID
+
+    INT             shift and go to state 14
+    DOUBLE          shift and go to state 15
+    STRING          shift and go to state 16
+    ID              shift and go to state 17
+
+    valor                          shift and go to state 30
+
+state 28
+
+    (5) arg -> valor COMA valor .
+    (3) valor -> valor . operacion_mat valor
+    (12) operacion_mat -> . ADICION
+    (13) operacion_mat -> . RESTA
+    (14) operacion_mat -> . MULTIPLICACION
+    (15) operacion_mat -> . DIVISION
+    (16) operacion_mat -> . MODULO
+
+    D_PARENTESIS    reduce using rule 5 (arg -> valor COMA valor .)
+    ADICION         shift and go to state 22
+    RESTA           shift and go to state 23
+    MULTIPLICACION  shift and go to state 24
+    DIVISION        shift and go to state 25
+    MODULO          shift and go to state 26
+
+    operacion_mat                  shift and go to state 21
+
+state 29
+
+    (3) valor -> valor operacion_mat valor .
+    (3) valor -> valor . operacion_mat valor
+    (12) operacion_mat -> . ADICION
+    (13) operacion_mat -> . RESTA
+    (14) operacion_mat -> . MULTIPLICACION
+    (15) operacion_mat -> . DIVISION
+    (16) operacion_mat -> . MODULO
+
+  ! shift/reduce conflict for ADICION resolved as shift
+  ! shift/reduce conflict for RESTA resolved as shift
+  ! shift/reduce conflict for MULTIPLICACION resolved as shift
+  ! shift/reduce conflict for DIVISION resolved as shift
+  ! shift/reduce conflict for MODULO resolved as shift
+    COMA            reduce using rule 3 (valor -> valor operacion_mat valor .)
+    D_PARENTESIS    reduce using rule 3 (valor -> valor operacion_mat valor .)
+    $end            reduce using rule 3 (valor -> valor operacion_mat valor .)
+    ADICION         shift and go to state 22
+    RESTA           shift and go to state 23
+    MULTIPLICACION  shift and go to state 24
+    DIVISION        shift and go to state 25
+    MODULO          shift and go to state 26
+
+  ! ADICION         [ reduce using rule 3 (valor -> valor operacion_mat valor .) ]
+  ! RESTA           [ reduce using rule 3 (valor -> valor operacion_mat valor .) ]
+  ! MULTIPLICACION  [ reduce using rule 3 (valor -> valor operacion_mat valor .) ]
+  ! DIVISION        [ reduce using rule 3 (valor -> valor operacion_mat valor .) ]
+  ! MODULO          [ reduce using rule 3 (valor -> valor operacion_mat valor .) ]
+
+    operacion_mat                  shift and go to state 21
+
+state 30
+
     (2) instruccion -> VAR type ID ASIGNACION valor .
+    (3) valor -> valor . operacion_mat valor
+    (12) operacion_mat -> . ADICION
+    (13) operacion_mat -> . RESTA
+    (14) operacion_mat -> . MULTIPLICACION
+    (15) operacion_mat -> . DIVISION
+    (16) operacion_mat -> . MODULO
 
     $end            reduce using rule 2 (instruccion -> VAR type ID ASIGNACION valor .)
+    ADICION         shift and go to state 22
+    RESTA           shift and go to state 23
+    MULTIPLICACION  shift and go to state 24
+    DIVISION        shift and go to state 25
+    MODULO          shift and go to state 26
 
+    operacion_mat                  shift and go to state 21
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for ADICION in state 29 resolved as shift
+WARNING: shift/reduce conflict for RESTA in state 29 resolved as shift
+WARNING: shift/reduce conflict for MULTIPLICACION in state 29 resolved as shift
+WARNING: shift/reduce conflict for DIVISION in state 29 resolved as shift
+WARNING: shift/reduce conflict for MODULO in state 29 resolved as shift
