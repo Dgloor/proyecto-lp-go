@@ -1,0 +1,387 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    ADICION
+    AND
+    ASIGNACION_ADICION
+    ASIGNACION_DIVISION
+    ASIGNACION_MODULO
+    ASIGNACION_MULTI
+    ASIGNACION_RESTA
+    BOOLEAN
+    BREAK
+    CASE
+    CHAN
+    CONST
+    CONTINUE
+    DECLARACION_ASIGNACION
+    DECREMENTO
+    DEFAULT
+    DEFER
+    DIFERENTE
+    DIVISION
+    DOS_PUNTOS
+    D_CORCHETE
+    D_LLAVE
+    ELSE
+    ELSEIF
+    FALLTHROUGH
+    FLOAT32
+    FLOAT64
+    FOR
+    FUNC
+    GO
+    GOTO
+    IDENTIFICADOR
+    IF
+    IGUAL
+    IMPORT
+    INCREMENTO
+    INTERFACE
+    I_CORCHETE
+    I_LLAVE
+    MAP
+    MAYOR
+    MAYOR_IGUAL
+    MENOR
+    MENOR_IGUAL
+    MODULO
+    MULTIPLICACION
+    NOT
+    OR
+    PACKAGE
+    PUNTO
+    PUNTO_COMA
+    RANGE
+    RESTA
+    RETURN
+    SELECT
+    STRUCT
+    SWITCH
+    TYPE
+
+Grammar
+
+Rule 0     S' -> instruccion
+Rule 1     instruccion -> print I_PARENTESIS arg D_PARENTESIS
+Rule 2     instruccion -> VAR type ID ASIGNACION valor
+Rule 3     arg -> valor
+Rule 4     arg -> valor COMA valor
+Rule 5     print -> PRINTLN
+Rule 6     print -> PRINTF
+Rule 7     print -> PRINT
+Rule 8     type -> BOOL
+Rule 9     type -> STRINGTYPE
+Rule 10    type -> INTEGER
+Rule 11    valor -> INT
+Rule 12    valor -> DOUBLE
+Rule 13    valor -> STRING
+Rule 14    valor -> ID
+
+Terminals, with rules where they appear
+
+ADICION              : 
+AND                  : 
+ASIGNACION           : 2
+ASIGNACION_ADICION   : 
+ASIGNACION_DIVISION  : 
+ASIGNACION_MODULO    : 
+ASIGNACION_MULTI     : 
+ASIGNACION_RESTA     : 
+BOOL                 : 8
+BOOLEAN              : 
+BREAK                : 
+CASE                 : 
+CHAN                 : 
+COMA                 : 4
+CONST                : 
+CONTINUE             : 
+DECLARACION_ASIGNACION : 
+DECREMENTO           : 
+DEFAULT              : 
+DEFER                : 
+DIFERENTE            : 
+DIVISION             : 
+DOS_PUNTOS           : 
+DOUBLE               : 12
+D_CORCHETE           : 
+D_LLAVE              : 
+D_PARENTESIS         : 1
+ELSE                 : 
+ELSEIF               : 
+FALLTHROUGH          : 
+FLOAT32              : 
+FLOAT64              : 
+FOR                  : 
+FUNC                 : 
+GO                   : 
+GOTO                 : 
+ID                   : 2 14
+IDENTIFICADOR        : 
+IF                   : 
+IGUAL                : 
+IMPORT               : 
+INCREMENTO           : 
+INT                  : 11
+INTEGER              : 10
+INTERFACE            : 
+I_CORCHETE           : 
+I_LLAVE              : 
+I_PARENTESIS         : 1
+MAP                  : 
+MAYOR                : 
+MAYOR_IGUAL          : 
+MENOR                : 
+MENOR_IGUAL          : 
+MODULO               : 
+MULTIPLICACION       : 
+NOT                  : 
+OR                   : 
+PACKAGE              : 
+PRINT                : 7
+PRINTF               : 6
+PRINTLN              : 5
+PUNTO                : 
+PUNTO_COMA           : 
+RANGE                : 
+RESTA                : 
+RETURN               : 
+SELECT               : 
+STRING               : 13
+STRINGTYPE           : 9
+STRUCT               : 
+SWITCH               : 
+TYPE                 : 
+VAR                  : 2
+error                : 
+
+Nonterminals, with rules where they appear
+
+arg                  : 1
+instruccion          : 0
+print                : 1
+type                 : 2
+valor                : 2 3 4 4
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . instruccion
+    (1) instruccion -> . print I_PARENTESIS arg D_PARENTESIS
+    (2) instruccion -> . VAR type ID ASIGNACION valor
+    (5) print -> . PRINTLN
+    (6) print -> . PRINTF
+    (7) print -> . PRINT
+
+    VAR             shift and go to state 3
+    PRINTLN         shift and go to state 4
+    PRINTF          shift and go to state 5
+    PRINT           shift and go to state 6
+
+    instruccion                    shift and go to state 1
+    print                          shift and go to state 2
+
+state 1
+
+    (0) S' -> instruccion .
+
+
+
+state 2
+
+    (1) instruccion -> print . I_PARENTESIS arg D_PARENTESIS
+
+    I_PARENTESIS    shift and go to state 7
+
+
+state 3
+
+    (2) instruccion -> VAR . type ID ASIGNACION valor
+    (8) type -> . BOOL
+    (9) type -> . STRINGTYPE
+    (10) type -> . INTEGER
+
+    BOOL            shift and go to state 9
+    STRINGTYPE      shift and go to state 10
+    INTEGER         shift and go to state 11
+
+    type                           shift and go to state 8
+
+state 4
+
+    (5) print -> PRINTLN .
+
+    I_PARENTESIS    reduce using rule 5 (print -> PRINTLN .)
+
+
+state 5
+
+    (6) print -> PRINTF .
+
+    I_PARENTESIS    reduce using rule 6 (print -> PRINTF .)
+
+
+state 6
+
+    (7) print -> PRINT .
+
+    I_PARENTESIS    reduce using rule 7 (print -> PRINT .)
+
+
+state 7
+
+    (1) instruccion -> print I_PARENTESIS . arg D_PARENTESIS
+    (3) arg -> . valor
+    (4) arg -> . valor COMA valor
+    (11) valor -> . INT
+    (12) valor -> . DOUBLE
+    (13) valor -> . STRING
+    (14) valor -> . ID
+
+    INT             shift and go to state 14
+    DOUBLE          shift and go to state 15
+    STRING          shift and go to state 16
+    ID              shift and go to state 17
+
+    arg                            shift and go to state 12
+    valor                          shift and go to state 13
+
+state 8
+
+    (2) instruccion -> VAR type . ID ASIGNACION valor
+
+    ID              shift and go to state 18
+
+
+state 9
+
+    (8) type -> BOOL .
+
+    ID              reduce using rule 8 (type -> BOOL .)
+
+
+state 10
+
+    (9) type -> STRINGTYPE .
+
+    ID              reduce using rule 9 (type -> STRINGTYPE .)
+
+
+state 11
+
+    (10) type -> INTEGER .
+
+    ID              reduce using rule 10 (type -> INTEGER .)
+
+
+state 12
+
+    (1) instruccion -> print I_PARENTESIS arg . D_PARENTESIS
+
+    D_PARENTESIS    shift and go to state 19
+
+
+state 13
+
+    (3) arg -> valor .
+    (4) arg -> valor . COMA valor
+
+    D_PARENTESIS    reduce using rule 3 (arg -> valor .)
+    COMA            shift and go to state 20
+
+
+state 14
+
+    (11) valor -> INT .
+
+    COMA            reduce using rule 11 (valor -> INT .)
+    D_PARENTESIS    reduce using rule 11 (valor -> INT .)
+    $end            reduce using rule 11 (valor -> INT .)
+
+
+state 15
+
+    (12) valor -> DOUBLE .
+
+    COMA            reduce using rule 12 (valor -> DOUBLE .)
+    D_PARENTESIS    reduce using rule 12 (valor -> DOUBLE .)
+    $end            reduce using rule 12 (valor -> DOUBLE .)
+
+
+state 16
+
+    (13) valor -> STRING .
+
+    COMA            reduce using rule 13 (valor -> STRING .)
+    D_PARENTESIS    reduce using rule 13 (valor -> STRING .)
+    $end            reduce using rule 13 (valor -> STRING .)
+
+
+state 17
+
+    (14) valor -> ID .
+
+    COMA            reduce using rule 14 (valor -> ID .)
+    D_PARENTESIS    reduce using rule 14 (valor -> ID .)
+    $end            reduce using rule 14 (valor -> ID .)
+
+
+state 18
+
+    (2) instruccion -> VAR type ID . ASIGNACION valor
+
+    ASIGNACION      shift and go to state 21
+
+
+state 19
+
+    (1) instruccion -> print I_PARENTESIS arg D_PARENTESIS .
+
+    $end            reduce using rule 1 (instruccion -> print I_PARENTESIS arg D_PARENTESIS .)
+
+
+state 20
+
+    (4) arg -> valor COMA . valor
+    (11) valor -> . INT
+    (12) valor -> . DOUBLE
+    (13) valor -> . STRING
+    (14) valor -> . ID
+
+    INT             shift and go to state 14
+    DOUBLE          shift and go to state 15
+    STRING          shift and go to state 16
+    ID              shift and go to state 17
+
+    valor                          shift and go to state 22
+
+state 21
+
+    (2) instruccion -> VAR type ID ASIGNACION . valor
+    (11) valor -> . INT
+    (12) valor -> . DOUBLE
+    (13) valor -> . STRING
+    (14) valor -> . ID
+
+    INT             shift and go to state 14
+    DOUBLE          shift and go to state 15
+    STRING          shift and go to state 16
+    ID              shift and go to state 17
+
+    valor                          shift and go to state 23
+
+state 22
+
+    (4) arg -> valor COMA valor .
+
+    D_PARENTESIS    reduce using rule 4 (arg -> valor COMA valor .)
+
+
+state 23
+
+    (2) instruccion -> VAR type ID ASIGNACION valor .
+
+    $end            reduce using rule 2 (instruccion -> VAR type ID ASIGNACION valor .)
+
