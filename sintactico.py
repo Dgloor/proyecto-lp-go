@@ -1,5 +1,13 @@
 import ply.yacc as sintactico
+# from main import log_content
 from lexico import tokens
+from datetime import datetime
+
+
+def log_content(content, filename):
+  f = open(filename, "a")
+  f.write("{0} -- {1}\n".format(datetime.now().strftime("%Y-%m-%d %H:%M"), content))
+  f.close()
 
 # def p_instrucciones(p):  #puede probar imprimir(var)
 #   '''instruccion : asignacion
@@ -137,9 +145,11 @@ def p_valores(p):
 # Error rule for syntax errors
 def p_error(p):
   if p:
+    error_message = f"Error de sintaxis - Token: {p.type}, Línea: {p.lineno}, Col: {p.lexpos}"
     print(
-      f"Error de sintaxis - Token: {p.type}, Línea: {p.lineno}, Col: {p.lexpos}"
+      error_message
     )
+    log_content(error_message, 'logs.txt')
     parser.errok()
   else:
     print("Error de sintaxis Fin de Linea")
