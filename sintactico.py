@@ -21,7 +21,8 @@ def p_impresion(p):
     'instruccion : print I_PARENTESIS valores D_PARENTESIS'
 
 def p_declaracion(p):  #puede reconocer a=20
-    'instruccion : VAR ID type ASIGNACION valor'
+    '''instruccion : VAR ID type ASIGNACION valor
+                   | VAR ID ASIGNACION valor'''
 
 def p_asignacion(p):
     'instruccion : ID asignacion valor'

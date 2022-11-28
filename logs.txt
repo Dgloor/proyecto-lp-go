@@ -1,0 +1,8 @@
+2022-11-28 17:18 -- Error de sintaxis - Token: ASIGNACION, Línea: 1, Col: 6
+2022-11-28 17:18 -- Error de sintaxis - Token: INT, Línea: 1, Col: 8
+2022-11-28 17:18 -- var a = 2: None
+2022-11-28 17:18 -- var a int = 2: None
+2022-11-28 17:20 -- Error de sintaxis - Token: ASIGNACION, Línea: 1, Col: 6
+2022-11-28 17:20 -- Error de sintaxis - Token: INT, Línea: 1, Col: 8
+2022-11-28 17:20 -- var b = 2: None
+2022-11-28 17:24 -- var a = 2: None
