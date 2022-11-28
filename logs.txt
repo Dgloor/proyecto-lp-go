@@ -6,3 +6,65 @@
 2022-11-28 17:20 -- Error de sintaxis - Token: INT, Línea: 1, Col: 8
 2022-11-28 17:20 -- var b = 2: None
 2022-11-28 17:24 -- var a = 2: None
+2022-11-28 17:30 -- Error de sintaxis - Token: I_PARENTESIS, Línea: 1, Col: 3
+2022-11-28 17:30 -- Error de sintaxis - Token: D_PARENTESIS, Línea: 1, Col: 8
+2022-11-28 17:30 -- if (cond): None
+2022-11-28 17:30 -- Error de sintaxis - Token: I_PARENTESIS, Línea: 1, Col: 2
+2022-11-28 17:30 -- Error de sintaxis - Token: D_PARENTESIS, Línea: 1, Col: 7
+2022-11-28 17:30 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 9
+2022-11-28 17:30 -- if(cond){}: None
+2022-11-28 17:34 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 9
+2022-11-28 17:34 -- if cond {}: None
+2022-11-28 17:35 -- if cond { var i = 2 }: None
+2022-11-28 21:46 -- Error de sintaxis - Token: RETURN, Línea: 1, Col: 13
+2022-11-28 21:46 -- Error de sintaxis - Token: INT, Línea: 1, Col: 20
+2022-11-28 21:46 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 21
+2022-11-28 21:46 -- if num%2==0 {return 2}: None
+2022-11-28 21:53 -- if (id<28){x=2}: None
+2022-11-28 21:57 -- Error de sintaxis - Token: MAP, Línea: 1, Col: 4
+2022-11-28 21:57 -- Error de sintaxis - Token: I_CORCHETE, Línea: 1, Col: 7
+2022-11-28 21:57 -- Error de sintaxis - Token: STRINGTYPE, Línea: 1, Col: 8
+2022-11-28 21:57 -- Error de sintaxis - Token: D_CORCHETE, Línea: 1, Col: 14
+2022-11-28 21:57 -- Error de sintaxis - Token: INTEGER, Línea: 1, Col: 15
+2022-11-28 21:57 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 18
+2022-11-28 21:57 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 19
+2022-11-28 21:57 -- m = map[string]int{}: None
+2022-11-28 22:00 -- m = map[string]int{}: None
+2022-11-28 22:02 -- Error de sintaxis - Token: I_CORCHETE, Línea: 1, Col: 6
+2022-11-28 22:02 -- Error de sintaxis - Token: INT, Línea: 1, Col: 7
+2022-11-28 22:02 -- Error de sintaxis - Token: D_CORCHETE, Línea: 1, Col: 8
+2022-11-28 22:02 -- var a [2]string: None
+2022-11-28 22:02 -- Error de sintaxis - Token: I_CORCHETE, Línea: 1, Col: 1
+2022-11-28 22:02 -- Error de sintaxis - Token: INT, Línea: 1, Col: 2
+2022-11-28 22:02 -- Error de sintaxis - Token: D_CORCHETE, Línea: 1, Col: 3
+2022-11-28 22:02 -- a[0] = "Hello": None
+2022-11-28 22:06 -- Error de sintaxis - Token: ID, Línea: 1, Col: 9
+2022-11-28 22:06 -- fmt.Println(a): None
+2022-11-28 22:06 -- Error de sintaxis - Token: ID, Línea: 1, Col: 9
+2022-11-28 22:06 -- fmt.Println(a): None
+2022-11-28 22:07 -- fmt.Print(a): None
+2022-11-28 22:08 -- Error de sintaxis - Token: ID, Línea: 1, Col: 9
+2022-11-28 22:08 -- fmt.Printf(a): None
+2022-11-28 22:09 -- Error de sintaxis - Token: ID, Línea: 1, Col: 9
+2022-11-28 22:09 -- fmt.Printf(a): None
+2022-11-28 22:09 -- Error de sintaxis - Token: ID, Línea: 1, Col: 9
+2022-11-28 22:09 -- fmt.Println(2): None
+2022-11-28 22:10 -- a = 20: None
+2022-11-28 22:12 -- Error de sintaxis - Token: ID, Línea: 1, Col: 9
+2022-11-28 22:12 -- Error de sintaxis - Token: I_CORCHETE, Línea: 1, Col: 13
+2022-11-28 22:12 -- Error de sintaxis - Token: INT, Línea: 1, Col: 14
+2022-11-28 22:12 -- Error de sintaxis - Token: D_CORCHETE, Línea: 1, Col: 15
+2022-11-28 22:12 -- Error de sintaxis - Token: I_CORCHETE, Línea: 1, Col: 19
+2022-11-28 22:12 -- Error de sintaxis - Token: INT, Línea: 1, Col: 20
+2022-11-28 22:12 -- Error de sintaxis - Token: D_CORCHETE, Línea: 1, Col: 21
+2022-11-28 22:12 -- fmt.Println(a[0], a[1]): None
+2022-11-28 22:12 -- Error de sintaxis - Token: ID, Línea: 1, Col: 9
+2022-11-28 22:12 -- Error de sintaxis - Token: I_CORCHETE, Línea: 1, Col: 13
+2022-11-28 22:12 -- Error de sintaxis - Token: INT, Línea: 1, Col: 14
+2022-11-28 22:12 -- Error de sintaxis - Token: D_CORCHETE, Línea: 1, Col: 15
+2022-11-28 22:12 -- fmt.Println(a[0]): None
+2022-11-28 22:13 -- Error de sintaxis - Token: ID, Línea: 1, Col: 9
+2022-11-28 22:13 -- fmt.Println(a): None
+2022-11-28 22:15 -- fmt.Println(a): None
+2022-11-28 22:15 -- fmt.Println(a): None
+2022-11-28 22:16 -- fmt.Printf(a): None

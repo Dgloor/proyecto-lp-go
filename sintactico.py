@@ -25,7 +25,8 @@ def p_declaracion(p):  #puede reconocer a=20
                    | VAR ID ASIGNACION valor'''
 
 def p_asignacion(p):
-    'instruccion : ID asignacion valor'
+    '''instruccion : ID asignacion valor
+          | ID asignacion instruccion'''
 
 def p_incremento_decremento(p):
     'instruccion : ID operador_matematico'
@@ -81,7 +82,8 @@ def p_multiple_clave_valor(p):
           | clave_valor COMA claves_valores'''
 
 def p_condicion(p):
-    'condicion : valor'
+    '''condicion : valor
+                | I_PARENTESIS valor D_PARENTESIS'''
 
 def p_iteracion_for(p):
     'iteracion_for : ID '

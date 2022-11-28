@@ -158,12 +158,6 @@ t_D_PARENTESIS = r'\)'
 # def t_FMTFUNC(t):
 #   r'fmt\.'
 
-
-def t_PRINT(t):
-    r'fmt\.Print'
-    return t
-
-
 def t_PRINTLN(t):
     r'fmt\.Println'
     return t
@@ -171,6 +165,10 @@ def t_PRINTLN(t):
 
 def t_PRINTF(t):
     r'fmt\.Printf'
+    return t
+
+def t_PRINT(t):
+    r'fmt\.Print'
     return t
 
 
