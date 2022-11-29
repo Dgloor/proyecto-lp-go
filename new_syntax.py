@@ -46,7 +46,8 @@ def p_impresion(p):
 def p_declaracion(p):  #puede reconocer a=20
     '''instruccion : VAR ID type ASIGNACION valor
                    | VAR ID ASIGNACION valor
-                   | VAR ID ASIGNACION instruccion'''
+                   | VAR ID ASIGNACION instruccion
+                   | VAR ID array_type_spec ASIGNACION instruccion'''
 
 def p_asignacion(p):
     '''instruccion : ID asignacion valor
@@ -134,16 +135,16 @@ def p_array_boolean(p):
     'array_boolean : I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE D_LLAVE'
 
 def p_array_length_int(p):
-    'array_length_int : I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE'
+    'array_length_int : array_length INTEGER I_LLAVE D_LLAVE'
 
 def p_array_length_double(p):
-    'array_length_double : I_CORCHETE INT D_CORCHETE floating_type I_LLAVE D_LLAVE'
+    'array_length_double : array_length floating_type I_LLAVE D_LLAVE'
 
 def p_array_length_string(p):
-    'array_length_string : I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE'
+    'array_length_string : array_length STRINGTYPE I_LLAVE D_LLAVE'
 
 def p_array_length_boolean(p):
-    'array_length_boolean : I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE D_LLAVE'
+    'array_length_boolean : array_length BOOLEAN I_LLAVE D_LLAVE'
 
 def p_array_con_valores_int(p):
     'array_con_valores_int : I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE'
@@ -158,16 +159,16 @@ def p_array_con_valores_boolean(p):
     'array_con_valores_boolean : I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE'
 
 def p_array_length_con_valores_int(p):
-    'array_length_con_valores_int : I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE'
+    'array_length_con_valores_int : array_length INTEGER I_LLAVE valores_int D_LLAVE'
 
 def p_array_length_con_valores_double(p):
-    'array_length_con_valores_double : I_CORCHETE INT D_CORCHETE floating_type I_LLAVE valores_double D_LLAVE'
+    'array_length_con_valores_double : array_length floating_type I_LLAVE valores_double D_LLAVE'
 
 def p_array_length_con_valores_string(p):
-    'array_length_con_valores_string : I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE'
+    'array_length_con_valores_string : array_length STRINGTYPE I_LLAVE valores_string D_LLAVE'
 
 def p_array_length_con_valores_boolean(p):
-    'array_length_con_valores_boolean : I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE'
+    'array_length_con_valores_boolean : array_length BOOLEAN I_LLAVE valores_boolean D_LLAVE'
 # Fin de arreglo
   
 
@@ -250,6 +251,15 @@ def p_print_options(p):
     '''print : PRINTLN
           | PRINTF
           | PRINT'''
+
+def p_tipo_array(p):
+    '''array_type_spec : array_length INTEGER
+          | array_length STRINGTYPE
+          | array_length BOOLEAN
+          | array_length floating_type'''
+
+def p_array_length_notype(p):
+    'array_length : I_CORCHETE INT D_CORCHETE'
 
 def p_tipo(p):
     '''type : BOOL

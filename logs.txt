@@ -439,3 +439,4 @@
 2022-11-29 21:11 -- Error de sintaxis - Token: INT, Línea: 1, Col: 30
 2022-11-29 21:11 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 32
 2022-11-29 21:11 -- var y [5]int = [5]int{10, 20, 30}: None
+2022-11-29 21:42 -- var y [5]int = [5]int{10, 20, 30}: None
