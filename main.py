@@ -1,4 +1,4 @@
-import sintactico
+import new_syntax
 from datetime import datetime
 
 def log_content(content, filename):
@@ -13,5 +13,5 @@ while True:
         break
     if not s: continue
     content = [s]
-    content.append(sintactico.valida_regla(s))
+    content.append(new_syntax.valida_regla(s))
     log_content(content, 'logs.txt')
