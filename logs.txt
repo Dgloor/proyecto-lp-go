@@ -68,3 +68,66 @@
 2022-11-28 22:15 -- fmt.Println(a): None
 2022-11-28 22:15 -- fmt.Println(a): None
 2022-11-28 22:16 -- fmt.Printf(a): None
+2022-11-28 23:52 -- a += 1 : None
+2022-11-28 23:53 -- Error de sintaxis - Token: RESTA, Línea: 1, Col: 2
+2022-11-28 23:53 -- Error de sintaxis - Token: ADICION, Línea: 1, Col: 3
+2022-11-28 23:53 -- Error de sintaxis - Token: INT, Línea: 1, Col: 4
+2022-11-28 23:53 -- a -+1: None
+2022-11-28 23:53 -- a -= 1: None
+2022-11-28 23:56 -- else if n < 0 {fmt.Println("Número negativo")}: None
+2022-11-28 23:56 -- else if n < 0 {fmt.Println("Número negativo")}: None
+2022-11-28 23:57 -- else if (n < 0) {fmt.Println("Número negativo")}: None
+2022-11-28 23:57 -- else if n < 0 {: None
+2022-11-28 23:57 -- Error de sintaxis - Token: ID, Línea: 1, Col: 16
+2022-11-28 23:57 --  fmt.Println("Número : None
+2022-11-28 23:57 -- Error de sintaxis - Token: D_PARENTESIS, Línea: 1, Col: 9
+2022-11-28 23:57 -- negativo"): None
+2022-11-28 23:57 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 0
+2022-11-28 23:57 -- }: None
+2022-11-28 23:58 -- Error de sintaxis - Token: ELSEIF, Línea: 1, Col: 5
+2022-11-28 23:58 -- Error de sintaxis - Token: I_PARENTESIS, Línea: 1, Col: 13
+2022-11-28 23:58 -- Error de sintaxis - Token: ID, Línea: 1, Col: 14
+2022-11-28 23:58 -- Error de sintaxis - Token: MENOR, Línea: 1, Col: 16
+2022-11-28 23:58 -- Error de sintaxis - Token: INT, Línea: 1, Col: 18
+2022-11-28 23:58 -- Error de sintaxis - Token: D_PARENTESIS, Línea: 1, Col: 19
+2022-11-28 23:58 -- else else if (n < 0) {fmt.Println("Número negativo")}: None
+2022-11-28 23:58 -- else if (n < 0) {fmt.Println("Número negativo")}: None
+2022-11-28 23:58 -- else if (n < 0) {fmt.Println("Número negativo")}: None
+2022-11-28 23:58 -- else if (n < 0) {fmt.Println("Número negativo")}: None
+2022-11-28 23:58 -- else if (n < 0) {fmt.Println("Número negativo")}: None
+2022-11-29 00:00 -- Error de sintaxis - Token: ID, Línea: 1, Col: 20
+2022-11-29 00:00 -- Error de sintaxis - Token: PUNTO, Línea: 1, Col: 24
+2022-11-29 00:00 -- Error de sintaxis - Token: ID, Línea: 1, Col: 25
+2022-11-29 00:00 -- Error de sintaxis - Token: I_PARENTESIS, Línea: 1, Col: 32
+2022-11-29 00:00 -- Error de sintaxis - Token: STRING, Línea: 1, Col: 33
+2022-11-29 00:00 -- Error de sintaxis - Token: D_PARENTESIS, Línea: 1, Col: 50
+2022-11-29 00:00 -- Error de sintaxis - Token: ID, Línea: 1, Col: 52
+2022-11-29 00:00 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 53
+2022-11-29 00:00 -- else if (n < 0) {\n\tfmt.Println("Número negativo")\n}: None
+2022-11-29 00:07 -- for variable := range array{ i++ }: None
+2022-11-29 00:08 -- for variable := range array{ var i = 2 }: None
+2022-11-29 00:08 -- for variable := range array{: None
+2022-11-29 00:10 -- Error de sintaxis - Token: I_CORCHETE, Línea: 1, Col: 12
+2022-11-29 00:10 -- Error de sintaxis - Token: COMA, Línea: 1, Col: 27
+2022-11-29 00:10 -- var names = ["Anna", "Alex", : None
+2022-11-29 00:10 -- Error de sintaxis - Token: STRING, Línea: 1, Col: 0
+2022-11-29 00:10 -- Error de sintaxis - Token: D_CORCHETE, Línea: 1, Col: 60
+2022-11-29 00:10 -- "Brian", "Jack"]var names = ["Anna", "Alex", "Brian", "Jack"]: None
+2022-11-29 00:11 -- Error de sintaxis - Token: I_CORCHETE, Línea: 1, Col: 12
+2022-11-29 00:11 -- Error de sintaxis - Token: D_CORCHETE, Línea: 1, Col: 44
+2022-11-29 00:11 -- var names = ['Anna', 'Alex', 'Brian', 'Jack']: None
+2022-11-29 00:14 -- arr:= [4]string{"geek", "gfg", "Geeks1231", "GeeksforGeeks"}: None
+2022-11-29 00:21 -- Error de sintaxis - Token: I_CORCHETE, Línea: 1, Col: 11
+2022-11-29 00:21 -- Error de sintaxis - Token: D_CORCHETE, Línea: 1, Col: 13
+2022-11-29 00:21 -- Error de sintaxis - Token: INTEGER, Línea: 1, Col: 14
+2022-11-29 00:21 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 17
+2022-11-29 00:21 -- Error de sintaxis - Token: INT, Línea: 1, Col: 18
+2022-11-29 00:21 -- Error de sintaxis - Token: COMA, Línea: 1, Col: 19
+2022-11-29 00:21 -- Error de sintaxis - Token: INT, Línea: 1, Col: 21
+2022-11-29 00:21 -- Error de sintaxis - Token: COMA, Línea: 1, Col: 22
+2022-11-29 00:21 -- Error de sintaxis - Token: INT, Línea: 1, Col: 24
+2022-11-29 00:21 -- Error de sintaxis - Token: COMA, Línea: 1, Col: 25
+2022-11-29 00:21 -- Error de sintaxis - Token: INT, Línea: 1, Col: 27
+2022-11-29 00:21 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 28
+2022-11-29 00:21 -- var nums = [4]int{1, 2, 3, 4}: None
+2022-11-29 00:25 -- var nums = [4]int{1, 2, 3, 4}: None
