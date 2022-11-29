@@ -125,7 +125,7 @@ def p_array_int(p):
     'array_int : I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE'
 
 def p_array_double(p):
-    'array_double : I_CORCHETE D_CORCHETE DOUBLE I_LLAVE D_LLAVE'
+    'array_double : I_CORCHETE D_CORCHETE floating_type I_LLAVE D_LLAVE'
 
 def p_array_string(p):
     'array_string : I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE'
@@ -137,7 +137,7 @@ def p_array_length_int(p):
     'array_length_int : I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE'
 
 def p_array_length_double(p):
-    'array_length_double : I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE D_LLAVE'
+    'array_length_double : I_CORCHETE INT D_CORCHETE floating_type I_LLAVE D_LLAVE'
 
 def p_array_length_string(p):
     'array_length_string : I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE'
@@ -149,7 +149,7 @@ def p_array_con_valores_int(p):
     'array_con_valores_int : I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE'
 
 def p_array_con_valores_double(p):
-    'array_con_valores_double : I_CORCHETE D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE'
+    'array_con_valores_double : I_CORCHETE D_CORCHETE floating_type I_LLAVE valores_double D_LLAVE'
 
 def p_array_con_valores_string(p):
     'array_con_valores_string : I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE'
@@ -161,7 +161,7 @@ def p_array_length_con_valores_int(p):
     'array_length_con_valores_int : I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE'
 
 def p_array_length_con_valores_double(p):
-    'array_length_con_valores_double : I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE'
+    'array_length_con_valores_double : I_CORCHETE INT D_CORCHETE floating_type I_LLAVE valores_double D_LLAVE'
 
 def p_array_length_con_valores_string(p):
     'array_length_con_valores_string : I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE'
@@ -255,7 +255,10 @@ def p_tipo(p):
     '''type : BOOL
           | STRINGTYPE
           | INTEGER
-          | FLOAT32
+          | floating_type'''
+
+def p_tipo_flotante(p):
+    ''' floating_type : FLOAT32
           | FLOAT64'''
 
 def p_operacion_mat_var(p):
