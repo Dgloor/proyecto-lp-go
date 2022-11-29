@@ -196,3 +196,138 @@
 2022-11-29 03:04 -- var id Car = Car{"Mercedez",2000}: None
 2022-11-29 03:21 -- valor := Car{100}: None
 2022-11-29 03:21 -- var valor Car = Car{100,"xd"}: None
+2022-11-29 00:21 -- Error de sintaxis - Token: FUNC, Línea: 1, Col: 0
+2022-11-29 00:21 -- Error de sintaxis - Token: I_PARENTESIS, Línea: 1, Col: 18
+2022-11-29 00:21 -- Error de sintaxis - Token: D_PARENTESIS, Línea: 1, Col: 19
+2022-11-29 00:21 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 20
+2022-11-29 00:21 -- Error de sintaxis - Token: VAR, Línea: 1, Col: 22
+2022-11-29 00:21 -- Error de sintaxis - Token: ID, Línea: 1, Col: 26
+2022-11-29 00:21 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 32
+2022-11-29 00:21 -- func funcionSimple(){ var a = 2 }: None
+2022-11-29 00:25 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 20
+2022-11-29 00:25 -- Error de sintaxis - Token: VAR, Línea: 1, Col: 22
+2022-11-29 00:25 -- Error de sintaxis - Token: ID, Línea: 1, Col: 26
+2022-11-29 00:25 -- Error de sintaxis - Token: ASIGNACION, Línea: 1, Col: 28
+2022-11-29 00:25 -- Error de sintaxis - Token: INT, Línea: 1, Col: 29
+2022-11-29 00:25 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 31
+2022-11-29 00:25 -- func funcionSimple(){ var a =2 }: None
+2022-11-29 00:26 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 10
+2022-11-29 00:26 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 11
+2022-11-29 00:26 -- func max(){}: None
+2022-11-29 08:53 -- var a int = 2: None
+2022-11-29 08:53 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 15
+2022-11-29 08:53 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 16
+2022-11-29 08:53 -- func esoTilin(){}: None
+2022-11-29 08:56 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 21
+2022-11-29 08:56 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 22
+2022-11-29 08:56 -- func simpleFunction(){}: None
+2022-11-29 08:56 -- func simpleFunction(): None
+2022-11-29 08:57 -- func simpleFunction() int {}: None
+2022-11-29 08:57 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 21
+2022-11-29 08:57 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 22
+2022-11-29 08:57 -- func simpleFunction(){}: None
+2022-11-29 08:58 -- Error de sintaxis - Token: I_PARENTESIS, Línea: 1, Col: 25
+2022-11-29 08:58 -- Error de sintaxis - Token: D_PARENTESIS, Línea: 1, Col: 26
+2022-11-29 08:58 -- func simpleFunction() int(){}: None
+2022-11-29 08:58 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 21
+2022-11-29 08:58 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 22
+2022-11-29 08:58 -- func simpleFunction(){}: None
+2022-11-29 08:59 -- func simpleFunction() int {}: None
+2022-11-29 08:59 -- func simpleFunction(vari int) int {}: None
+2022-11-29 08:59 -- func simpleFunction(a1 int, a2 int) int {}: None
+2022-11-29 08:59 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 29
+2022-11-29 08:59 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 30
+2022-11-29 08:59 -- func simpleFunction(a1 int)  {}: None
+2022-11-29 09:00 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 19
+2022-11-29 09:00 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 20
+2022-11-29 09:00 -- func mainFunction(){}: None
+2022-11-29 09:01 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 11
+2022-11-29 09:01 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 12
+2022-11-29 09:01 -- func mian(){}: None
+2022-11-29 09:02 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 21
+2022-11-29 09:02 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 22
+2022-11-29 09:02 -- func simpleFunction(){}: None
+2022-11-29 09:03 -- Error de sintaxis - Token: ID, Línea: 1, Col: 4
+2022-11-29 09:03 -- Error de sintaxis - Token: I_PARENTESIS, Línea: 1, Col: 16
+2022-11-29 09:03 -- Error de sintaxis - Token: ID, Línea: 1, Col: 17
+2022-11-29 09:03 -- Error de sintaxis - Token: INTEGER, Línea: 1, Col: 23
+2022-11-29 09:03 -- Error de sintaxis - Token: D_PARENTESIS, Línea: 1, Col: 26
+2022-11-29 09:03 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 27
+2022-11-29 09:03 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 28
+2022-11-29 09:03 -- fun simpFunction(vari1 int){}: None
+2022-11-29 09:03 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 28
+2022-11-29 09:03 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 29
+2022-11-29 09:03 -- func simpFunction(vari1 int){}: None
+2022-11-29 09:05 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 20
+2022-11-29 09:05 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 21
+2022-11-29 09:05 -- func simplFunction(){}: None
+2022-11-29 09:06 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 21
+2022-11-29 09:06 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 22
+2022-11-29 09:06 -- func simpleFunction(){}: None
+2022-11-29 09:06 -- func simpleFunction() int {}: None
+2022-11-29 09:07 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 16
+2022-11-29 09:07 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 17
+2022-11-29 09:07 -- func matricula(){}: None
+2022-11-29 09:09 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 15
+2022-11-29 09:09 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 16
+2022-11-29 09:09 -- func mainFunc(){}: None
+2022-11-29 09:10 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 15
+2022-11-29 09:10 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 16
+2022-11-29 09:10 -- func mainFunc(){}: None
+2022-11-29 09:11 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 21
+2022-11-29 09:11 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 22
+2022-11-29 09:11 -- func simpleFunction(){}: None
+2022-11-29 09:11 -- func simpleFunction() int{}: None
+2022-11-29 09:12 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 21
+2022-11-29 09:12 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 22
+2022-11-29 09:12 -- func simpleFunction(){}: None
+2022-11-29 09:14 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 21
+2022-11-29 09:14 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 22
+2022-11-29 09:14 -- func simpleFucntion(){}: None
+2022-11-29 09:14 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 21
+2022-11-29 09:14 -- Error de sintaxis - Token: VAR, Línea: 1, Col: 23
+2022-11-29 09:14 -- Error de sintaxis - Token: ID, Línea: 1, Col: 27
+2022-11-29 09:14 -- Error de sintaxis - Token: ASIGNACION, Línea: 1, Col: 29
+2022-11-29 09:14 -- Error de sintaxis - Token: INT, Línea: 1, Col: 31
+2022-11-29 09:14 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 33
+2022-11-29 09:14 -- func simpleFucntion(){ var a = 2 }: None
+2022-11-29 13:19 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 21
+2022-11-29 13:19 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 22
+2022-11-29 13:19 -- func simpleFunction(){}: None
+2022-11-29 13:20 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 17
+2022-11-29 13:20 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 18
+2022-11-29 13:20 -- func simpleFunc(){}: None
+2022-11-29 13:20 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 21
+2022-11-29 13:20 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 22
+2022-11-29 13:20 -- func simpleFunction(){}: None
+2022-11-29 13:20 -- func simpleFunction() int{}: None
+2022-11-29 13:20 -- func simpleFunction() string{}: None
+2022-11-29 13:20 -- func simpleFunction() float32{}: None
+2022-11-29 13:20 -- func simpleFunction() float64{}: None
+2022-11-29 13:20 -- Error de sintaxis - Token: ID, Línea: 1, Col: 22
+2022-11-29 13:20 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 26
+2022-11-29 13:20 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 27
+2022-11-29 13:20 -- func simpleFunction() void{}: None
+2022-11-29 13:23 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 22
+2022-11-29 13:23 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 23
+2022-11-29 13:23 -- func simpleFunction() {}: None
+2022-11-29 13:24 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 33
+2022-11-29 13:24 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 34
+2022-11-29 13:24 -- func simpleFunction(hola string) {}: None
+2022-11-29 13:25 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 22
+2022-11-29 13:25 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 23
+2022-11-29 13:25 -- func simpleFunction() {}: None
+2022-11-29 13:26 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 21
+2022-11-29 13:26 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 22
+2022-11-29 13:26 -- func simpleFunction(){}: None
+2022-11-29 13:26 -- func simpleFunction() int{}: None
+2022-11-29 13:26 -- func simpleFunction() string{}: None
+2022-11-29 13:26 -- func simpleFunction() float32{}: None
+2022-11-29 13:27 -- func simpleFunction() float64{}: None
+2022-11-29 13:28 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 22
+2022-11-29 13:28 -- Error de sintaxis - Token: VAR, Línea: 1, Col: 24
+2022-11-29 13:28 -- Error de sintaxis - Token: ID, Línea: 1, Col: 28
+2022-11-29 13:28 -- Error de sintaxis - Token: ASIGNACION, Línea: 1, Col: 30
+2022-11-29 13:28 -- Error de sintaxis - Token: INT, Línea: 1, Col: 32
+2022-11-29 13:28 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 33
+2022-11-29 13:28 -- func simpleFunction() { var a = 2}: None

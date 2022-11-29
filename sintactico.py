@@ -14,8 +14,24 @@ def log_content(content, filename):
 #   '''instruccion : asignacion
 #                     | impresion '''
 
+def p_go(p):
+    '''go : instruccion
+            | funcion go
+            | funcion'''
+
 def p_body(p):
-    '''body : instruccion'''
+    '''body : instruccion
+            | I_LLAVE instruct_expression D_LLAVE
+            | I_LLAVE varias_instrucciones 
+            | I_LLAVE varias_instrucciones instruct_expression D_LLAVE
+            | I_LLAVE D_LLAVE'''
+
+def p_varias_instrucciones(p):
+    '''varias_instrucciones : instruccion
+                            | instruccion varias_instrucciones'''
+
+def p_expression_result(p):
+    '''instruct_expression : RETURN valor'''
 
 def p_impresion(p):
     'instruccion : print I_PARENTESIS valores D_PARENTESIS'
@@ -31,6 +47,20 @@ def p_asignacion(p):
 
 def p_incremento_decremento(p):
     'instruccion : ID operador_matematico'
+
+def p_funcion(p):
+    'funcion : FUNC ID cuerpo_fun'
+
+def p_body_fm(p):
+    '''cuerpo_fun : parametrosMetodo body'''
+
+def p_parametros_metodo(p):
+    'parametrosMetodo : I_PARENTESIS parametros D_PARENTESIS type'
+
+def p_parametros(p):
+    '''parametros : atributo
+                  | atributo COMA parametros
+                  | '''
 
 #Estructuras de Control
 
@@ -139,11 +169,11 @@ def p_map_valores(p):
     'instruccion : MAP I_CORCHETE type D_CORCHETE type I_LLAVE claves_valores D_LLAVE'
 
 def p_struct(p):
-    'instruccion : TYPE ID STRUCT I_LLAVE atributos D_LLAVE'
+    'instruccion : TYPE ID STRUCT I_LLAVE atributos_struct D_LLAVE'
 
-def p_atributos(p):
-    '''atributos : atributo
-                | atributo atributos'''
+def p_atributos_struct(p):
+    '''atributos_struct : atributo
+                | atributo atributos_struct'''
 
 def p_atributo(p):
     'atributo : ID type'
