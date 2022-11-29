@@ -31,7 +31,14 @@ def p_varias_instrucciones(p):
                             | instruccion varias_instrucciones'''
 
 def p_expression_result(p):
-    '''instruct_expression : RETURN valor'''
+    '''instruct_expression : RETURN valor
+                            | RETURN resultado'''
+
+
+def p_instrucciones(p):
+    '''instruccion : llamada_func
+                     | resultado_inc_dec
+                     | expression'''
 
 def p_impresion(p):
     'instruccion : print I_PARENTESIS valores D_PARENTESIS'
@@ -44,9 +51,6 @@ def p_declaracion(p):  #puede reconocer a=20
 def p_asignacion(p):
     '''instruccion : ID asignacion valor
           | ID asignacion instruccion'''
-
-def p_incremento_decremento(p):
-    'instruccion : ID operador_matematico'
 
 def p_funcion(p):
     'funcion : FUNC ID cuerpo_fun'
@@ -62,6 +66,13 @@ def p_parametros(p):
     '''parametros : atributo
                   | atributo COMA parametros
                   | '''
+
+def p_llamada_func(p):
+    'llamada_func : ID I_PARENTESIS llamada_params D_PARENTESIS'
+
+def p_llamada_params(p):
+    '''llamada_params : expression
+                      | expression COMA llamada_params'''
 
 #Estructuras de Control
 
@@ -199,6 +210,18 @@ def p_condicion(p):
 
 def p_iteracion_for(p):
     'iteracion_for : ID'
+
+def p_expression_term(p):
+    '''expression : valores
+                  | resultado
+                  | llamada_func
+                  | I_PARENTESIS resultado D_PARENTESIS'''
+
+def p_expression_operation(p):
+    'resultado : expression operacion_binaria expression'
+
+def p_incremento_decremento(p):
+    'resultado_inc_dec : ID operador_matematico'
 
 def p_multiples_valores(p):
     '''valores : valor
