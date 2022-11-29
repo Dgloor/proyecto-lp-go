@@ -79,21 +79,21 @@ Rule 50    instruccion -> array_length_con_valores_int
 Rule 51    instruccion -> array_length_con_valores_double
 Rule 52    instruccion -> array_length_con_valores_string
 Rule 53    instruccion -> array_length_con_valores_boolean
-Rule 54    array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE
+Rule 54    array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE
 Rule 55    array_double -> I_CORCHETE D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-Rule 56    array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE
+Rule 56    array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
 Rule 57    array_boolean -> I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-Rule 58    array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE
+Rule 58    array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE
 Rule 59    array_length_double -> I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-Rule 60    array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE
+Rule 60    array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
 Rule 61    array_length_boolean -> I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-Rule 62    array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+Rule 62    array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
 Rule 63    array_con_valores_double -> I_CORCHETE D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-Rule 64    array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+Rule 64    array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
 Rule 65    array_con_valores_boolean -> I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
-Rule 66    array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+Rule 66    array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
 Rule 67    array_length_con_valores_double -> I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-Rule 68    array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+Rule 68    array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
 Rule 69    array_length_con_valores_boolean -> I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
 Rule 70    instruccion -> MAP I_CORCHETE type D_CORCHETE type I_LLAVE D_LLAVE
 Rule 71    instruccion -> MAKE I_PARENTESIS MAP I_CORCHETE type D_CORCHETE type D_PARENTESIS
@@ -211,8 +211,8 @@ IF                   : 32
 IGUAL                : 126
 IMPORT               : 
 INCREMENTO           : 111
-INT                  : 54 58 58 59 60 61 62 66 66 67 68 69 136
-INTEGER              : 108
+INT                  : 58 59 60 61 66 67 68 69 136
+INTEGER              : 54 58 62 66 108
 INTERFACE            : 
 I_CORCHETE           : 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72
 I_LLAVE              : 5 6 7 8 32 33 34 35 36 37 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 72 73 78 79
@@ -237,8 +237,8 @@ RANGE                : 35 37
 RESTA                : 121
 RETURN               : 11 12
 SELECT               : 
-STRING               : 56 60 64 68 138
-STRINGTYPE           : 107
+STRING               : 138
+STRINGTYPE           : 56 60 64 68 107
 STRUCT               : 73
 SWITCH               : 
 TYPE                 : 73
@@ -355,21 +355,21 @@ state 0
     (103) print -> . PRINTLN
     (104) print -> . PRINTF
     (105) print -> . PRINT
-    (54) array_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE
+    (54) array_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (55) array_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (56) array_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE
+    (56) array_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (57) array_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE
+    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (59) array_length_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE
+    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (61) array_length_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (63) array_con_valores_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (65) array_con_valores_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
-    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (67) array_length_con_valores_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (69) array_length_con_valores_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
     (78) init_struct -> . VAR ID ID ASIGNACION ID I_LLAVE valores D_LLAVE
     (79) init_struct -> . ID DECLARACION_ASIGNACION ID I_LLAVE valores D_LLAVE
@@ -403,10 +403,10 @@ state 0
     PRINTF          shift and go to state 41
     PRINT           shift and go to state 42
     I_CORCHETE      shift and go to state 34
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
 
     go                             shift and go to state 1
     instruccion                    shift and go to state 2
@@ -435,11 +435,11 @@ state 0
     array_length_con_valores_boolean shift and go to state 32
     init_struct                    shift and go to state 37
     resultado                      shift and go to state 39
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 1
 
@@ -507,21 +507,21 @@ state 3
     (103) print -> . PRINTLN
     (104) print -> . PRINTF
     (105) print -> . PRINT
-    (54) array_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE
+    (54) array_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (55) array_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (56) array_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE
+    (56) array_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (57) array_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE
+    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (59) array_length_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE
+    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (61) array_length_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (63) array_con_valores_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (65) array_con_valores_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
-    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (67) array_length_con_valores_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (69) array_length_con_valores_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
     (78) init_struct -> . VAR ID ID ASIGNACION ID I_LLAVE valores D_LLAVE
     (79) init_struct -> . ID DECLARACION_ASIGNACION ID I_LLAVE valores D_LLAVE
@@ -556,10 +556,10 @@ state 3
     PRINTF          shift and go to state 41
     PRINT           shift and go to state 42
     I_CORCHETE      shift and go to state 34
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
 
     funcion                        shift and go to state 3
     go                             shift and go to state 52
@@ -588,11 +588,11 @@ state 3
     array_length_con_valores_boolean shift and go to state 32
     init_struct                    shift and go to state 37
     resultado                      shift and go to state 39
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 4
 
@@ -796,21 +796,21 @@ state 8
 
     I_PARENTESIS    shift and go to state 8
     ID              shift and go to state 69
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
 
     resultado                      shift and go to state 66
     expression                     shift and go to state 67
     valores                        shift and go to state 9
     llamada_func                   shift and go to state 68
     valor                          shift and go to state 12
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 9
 
@@ -1031,19 +1031,19 @@ state 13
     (140) valor_variable -> . ID
 
     I_PARENTESIS    shift and go to state 87
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
     ID              shift and go to state 88
 
     condicion                      shift and go to state 85
     valor                          shift and go to state 86
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 14
 
@@ -1070,19 +1070,19 @@ state 15
     (140) valor_variable -> . ID
 
     I_PARENTESIS    shift and go to state 87
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
     ID              shift and go to state 88
 
     condicion                      shift and go to state 90
     valor                          shift and go to state 86
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 16
 
@@ -1134,21 +1134,21 @@ state 16
     (103) print -> . PRINTLN
     (104) print -> . PRINTF
     (105) print -> . PRINT
-    (54) array_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE
+    (54) array_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (55) array_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (56) array_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE
+    (56) array_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (57) array_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE
+    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (59) array_length_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE
+    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (61) array_length_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (63) array_con_valores_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (65) array_con_valores_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
-    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (67) array_length_con_valores_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (69) array_length_con_valores_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
     (78) init_struct -> . VAR ID ID ASIGNACION ID I_LLAVE valores D_LLAVE
     (79) init_struct -> . ID DECLARACION_ASIGNACION ID I_LLAVE valores D_LLAVE
@@ -1181,10 +1181,10 @@ state 16
     PRINTF          shift and go to state 41
     PRINT           shift and go to state 42
     I_CORCHETE      shift and go to state 34
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
 
     instruccion                    shift and go to state 92
     valor                          shift and go to state 12
@@ -1211,11 +1211,11 @@ state 16
     array_length_con_valores_boolean shift and go to state 32
     init_struct                    shift and go to state 37
     resultado                      shift and go to state 39
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 17
 
@@ -1691,21 +1691,21 @@ state 33
 
 state 34
 
-    (54) array_int -> I_CORCHETE . D_CORCHETE INT I_LLAVE D_LLAVE
+    (54) array_int -> I_CORCHETE . D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (55) array_double -> I_CORCHETE . D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (56) array_string -> I_CORCHETE . D_CORCHETE STRING I_LLAVE D_LLAVE
+    (56) array_string -> I_CORCHETE . D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (57) array_boolean -> I_CORCHETE . D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (58) array_length_int -> I_CORCHETE . INT D_CORCHETE INT I_LLAVE D_LLAVE
+    (58) array_length_int -> I_CORCHETE . INT D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (59) array_length_double -> I_CORCHETE . INT D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (60) array_length_string -> I_CORCHETE . INT D_CORCHETE STRING I_LLAVE D_LLAVE
+    (60) array_length_string -> I_CORCHETE . INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (61) array_length_boolean -> I_CORCHETE . INT D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (62) array_con_valores_int -> I_CORCHETE . D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (62) array_con_valores_int -> I_CORCHETE . D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (63) array_con_valores_double -> I_CORCHETE . D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (64) array_con_valores_string -> I_CORCHETE . D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (64) array_con_valores_string -> I_CORCHETE . D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (65) array_con_valores_boolean -> I_CORCHETE . D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
-    (66) array_length_con_valores_int -> I_CORCHETE . INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (66) array_length_con_valores_int -> I_CORCHETE . INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (67) array_length_con_valores_double -> I_CORCHETE . INT D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (68) array_length_con_valores_string -> I_CORCHETE . INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (68) array_length_con_valores_string -> I_CORCHETE . INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (69) array_length_con_valores_boolean -> I_CORCHETE . INT D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
 
     D_CORCHETE      shift and go to state 94
@@ -1827,50 +1827,6 @@ state 42
 
 state 43
 
-    (136) valor_int -> INT .
-
-    COMA            reduce using rule 136 (valor_int -> INT .)
-    ADICION         reduce using rule 136 (valor_int -> INT .)
-    RESTA           reduce using rule 136 (valor_int -> INT .)
-    MULTIPLICACION  reduce using rule 136 (valor_int -> INT .)
-    DIVISION        reduce using rule 136 (valor_int -> INT .)
-    MODULO          reduce using rule 136 (valor_int -> INT .)
-    MENOR_IGUAL     reduce using rule 136 (valor_int -> INT .)
-    IGUAL           reduce using rule 136 (valor_int -> INT .)
-    DIFERENTE       reduce using rule 136 (valor_int -> INT .)
-    MAYOR           reduce using rule 136 (valor_int -> INT .)
-    MAYOR_IGUAL     reduce using rule 136 (valor_int -> INT .)
-    MENOR           reduce using rule 136 (valor_int -> INT .)
-    $end            reduce using rule 136 (valor_int -> INT .)
-    I_LLAVE         reduce using rule 136 (valor_int -> INT .)
-    PUNTO_COMA      reduce using rule 136 (valor_int -> INT .)
-    D_PARENTESIS    reduce using rule 136 (valor_int -> INT .)
-    D_LLAVE         reduce using rule 136 (valor_int -> INT .)
-    VAR             reduce using rule 136 (valor_int -> INT .)
-    ID              reduce using rule 136 (valor_int -> INT .)
-    IF              reduce using rule 136 (valor_int -> INT .)
-    ELSE            reduce using rule 136 (valor_int -> INT .)
-    ELSEIF          reduce using rule 136 (valor_int -> INT .)
-    FOR             reduce using rule 136 (valor_int -> INT .)
-    MAP             reduce using rule 136 (valor_int -> INT .)
-    MAKE            reduce using rule 136 (valor_int -> INT .)
-    TYPE            reduce using rule 136 (valor_int -> INT .)
-    I_PARENTESIS    reduce using rule 136 (valor_int -> INT .)
-    PRINTLN         reduce using rule 136 (valor_int -> INT .)
-    PRINTF          reduce using rule 136 (valor_int -> INT .)
-    PRINT           reduce using rule 136 (valor_int -> INT .)
-    I_CORCHETE      reduce using rule 136 (valor_int -> INT .)
-    INT             reduce using rule 136 (valor_int -> INT .)
-    DOUBLE          reduce using rule 136 (valor_int -> INT .)
-    STRING          reduce using rule 136 (valor_int -> INT .)
-    BOOLEAN         reduce using rule 136 (valor_int -> INT .)
-    RETURN          reduce using rule 136 (valor_int -> INT .)
-    FUNC            reduce using rule 136 (valor_int -> INT .)
-    DOS_PUNTOS      reduce using rule 136 (valor_int -> INT .)
-
-
-state 44
-
     (137) valor_double -> DOUBLE .
 
     COMA            reduce using rule 137 (valor_double -> DOUBLE .)
@@ -1913,51 +1869,7 @@ state 44
     DOS_PUNTOS      reduce using rule 137 (valor_double -> DOUBLE .)
 
 
-state 45
-
-    (138) valor_string -> STRING .
-
-    COMA            reduce using rule 138 (valor_string -> STRING .)
-    ADICION         reduce using rule 138 (valor_string -> STRING .)
-    RESTA           reduce using rule 138 (valor_string -> STRING .)
-    MULTIPLICACION  reduce using rule 138 (valor_string -> STRING .)
-    DIVISION        reduce using rule 138 (valor_string -> STRING .)
-    MODULO          reduce using rule 138 (valor_string -> STRING .)
-    MENOR_IGUAL     reduce using rule 138 (valor_string -> STRING .)
-    IGUAL           reduce using rule 138 (valor_string -> STRING .)
-    DIFERENTE       reduce using rule 138 (valor_string -> STRING .)
-    MAYOR           reduce using rule 138 (valor_string -> STRING .)
-    MAYOR_IGUAL     reduce using rule 138 (valor_string -> STRING .)
-    MENOR           reduce using rule 138 (valor_string -> STRING .)
-    $end            reduce using rule 138 (valor_string -> STRING .)
-    I_LLAVE         reduce using rule 138 (valor_string -> STRING .)
-    PUNTO_COMA      reduce using rule 138 (valor_string -> STRING .)
-    D_PARENTESIS    reduce using rule 138 (valor_string -> STRING .)
-    D_LLAVE         reduce using rule 138 (valor_string -> STRING .)
-    VAR             reduce using rule 138 (valor_string -> STRING .)
-    ID              reduce using rule 138 (valor_string -> STRING .)
-    IF              reduce using rule 138 (valor_string -> STRING .)
-    ELSE            reduce using rule 138 (valor_string -> STRING .)
-    ELSEIF          reduce using rule 138 (valor_string -> STRING .)
-    FOR             reduce using rule 138 (valor_string -> STRING .)
-    MAP             reduce using rule 138 (valor_string -> STRING .)
-    MAKE            reduce using rule 138 (valor_string -> STRING .)
-    TYPE            reduce using rule 138 (valor_string -> STRING .)
-    I_PARENTESIS    reduce using rule 138 (valor_string -> STRING .)
-    PRINTLN         reduce using rule 138 (valor_string -> STRING .)
-    PRINTF          reduce using rule 138 (valor_string -> STRING .)
-    PRINT           reduce using rule 138 (valor_string -> STRING .)
-    I_CORCHETE      reduce using rule 138 (valor_string -> STRING .)
-    INT             reduce using rule 138 (valor_string -> STRING .)
-    DOUBLE          reduce using rule 138 (valor_string -> STRING .)
-    STRING          reduce using rule 138 (valor_string -> STRING .)
-    BOOLEAN         reduce using rule 138 (valor_string -> STRING .)
-    RETURN          reduce using rule 138 (valor_string -> STRING .)
-    FUNC            reduce using rule 138 (valor_string -> STRING .)
-    DOS_PUNTOS      reduce using rule 138 (valor_string -> STRING .)
-
-
-state 46
+state 44
 
     (139) valor_boolean -> BOOLEAN .
 
@@ -2001,7 +1913,51 @@ state 46
     DOS_PUNTOS      reduce using rule 139 (valor_boolean -> BOOLEAN .)
 
 
-state 47
+state 45
+
+    (136) valor_int -> INT .
+
+    COMA            reduce using rule 136 (valor_int -> INT .)
+    ADICION         reduce using rule 136 (valor_int -> INT .)
+    RESTA           reduce using rule 136 (valor_int -> INT .)
+    MULTIPLICACION  reduce using rule 136 (valor_int -> INT .)
+    DIVISION        reduce using rule 136 (valor_int -> INT .)
+    MODULO          reduce using rule 136 (valor_int -> INT .)
+    MENOR_IGUAL     reduce using rule 136 (valor_int -> INT .)
+    IGUAL           reduce using rule 136 (valor_int -> INT .)
+    DIFERENTE       reduce using rule 136 (valor_int -> INT .)
+    MAYOR           reduce using rule 136 (valor_int -> INT .)
+    MAYOR_IGUAL     reduce using rule 136 (valor_int -> INT .)
+    MENOR           reduce using rule 136 (valor_int -> INT .)
+    $end            reduce using rule 136 (valor_int -> INT .)
+    I_LLAVE         reduce using rule 136 (valor_int -> INT .)
+    PUNTO_COMA      reduce using rule 136 (valor_int -> INT .)
+    D_PARENTESIS    reduce using rule 136 (valor_int -> INT .)
+    D_LLAVE         reduce using rule 136 (valor_int -> INT .)
+    VAR             reduce using rule 136 (valor_int -> INT .)
+    ID              reduce using rule 136 (valor_int -> INT .)
+    IF              reduce using rule 136 (valor_int -> INT .)
+    ELSE            reduce using rule 136 (valor_int -> INT .)
+    ELSEIF          reduce using rule 136 (valor_int -> INT .)
+    FOR             reduce using rule 136 (valor_int -> INT .)
+    MAP             reduce using rule 136 (valor_int -> INT .)
+    MAKE            reduce using rule 136 (valor_int -> INT .)
+    TYPE            reduce using rule 136 (valor_int -> INT .)
+    I_PARENTESIS    reduce using rule 136 (valor_int -> INT .)
+    PRINTLN         reduce using rule 136 (valor_int -> INT .)
+    PRINTF          reduce using rule 136 (valor_int -> INT .)
+    PRINT           reduce using rule 136 (valor_int -> INT .)
+    I_CORCHETE      reduce using rule 136 (valor_int -> INT .)
+    INT             reduce using rule 136 (valor_int -> INT .)
+    DOUBLE          reduce using rule 136 (valor_int -> INT .)
+    STRING          reduce using rule 136 (valor_int -> INT .)
+    BOOLEAN         reduce using rule 136 (valor_int -> INT .)
+    RETURN          reduce using rule 136 (valor_int -> INT .)
+    FUNC            reduce using rule 136 (valor_int -> INT .)
+    DOS_PUNTOS      reduce using rule 136 (valor_int -> INT .)
+
+
+state 46
 
     (131) valor -> valor_int .
 
@@ -2045,7 +2001,7 @@ state 47
     DOS_PUNTOS      reduce using rule 131 (valor -> valor_int .)
 
 
-state 48
+state 47
 
     (132) valor -> valor_double .
 
@@ -2089,7 +2045,7 @@ state 48
     DOS_PUNTOS      reduce using rule 132 (valor -> valor_double .)
 
 
-state 49
+state 48
 
     (133) valor -> valor_string .
 
@@ -2133,7 +2089,7 @@ state 49
     DOS_PUNTOS      reduce using rule 133 (valor -> valor_string .)
 
 
-state 50
+state 49
 
     (134) valor -> valor_boolean .
 
@@ -2177,7 +2133,7 @@ state 50
     DOS_PUNTOS      reduce using rule 134 (valor -> valor_boolean .)
 
 
-state 51
+state 50
 
     (135) valor -> valor_variable .
 
@@ -2221,6 +2177,50 @@ state 51
     DOS_PUNTOS      reduce using rule 135 (valor -> valor_variable .)
 
 
+state 51
+
+    (138) valor_string -> STRING .
+
+    COMA            reduce using rule 138 (valor_string -> STRING .)
+    ADICION         reduce using rule 138 (valor_string -> STRING .)
+    RESTA           reduce using rule 138 (valor_string -> STRING .)
+    MULTIPLICACION  reduce using rule 138 (valor_string -> STRING .)
+    DIVISION        reduce using rule 138 (valor_string -> STRING .)
+    MODULO          reduce using rule 138 (valor_string -> STRING .)
+    MENOR_IGUAL     reduce using rule 138 (valor_string -> STRING .)
+    IGUAL           reduce using rule 138 (valor_string -> STRING .)
+    DIFERENTE       reduce using rule 138 (valor_string -> STRING .)
+    MAYOR           reduce using rule 138 (valor_string -> STRING .)
+    MAYOR_IGUAL     reduce using rule 138 (valor_string -> STRING .)
+    MENOR           reduce using rule 138 (valor_string -> STRING .)
+    $end            reduce using rule 138 (valor_string -> STRING .)
+    I_LLAVE         reduce using rule 138 (valor_string -> STRING .)
+    PUNTO_COMA      reduce using rule 138 (valor_string -> STRING .)
+    D_PARENTESIS    reduce using rule 138 (valor_string -> STRING .)
+    D_LLAVE         reduce using rule 138 (valor_string -> STRING .)
+    VAR             reduce using rule 138 (valor_string -> STRING .)
+    ID              reduce using rule 138 (valor_string -> STRING .)
+    IF              reduce using rule 138 (valor_string -> STRING .)
+    ELSE            reduce using rule 138 (valor_string -> STRING .)
+    ELSEIF          reduce using rule 138 (valor_string -> STRING .)
+    FOR             reduce using rule 138 (valor_string -> STRING .)
+    MAP             reduce using rule 138 (valor_string -> STRING .)
+    MAKE            reduce using rule 138 (valor_string -> STRING .)
+    TYPE            reduce using rule 138 (valor_string -> STRING .)
+    I_PARENTESIS    reduce using rule 138 (valor_string -> STRING .)
+    PRINTLN         reduce using rule 138 (valor_string -> STRING .)
+    PRINTF          reduce using rule 138 (valor_string -> STRING .)
+    PRINT           reduce using rule 138 (valor_string -> STRING .)
+    I_CORCHETE      reduce using rule 138 (valor_string -> STRING .)
+    INT             reduce using rule 138 (valor_string -> STRING .)
+    DOUBLE          reduce using rule 138 (valor_string -> STRING .)
+    STRING          reduce using rule 138 (valor_string -> STRING .)
+    BOOLEAN         reduce using rule 138 (valor_string -> STRING .)
+    RETURN          reduce using rule 138 (valor_string -> STRING .)
+    FUNC            reduce using rule 138 (valor_string -> STRING .)
+    DOS_PUNTOS      reduce using rule 138 (valor_string -> STRING .)
+
+
 state 52
 
     (2) go -> funcion go .
@@ -2253,21 +2253,21 @@ state 53
 
     I_PARENTESIS    shift and go to state 8
     ID              shift and go to state 69
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
 
     expression                     shift and go to state 99
     valores                        shift and go to state 9
     resultado                      shift and go to state 39
     llamada_func                   shift and go to state 68
     valor                          shift and go to state 12
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 54
 
@@ -2418,19 +2418,19 @@ state 65
     (139) valor_boolean -> . BOOLEAN
     (140) valor_variable -> . ID
 
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
     ID              shift and go to state 88
 
     valores                        shift and go to state 100
     valor                          shift and go to state 12
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 66
 
@@ -2650,21 +2650,21 @@ state 71
     (103) print -> . PRINTLN
     (104) print -> . PRINTF
     (105) print -> . PRINT
-    (54) array_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE
+    (54) array_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (55) array_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (56) array_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE
+    (56) array_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (57) array_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE
+    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (59) array_length_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE
+    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (61) array_length_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (63) array_con_valores_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (65) array_con_valores_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
-    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (67) array_length_con_valores_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (69) array_length_con_valores_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
     (78) init_struct -> . VAR ID ID ASIGNACION ID I_LLAVE valores D_LLAVE
     (79) init_struct -> . ID DECLARACION_ASIGNACION ID I_LLAVE valores D_LLAVE
@@ -2681,10 +2681,10 @@ state 71
     MAP             shift and go to state 33
     MAKE            shift and go to state 35
     TYPE            shift and go to state 36
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
     I_PARENTESIS    shift and go to state 8
     PRINTLN         shift and go to state 40
     PRINTF          shift and go to state 41
@@ -2693,11 +2693,11 @@ state 71
 
     valor                          shift and go to state 111
     instruccion                    shift and go to state 112
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
     llamada_func                   shift and go to state 4
     resultado_inc_dec              shift and go to state 5
     expression                     shift and go to state 6
@@ -2749,10 +2749,10 @@ state 72
 
     I_PARENTESIS    shift and go to state 8
     ID              shift and go to state 69
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
 
     llamada_params                 shift and go to state 113
     expression                     shift and go to state 114
@@ -2760,11 +2760,11 @@ state 72
     resultado                      shift and go to state 39
     llamada_func                   shift and go to state 68
     valor                          shift and go to state 12
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 73
 
@@ -3044,19 +3044,19 @@ state 83
     (139) valor_boolean -> . BOOLEAN
     (140) valor_variable -> . ID
 
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
     ID              shift and go to state 88
 
     valor                          shift and go to state 12
     valores                        shift and go to state 116
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 84
 
@@ -3073,18 +3073,18 @@ state 84
     (139) valor_boolean -> . BOOLEAN
     (140) valor_variable -> . ID
 
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
     ID              shift and go to state 88
 
     valor                          shift and go to state 117
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 85
 
@@ -3139,18 +3139,18 @@ state 87
     (139) valor_boolean -> . BOOLEAN
     (140) valor_variable -> . ID
 
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
     ID              shift and go to state 88
 
     valor                          shift and go to state 119
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 88
 
@@ -3249,21 +3249,21 @@ state 89
     (103) print -> . PRINTLN
     (104) print -> . PRINTF
     (105) print -> . PRINT
-    (54) array_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE
+    (54) array_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (55) array_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (56) array_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE
+    (56) array_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (57) array_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE
+    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (59) array_length_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE
+    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (61) array_length_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (63) array_con_valores_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (65) array_con_valores_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
-    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (67) array_length_con_valores_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (69) array_length_con_valores_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
     (78) init_struct -> . VAR ID ID ASIGNACION ID I_LLAVE valores D_LLAVE
     (79) init_struct -> . ID DECLARACION_ASIGNACION ID I_LLAVE valores D_LLAVE
@@ -3297,10 +3297,10 @@ state 89
     PRINTF          shift and go to state 41
     PRINT           shift and go to state 42
     I_CORCHETE      shift and go to state 34
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
 
     body                           shift and go to state 121
     instruccion                    shift and go to state 122
@@ -3328,11 +3328,11 @@ state 89
     array_length_con_valores_boolean shift and go to state 32
     init_struct                    shift and go to state 37
     resultado                      shift and go to state 39
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 90
 
@@ -3418,30 +3418,30 @@ state 93
 
 state 94
 
-    (54) array_int -> I_CORCHETE D_CORCHETE . INT I_LLAVE D_LLAVE
+    (54) array_int -> I_CORCHETE D_CORCHETE . INTEGER I_LLAVE D_LLAVE
     (55) array_double -> I_CORCHETE D_CORCHETE . DOUBLE I_LLAVE D_LLAVE
-    (56) array_string -> I_CORCHETE D_CORCHETE . STRING I_LLAVE D_LLAVE
+    (56) array_string -> I_CORCHETE D_CORCHETE . STRINGTYPE I_LLAVE D_LLAVE
     (57) array_boolean -> I_CORCHETE D_CORCHETE . BOOLEAN I_LLAVE D_LLAVE
-    (62) array_con_valores_int -> I_CORCHETE D_CORCHETE . INT I_LLAVE valores_int D_LLAVE
+    (62) array_con_valores_int -> I_CORCHETE D_CORCHETE . INTEGER I_LLAVE valores_int D_LLAVE
     (63) array_con_valores_double -> I_CORCHETE D_CORCHETE . DOUBLE I_LLAVE valores_double D_LLAVE
-    (64) array_con_valores_string -> I_CORCHETE D_CORCHETE . STRING I_LLAVE valores_string D_LLAVE
+    (64) array_con_valores_string -> I_CORCHETE D_CORCHETE . STRINGTYPE I_LLAVE valores_string D_LLAVE
     (65) array_con_valores_boolean -> I_CORCHETE D_CORCHETE . BOOLEAN I_LLAVE valores_boolean D_LLAVE
 
-    INT             shift and go to state 128
+    INTEGER         shift and go to state 128
     DOUBLE          shift and go to state 129
-    STRING          shift and go to state 130
+    STRINGTYPE      shift and go to state 130
     BOOLEAN         shift and go to state 131
 
 
 state 95
 
-    (58) array_length_int -> I_CORCHETE INT . D_CORCHETE INT I_LLAVE D_LLAVE
+    (58) array_length_int -> I_CORCHETE INT . D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (59) array_length_double -> I_CORCHETE INT . D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (60) array_length_string -> I_CORCHETE INT . D_CORCHETE STRING I_LLAVE D_LLAVE
+    (60) array_length_string -> I_CORCHETE INT . D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (61) array_length_boolean -> I_CORCHETE INT . D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (66) array_length_con_valores_int -> I_CORCHETE INT . D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (66) array_length_con_valores_int -> I_CORCHETE INT . D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (67) array_length_con_valores_double -> I_CORCHETE INT . D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (68) array_length_con_valores_string -> I_CORCHETE INT . D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (68) array_length_con_valores_string -> I_CORCHETE INT . D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (69) array_length_con_valores_boolean -> I_CORCHETE INT . D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
 
     D_CORCHETE      shift and go to state 132
@@ -3674,21 +3674,21 @@ state 104
     (103) print -> . PRINTLN
     (104) print -> . PRINTF
     (105) print -> . PRINT
-    (54) array_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE
+    (54) array_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (55) array_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (56) array_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE
+    (56) array_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (57) array_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE
+    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (59) array_length_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE
+    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (61) array_length_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (63) array_con_valores_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (65) array_con_valores_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
-    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (67) array_length_con_valores_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (69) array_length_con_valores_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
     (78) init_struct -> . VAR ID ID ASIGNACION ID I_LLAVE valores D_LLAVE
     (79) init_struct -> . ID DECLARACION_ASIGNACION ID I_LLAVE valores D_LLAVE
@@ -3705,10 +3705,10 @@ state 104
     MAP             shift and go to state 33
     MAKE            shift and go to state 35
     TYPE            shift and go to state 36
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
     I_PARENTESIS    shift and go to state 8
     PRINTLN         shift and go to state 40
     PRINTF          shift and go to state 41
@@ -3717,11 +3717,11 @@ state 104
 
     valor                          shift and go to state 141
     instruccion                    shift and go to state 142
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
     llamada_func                   shift and go to state 4
     resultado_inc_dec              shift and go to state 5
     expression                     shift and go to state 6
@@ -4341,21 +4341,21 @@ state 118
     (103) print -> . PRINTLN
     (104) print -> . PRINTF
     (105) print -> . PRINT
-    (54) array_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE
+    (54) array_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (55) array_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (56) array_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE
+    (56) array_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (57) array_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE
+    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (59) array_length_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE
+    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (61) array_length_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (63) array_con_valores_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (65) array_con_valores_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
-    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (67) array_length_con_valores_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (69) array_length_con_valores_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
     (78) init_struct -> . VAR ID ID ASIGNACION ID I_LLAVE valores D_LLAVE
     (79) init_struct -> . ID DECLARACION_ASIGNACION ID I_LLAVE valores D_LLAVE
@@ -4389,10 +4389,10 @@ state 118
     PRINTF          shift and go to state 41
     PRINT           shift and go to state 42
     I_CORCHETE      shift and go to state 34
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
 
     body                           shift and go to state 146
     instruccion                    shift and go to state 122
@@ -4420,11 +4420,11 @@ state 118
     array_length_con_valores_boolean shift and go to state 32
     init_struct                    shift and go to state 37
     resultado                      shift and go to state 39
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 119
 
@@ -4512,21 +4512,21 @@ state 120
     (103) print -> . PRINTLN
     (104) print -> . PRINTF
     (105) print -> . PRINT
-    (54) array_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE
+    (54) array_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (55) array_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (56) array_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE
+    (56) array_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (57) array_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE
+    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (59) array_length_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE
+    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (61) array_length_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (63) array_con_valores_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (65) array_con_valores_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
-    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (67) array_length_con_valores_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (69) array_length_con_valores_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
     (78) init_struct -> . VAR ID ID ASIGNACION ID I_LLAVE valores D_LLAVE
     (79) init_struct -> . ID DECLARACION_ASIGNACION ID I_LLAVE valores D_LLAVE
@@ -4561,10 +4561,10 @@ state 120
     PRINTF          shift and go to state 41
     PRINT           shift and go to state 42
     I_CORCHETE      shift and go to state 34
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
 
     instruct_expression            shift and go to state 148
     varias_instrucciones           shift and go to state 150
@@ -4593,11 +4593,11 @@ state 120
     array_length_con_valores_string shift and go to state 31
     array_length_con_valores_boolean shift and go to state 32
     init_struct                    shift and go to state 37
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 121
 
@@ -4686,21 +4686,21 @@ state 123
     (103) print -> . PRINTLN
     (104) print -> . PRINTF
     (105) print -> . PRINT
-    (54) array_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE
+    (54) array_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (55) array_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (56) array_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE
+    (56) array_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (57) array_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE
+    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (59) array_length_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE
+    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (61) array_length_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (63) array_con_valores_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (65) array_con_valores_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
-    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (67) array_length_con_valores_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (69) array_length_con_valores_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
     (78) init_struct -> . VAR ID ID ASIGNACION ID I_LLAVE valores D_LLAVE
     (79) init_struct -> . ID DECLARACION_ASIGNACION ID I_LLAVE valores D_LLAVE
@@ -4734,10 +4734,10 @@ state 123
     PRINTF          shift and go to state 41
     PRINT           shift and go to state 42
     I_CORCHETE      shift and go to state 34
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
 
     body                           shift and go to state 154
     instruccion                    shift and go to state 122
@@ -4765,11 +4765,11 @@ state 123
     array_length_con_valores_boolean shift and go to state 32
     init_struct                    shift and go to state 37
     resultado                      shift and go to state 39
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 124
 
@@ -4823,18 +4823,18 @@ state 126
     (139) valor_boolean -> . BOOLEAN
     (140) valor_variable -> . ID
 
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
     ID              shift and go to state 88
 
     valor                          shift and go to state 157
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 127
 
@@ -4846,8 +4846,8 @@ state 127
 
 state 128
 
-    (54) array_int -> I_CORCHETE D_CORCHETE INT . I_LLAVE D_LLAVE
-    (62) array_con_valores_int -> I_CORCHETE D_CORCHETE INT . I_LLAVE valores_int D_LLAVE
+    (54) array_int -> I_CORCHETE D_CORCHETE INTEGER . I_LLAVE D_LLAVE
+    (62) array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER . I_LLAVE valores_int D_LLAVE
 
     I_LLAVE         shift and go to state 159
 
@@ -4862,8 +4862,8 @@ state 129
 
 state 130
 
-    (56) array_string -> I_CORCHETE D_CORCHETE STRING . I_LLAVE D_LLAVE
-    (64) array_con_valores_string -> I_CORCHETE D_CORCHETE STRING . I_LLAVE valores_string D_LLAVE
+    (56) array_string -> I_CORCHETE D_CORCHETE STRINGTYPE . I_LLAVE D_LLAVE
+    (64) array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE . I_LLAVE valores_string D_LLAVE
 
     I_LLAVE         shift and go to state 161
 
@@ -4878,18 +4878,18 @@ state 131
 
 state 132
 
-    (58) array_length_int -> I_CORCHETE INT D_CORCHETE . INT I_LLAVE D_LLAVE
+    (58) array_length_int -> I_CORCHETE INT D_CORCHETE . INTEGER I_LLAVE D_LLAVE
     (59) array_length_double -> I_CORCHETE INT D_CORCHETE . DOUBLE I_LLAVE D_LLAVE
-    (60) array_length_string -> I_CORCHETE INT D_CORCHETE . STRING I_LLAVE D_LLAVE
+    (60) array_length_string -> I_CORCHETE INT D_CORCHETE . STRINGTYPE I_LLAVE D_LLAVE
     (61) array_length_boolean -> I_CORCHETE INT D_CORCHETE . BOOLEAN I_LLAVE D_LLAVE
-    (66) array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE . INT I_LLAVE valores_int D_LLAVE
+    (66) array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE . INTEGER I_LLAVE valores_int D_LLAVE
     (67) array_length_con_valores_double -> I_CORCHETE INT D_CORCHETE . DOUBLE I_LLAVE valores_double D_LLAVE
-    (68) array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE . STRING I_LLAVE valores_string D_LLAVE
+    (68) array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE . STRINGTYPE I_LLAVE valores_string D_LLAVE
     (69) array_length_con_valores_boolean -> I_CORCHETE INT D_CORCHETE . BOOLEAN I_LLAVE valores_boolean D_LLAVE
 
-    INT             shift and go to state 163
+    INTEGER         shift and go to state 163
     DOUBLE          shift and go to state 164
-    STRING          shift and go to state 165
+    STRINGTYPE      shift and go to state 165
     BOOLEAN         shift and go to state 166
 
 
@@ -4986,21 +4986,21 @@ state 136
     (103) print -> . PRINTLN
     (104) print -> . PRINTF
     (105) print -> . PRINT
-    (54) array_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE
+    (54) array_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (55) array_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (56) array_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE
+    (56) array_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (57) array_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE
+    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (59) array_length_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE
+    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (61) array_length_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (63) array_con_valores_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (65) array_con_valores_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
-    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (67) array_length_con_valores_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (69) array_length_con_valores_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
     (78) init_struct -> . VAR ID ID ASIGNACION ID I_LLAVE valores D_LLAVE
     (79) init_struct -> . ID DECLARACION_ASIGNACION ID I_LLAVE valores D_LLAVE
@@ -5034,10 +5034,10 @@ state 136
     PRINTF          shift and go to state 41
     PRINT           shift and go to state 42
     I_CORCHETE      shift and go to state 34
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
 
     body                           shift and go to state 169
     instruccion                    shift and go to state 122
@@ -5065,11 +5065,11 @@ state 136
     array_length_con_valores_boolean shift and go to state 32
     init_struct                    shift and go to state 37
     resultado                      shift and go to state 39
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 137
 
@@ -5137,18 +5137,18 @@ state 140
     (139) valor_boolean -> . BOOLEAN
     (140) valor_variable -> . ID
 
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
     ID              shift and go to state 88
 
     valor                          shift and go to state 174
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 141
 
@@ -5373,10 +5373,10 @@ state 144
 
     I_PARENTESIS    shift and go to state 8
     ID              shift and go to state 69
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
 
     expression                     shift and go to state 114
     llamada_params                 shift and go to state 175
@@ -5384,11 +5384,11 @@ state 144
     resultado                      shift and go to state 39
     llamada_func                   shift and go to state 68
     valor                          shift and go to state 12
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 145
 
@@ -5407,19 +5407,19 @@ state 145
     (139) valor_boolean -> . BOOLEAN
     (140) valor_variable -> . ID
 
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
     ID              shift and go to state 88
 
     valores                        shift and go to state 176
     valor                          shift and go to state 12
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 146
 
@@ -5505,20 +5505,20 @@ state 151
     (93) valores -> . valor COMA valores
     (29) llamada_func -> . ID I_PARENTESIS llamada_params D_PARENTESIS
 
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
     ID              shift and go to state 183
     I_PARENTESIS    shift and go to state 8
 
     valor                          shift and go to state 181
     resultado                      shift and go to state 182
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
     expression                     shift and go to state 67
     valores                        shift and go to state 9
     llamada_func                   shift and go to state 68
@@ -5574,21 +5574,21 @@ state 152
     (103) print -> . PRINTLN
     (104) print -> . PRINTF
     (105) print -> . PRINT
-    (54) array_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE
+    (54) array_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (55) array_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (56) array_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE
+    (56) array_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (57) array_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE
+    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (59) array_length_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE
+    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (61) array_length_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (63) array_con_valores_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (65) array_con_valores_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
-    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (67) array_length_con_valores_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (69) array_length_con_valores_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
     (78) init_struct -> . VAR ID ID ASIGNACION ID I_LLAVE valores D_LLAVE
     (79) init_struct -> . ID DECLARACION_ASIGNACION ID I_LLAVE valores D_LLAVE
@@ -5623,10 +5623,10 @@ state 152
     PRINTF          shift and go to state 41
     PRINT           shift and go to state 42
     I_CORCHETE      shift and go to state 34
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
 
     instruccion                    shift and go to state 152
     varias_instrucciones           shift and go to state 184
@@ -5654,11 +5654,11 @@ state 152
     array_length_con_valores_boolean shift and go to state 32
     init_struct                    shift and go to state 37
     resultado                      shift and go to state 39
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 153
 
@@ -5761,14 +5761,14 @@ state 158
 
 state 159
 
-    (54) array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE . D_LLAVE
-    (62) array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE . valores_int D_LLAVE
+    (54) array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE . D_LLAVE
+    (62) array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE . valores_int D_LLAVE
     (94) valores_int -> . valor_int
     (95) valores_int -> . valor_int COMA valores_int
     (136) valor_int -> . INT
 
     D_LLAVE         shift and go to state 190
-    INT             shift and go to state 43
+    INT             shift and go to state 45
 
     valores_int                    shift and go to state 191
     valor_int                      shift and go to state 192
@@ -5782,21 +5782,21 @@ state 160
     (137) valor_double -> . DOUBLE
 
     D_LLAVE         shift and go to state 193
-    DOUBLE          shift and go to state 44
+    DOUBLE          shift and go to state 43
 
     valores_double                 shift and go to state 194
     valor_double                   shift and go to state 195
 
 state 161
 
-    (56) array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE . D_LLAVE
-    (64) array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE . valores_string D_LLAVE
+    (56) array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE . D_LLAVE
+    (64) array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE . valores_string D_LLAVE
     (98) valores_string -> . valor_string
     (99) valores_string -> . valor_string COMA valores_string
     (138) valor_string -> . STRING
 
     D_LLAVE         shift and go to state 196
-    STRING          shift and go to state 45
+    STRING          shift and go to state 51
 
     valores_string                 shift and go to state 197
     valor_string                   shift and go to state 198
@@ -5810,15 +5810,15 @@ state 162
     (139) valor_boolean -> . BOOLEAN
 
     D_LLAVE         shift and go to state 199
-    BOOLEAN         shift and go to state 46
+    BOOLEAN         shift and go to state 44
 
     valores_boolean                shift and go to state 200
     valor_boolean                  shift and go to state 201
 
 state 163
 
-    (58) array_length_int -> I_CORCHETE INT D_CORCHETE INT . I_LLAVE D_LLAVE
-    (66) array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT . I_LLAVE valores_int D_LLAVE
+    (58) array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER . I_LLAVE D_LLAVE
+    (66) array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER . I_LLAVE valores_int D_LLAVE
 
     I_LLAVE         shift and go to state 202
 
@@ -5833,8 +5833,8 @@ state 164
 
 state 165
 
-    (60) array_length_string -> I_CORCHETE INT D_CORCHETE STRING . I_LLAVE D_LLAVE
-    (68) array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING . I_LLAVE valores_string D_LLAVE
+    (60) array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE . I_LLAVE D_LLAVE
+    (68) array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE . I_LLAVE valores_string D_LLAVE
 
     I_LLAVE         shift and go to state 204
 
@@ -6265,36 +6265,36 @@ state 189
 
 state 190
 
-    (54) array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE .
+    (54) array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE .
 
-    $end            reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE .)
-    PUNTO_COMA      reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE .)
-    D_LLAVE         reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE .)
-    VAR             reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE .)
-    ID              reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE .)
-    IF              reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE .)
-    ELSE            reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE .)
-    ELSEIF          reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE .)
-    FOR             reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE .)
-    MAP             reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE .)
-    MAKE            reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE .)
-    TYPE            reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE .)
-    I_PARENTESIS    reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE .)
-    PRINTLN         reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE .)
-    PRINTF          reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE .)
-    PRINT           reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE .)
-    I_CORCHETE      reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE .)
-    INT             reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE .)
-    DOUBLE          reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE .)
-    STRING          reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE .)
-    BOOLEAN         reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE .)
-    RETURN          reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE .)
-    FUNC            reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE .)
+    $end            reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    PUNTO_COMA      reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    D_LLAVE         reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    VAR             reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    ID              reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    IF              reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    ELSE            reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    ELSEIF          reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    FOR             reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    MAP             reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    MAKE            reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    TYPE            reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    I_PARENTESIS    reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    PRINTLN         reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    PRINTF          reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    PRINT           reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    I_CORCHETE      reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    INT             reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    DOUBLE          reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    STRING          reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    BOOLEAN         reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    RETURN          reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    FUNC            reduce using rule 54 (array_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
 
 
 state 191
 
-    (62) array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int . D_LLAVE
+    (62) array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int . D_LLAVE
 
     D_LLAVE         shift and go to state 219
 
@@ -6355,36 +6355,36 @@ state 195
 
 state 196
 
-    (56) array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE .
+    (56) array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .
 
-    $end            reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    PUNTO_COMA      reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    D_LLAVE         reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    VAR             reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    ID              reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    IF              reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    ELSE            reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    ELSEIF          reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    FOR             reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    MAP             reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    MAKE            reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    TYPE            reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    I_PARENTESIS    reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    PRINTLN         reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    PRINTF          reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    PRINT           reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    I_CORCHETE      reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    INT             reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    DOUBLE          reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    STRING          reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    BOOLEAN         reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    RETURN          reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    FUNC            reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE .)
+    $end            reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    PUNTO_COMA      reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    D_LLAVE         reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    VAR             reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    ID              reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    IF              reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    ELSE            reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    ELSEIF          reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    FOR             reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    MAP             reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    MAKE            reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    TYPE            reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    I_PARENTESIS    reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    PRINTLN         reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    PRINTF          reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    PRINT           reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    I_CORCHETE      reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    INT             reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    DOUBLE          reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    STRING          reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    BOOLEAN         reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    RETURN          reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    FUNC            reduce using rule 56 (array_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
 
 
 state 197
 
-    (64) array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string . D_LLAVE
+    (64) array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string . D_LLAVE
 
     D_LLAVE         shift and go to state 223
 
@@ -6445,14 +6445,14 @@ state 201
 
 state 202
 
-    (58) array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE . D_LLAVE
-    (66) array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE . valores_int D_LLAVE
+    (58) array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE . D_LLAVE
+    (66) array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE . valores_int D_LLAVE
     (94) valores_int -> . valor_int
     (95) valores_int -> . valor_int COMA valores_int
     (136) valor_int -> . INT
 
     D_LLAVE         shift and go to state 227
-    INT             shift and go to state 43
+    INT             shift and go to state 45
 
     valores_int                    shift and go to state 228
     valor_int                      shift and go to state 192
@@ -6466,21 +6466,21 @@ state 203
     (137) valor_double -> . DOUBLE
 
     D_LLAVE         shift and go to state 229
-    DOUBLE          shift and go to state 44
+    DOUBLE          shift and go to state 43
 
     valores_double                 shift and go to state 230
     valor_double                   shift and go to state 195
 
 state 204
 
-    (60) array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE . D_LLAVE
-    (68) array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE . valores_string D_LLAVE
+    (60) array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE . D_LLAVE
+    (68) array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE . valores_string D_LLAVE
     (98) valores_string -> . valor_string
     (99) valores_string -> . valor_string COMA valores_string
     (138) valor_string -> . STRING
 
     D_LLAVE         shift and go to state 231
-    STRING          shift and go to state 45
+    STRING          shift and go to state 51
 
     valores_string                 shift and go to state 232
     valor_string                   shift and go to state 198
@@ -6494,7 +6494,7 @@ state 205
     (139) valor_boolean -> . BOOLEAN
 
     D_LLAVE         shift and go to state 233
-    BOOLEAN         shift and go to state 46
+    BOOLEAN         shift and go to state 44
 
     valores_boolean                shift and go to state 234
     valor_boolean                  shift and go to state 201
@@ -6605,19 +6605,19 @@ state 212
     (139) valor_boolean -> . BOOLEAN
     (140) valor_variable -> . ID
 
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
     ID              shift and go to state 88
 
     valores                        shift and go to state 240
     valor                          shift and go to state 12
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 213
 
@@ -6728,21 +6728,21 @@ state 215
     (103) print -> . PRINTLN
     (104) print -> . PRINTF
     (105) print -> . PRINT
-    (54) array_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE
+    (54) array_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (55) array_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (56) array_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE
+    (56) array_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (57) array_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE
+    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (59) array_length_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE
+    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (61) array_length_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (63) array_con_valores_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (65) array_con_valores_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
-    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (67) array_length_con_valores_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (69) array_length_con_valores_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
     (78) init_struct -> . VAR ID ID ASIGNACION ID I_LLAVE valores D_LLAVE
     (79) init_struct -> . ID DECLARACION_ASIGNACION ID I_LLAVE valores D_LLAVE
@@ -6776,10 +6776,10 @@ state 215
     PRINTF          shift and go to state 41
     PRINT           shift and go to state 42
     I_CORCHETE      shift and go to state 34
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
 
     body                           shift and go to state 241
     instruccion                    shift and go to state 122
@@ -6807,11 +6807,11 @@ state 215
     array_length_con_valores_boolean shift and go to state 32
     init_struct                    shift and go to state 37
     resultado                      shift and go to state 39
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 216
 
@@ -6851,48 +6851,48 @@ state 218
     (140) valor_variable -> . ID
 
     D_LLAVE         shift and go to state 244
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
     ID              shift and go to state 88
 
     claves_valores                 shift and go to state 245
     clave_valor                    shift and go to state 246
     valor                          shift and go to state 247
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 219
 
-    (62) array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE .
+    (62) array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .
 
-    $end            reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    PUNTO_COMA      reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    D_LLAVE         reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    VAR             reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    ID              reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    IF              reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    ELSE            reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    ELSEIF          reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    FOR             reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    MAP             reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    MAKE            reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    TYPE            reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    I_PARENTESIS    reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    PRINTLN         reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    PRINTF          reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    PRINT           reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    I_CORCHETE      reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    INT             reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    DOUBLE          reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    STRING          reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    BOOLEAN         reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    RETURN          reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    FUNC            reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
+    $end            reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    PUNTO_COMA      reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    D_LLAVE         reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    VAR             reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    ID              reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    IF              reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    ELSE            reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    ELSEIF          reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    FOR             reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    MAP             reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    MAKE            reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    TYPE            reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    I_PARENTESIS    reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    PRINTLN         reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    PRINTF          reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    PRINT           reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    I_CORCHETE      reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    INT             reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    DOUBLE          reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    STRING          reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    BOOLEAN         reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    RETURN          reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    FUNC            reduce using rule 62 (array_con_valores_int -> I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
 
 
 state 220
@@ -6902,7 +6902,7 @@ state 220
     (95) valores_int -> . valor_int COMA valores_int
     (136) valor_int -> . INT
 
-    INT             shift and go to state 43
+    INT             shift and go to state 45
 
     valor_int                      shift and go to state 192
     valores_int                    shift and go to state 248
@@ -6943,38 +6943,38 @@ state 222
     (97) valores_double -> . valor_double COMA valores_double
     (137) valor_double -> . DOUBLE
 
-    DOUBLE          shift and go to state 44
+    DOUBLE          shift and go to state 43
 
     valor_double                   shift and go to state 195
     valores_double                 shift and go to state 249
 
 state 223
 
-    (64) array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .
+    (64) array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .
 
-    $end            reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    PUNTO_COMA      reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    D_LLAVE         reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    VAR             reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    ID              reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    IF              reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    ELSE            reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    ELSEIF          reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    FOR             reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    MAP             reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    MAKE            reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    TYPE            reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    I_PARENTESIS    reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    PRINTLN         reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    PRINTF          reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    PRINT           reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    I_CORCHETE      reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    INT             reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    DOUBLE          reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    STRING          reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    BOOLEAN         reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    RETURN          reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    FUNC            reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
+    $end            reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    PUNTO_COMA      reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    D_LLAVE         reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    VAR             reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    ID              reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    IF              reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    ELSE            reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    ELSEIF          reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    FOR             reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    MAP             reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    MAKE            reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    TYPE            reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    I_PARENTESIS    reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    PRINTLN         reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    PRINTF          reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    PRINT           reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    I_CORCHETE      reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    INT             reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    DOUBLE          reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    STRING          reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    BOOLEAN         reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    RETURN          reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    FUNC            reduce using rule 64 (array_con_valores_string -> I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
 
 
 state 224
@@ -6984,7 +6984,7 @@ state 224
     (99) valores_string -> . valor_string COMA valores_string
     (138) valor_string -> . STRING
 
-    STRING          shift and go to state 45
+    STRING          shift and go to state 51
 
     valor_string                   shift and go to state 198
     valores_string                 shift and go to state 250
@@ -7025,43 +7025,43 @@ state 226
     (101) valores_boolean -> . valor_boolean COMA valores_boolean
     (139) valor_boolean -> . BOOLEAN
 
-    BOOLEAN         shift and go to state 46
+    BOOLEAN         shift and go to state 44
 
     valor_boolean                  shift and go to state 201
     valores_boolean                shift and go to state 251
 
 state 227
 
-    (58) array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE .
+    (58) array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE .
 
-    $end            reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE .)
-    PUNTO_COMA      reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE .)
-    D_LLAVE         reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE .)
-    VAR             reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE .)
-    ID              reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE .)
-    IF              reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE .)
-    ELSE            reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE .)
-    ELSEIF          reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE .)
-    FOR             reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE .)
-    MAP             reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE .)
-    MAKE            reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE .)
-    TYPE            reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE .)
-    I_PARENTESIS    reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE .)
-    PRINTLN         reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE .)
-    PRINTF          reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE .)
-    PRINT           reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE .)
-    I_CORCHETE      reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE .)
-    INT             reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE .)
-    DOUBLE          reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE .)
-    STRING          reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE .)
-    BOOLEAN         reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE .)
-    RETURN          reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE .)
-    FUNC            reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE .)
+    $end            reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    PUNTO_COMA      reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    D_LLAVE         reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    VAR             reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    ID              reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    IF              reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    ELSE            reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    ELSEIF          reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    FOR             reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    MAP             reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    MAKE            reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    TYPE            reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    I_PARENTESIS    reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    PRINTLN         reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    PRINTF          reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    PRINT           reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    I_CORCHETE      reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    INT             reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    DOUBLE          reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    STRING          reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    BOOLEAN         reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    RETURN          reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
+    FUNC            reduce using rule 58 (array_length_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE .)
 
 
 state 228
 
-    (66) array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int . D_LLAVE
+    (66) array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int . D_LLAVE
 
     D_LLAVE         shift and go to state 252
 
@@ -7104,36 +7104,36 @@ state 230
 
 state 231
 
-    (60) array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE .
+    (60) array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .
 
-    $end            reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    PUNTO_COMA      reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    D_LLAVE         reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    VAR             reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    ID              reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    IF              reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    ELSE            reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    ELSEIF          reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    FOR             reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    MAP             reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    MAKE            reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    TYPE            reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    I_PARENTESIS    reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    PRINTLN         reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    PRINTF          reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    PRINT           reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    I_CORCHETE      reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    INT             reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    DOUBLE          reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    STRING          reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    BOOLEAN         reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    RETURN          reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE .)
-    FUNC            reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE .)
+    $end            reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    PUNTO_COMA      reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    D_LLAVE         reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    VAR             reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    ID              reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    IF              reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    ELSE            reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    ELSEIF          reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    FOR             reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    MAP             reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    MAKE            reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    TYPE            reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    I_PARENTESIS    reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    PRINTLN         reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    PRINTF          reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    PRINT           reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    I_CORCHETE      reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    INT             reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    DOUBLE          reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    STRING          reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    BOOLEAN         reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    RETURN          reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
+    FUNC            reduce using rule 60 (array_length_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE .)
 
 
 state 232
 
-    (68) array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string . D_LLAVE
+    (68) array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string . D_LLAVE
 
     D_LLAVE         shift and go to state 254
 
@@ -7393,31 +7393,31 @@ state 251
 
 state 252
 
-    (66) array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE .
+    (66) array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .
 
-    $end            reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    PUNTO_COMA      reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    D_LLAVE         reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    VAR             reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    ID              reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    IF              reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    ELSE            reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    ELSEIF          reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    FOR             reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    MAP             reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    MAKE            reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    TYPE            reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    I_PARENTESIS    reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    PRINTLN         reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    PRINTF          reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    PRINT           reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    I_CORCHETE      reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    INT             reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    DOUBLE          reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    STRING          reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    BOOLEAN         reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    RETURN          reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
-    FUNC            reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE .)
+    $end            reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    PUNTO_COMA      reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    D_LLAVE         reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    VAR             reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    ID              reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    IF              reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    ELSE            reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    ELSEIF          reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    FOR             reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    MAP             reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    MAKE            reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    TYPE            reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    I_PARENTESIS    reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    PRINTLN         reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    PRINTF          reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    PRINT           reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    I_CORCHETE      reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    INT             reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    DOUBLE          reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    STRING          reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    BOOLEAN         reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    RETURN          reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
+    FUNC            reduce using rule 66 (array_length_con_valores_int -> I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE .)
 
 
 state 253
@@ -7451,31 +7451,31 @@ state 253
 
 state 254
 
-    (68) array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .
+    (68) array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .
 
-    $end            reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    PUNTO_COMA      reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    D_LLAVE         reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    VAR             reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    ID              reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    IF              reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    ELSE            reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    ELSEIF          reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    FOR             reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    MAP             reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    MAKE            reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    TYPE            reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    I_PARENTESIS    reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    PRINTLN         reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    PRINTF          reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    PRINT           reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    I_CORCHETE      reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    INT             reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    DOUBLE          reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    STRING          reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    BOOLEAN         reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    RETURN          reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
-    FUNC            reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE .)
+    $end            reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    PUNTO_COMA      reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    D_LLAVE         reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    VAR             reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    ID              reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    IF              reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    ELSE            reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    ELSEIF          reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    FOR             reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    MAP             reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    MAKE            reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    TYPE            reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    I_PARENTESIS    reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    PRINTLN         reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    PRINTF          reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    PRINT           reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    I_CORCHETE      reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    INT             reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    DOUBLE          reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    STRING          reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    BOOLEAN         reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    RETURN          reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
+    FUNC            reduce using rule 68 (array_length_con_valores_string -> I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE .)
 
 
 state 255
@@ -7625,21 +7625,21 @@ state 259
     (103) print -> . PRINTLN
     (104) print -> . PRINTF
     (105) print -> . PRINT
-    (54) array_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE
+    (54) array_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (55) array_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (56) array_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE
+    (56) array_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (57) array_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE
+    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (59) array_length_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE
+    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (61) array_length_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (63) array_con_valores_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (65) array_con_valores_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
-    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (67) array_length_con_valores_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (69) array_length_con_valores_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
     (78) init_struct -> . VAR ID ID ASIGNACION ID I_LLAVE valores D_LLAVE
     (79) init_struct -> . ID DECLARACION_ASIGNACION ID I_LLAVE valores D_LLAVE
@@ -7673,10 +7673,10 @@ state 259
     PRINTF          shift and go to state 41
     PRINT           shift and go to state 42
     I_CORCHETE      shift and go to state 34
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
 
     body                           shift and go to state 265
     instruccion                    shift and go to state 122
@@ -7704,11 +7704,11 @@ state 259
     array_length_con_valores_boolean shift and go to state 32
     init_struct                    shift and go to state 37
     resultado                      shift and go to state 39
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 260
 
@@ -7763,21 +7763,21 @@ state 260
     (103) print -> . PRINTLN
     (104) print -> . PRINTF
     (105) print -> . PRINT
-    (54) array_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE
+    (54) array_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (55) array_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (56) array_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE
+    (56) array_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (57) array_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE
+    (58) array_length_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE
     (59) array_length_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE D_LLAVE
-    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE
+    (60) array_length_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE
     (61) array_length_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE D_LLAVE
-    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (62) array_con_valores_int -> . I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (63) array_con_valores_double -> . I_CORCHETE D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (64) array_con_valores_string -> . I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (65) array_con_valores_boolean -> . I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
-    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE
+    (66) array_length_con_valores_int -> . I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE
     (67) array_length_con_valores_double -> . I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE
-    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE
+    (68) array_length_con_valores_string -> . I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE
     (69) array_length_con_valores_boolean -> . I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE
     (78) init_struct -> . VAR ID ID ASIGNACION ID I_LLAVE valores D_LLAVE
     (79) init_struct -> . ID DECLARACION_ASIGNACION ID I_LLAVE valores D_LLAVE
@@ -7811,10 +7811,10 @@ state 260
     PRINTF          shift and go to state 41
     PRINT           shift and go to state 42
     I_CORCHETE      shift and go to state 34
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
 
     instruccion                    shift and go to state 122
     valor                          shift and go to state 12
@@ -7842,11 +7842,11 @@ state 260
     array_length_con_valores_boolean shift and go to state 32
     init_struct                    shift and go to state 37
     resultado                      shift and go to state 39
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 261
 
@@ -7895,20 +7895,20 @@ state 262
     (139) valor_boolean -> . BOOLEAN
     (140) valor_variable -> . ID
 
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
     ID              shift and go to state 88
 
     clave_valor                    shift and go to state 246
     claves_valores                 shift and go to state 267
     valor                          shift and go to state 247
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 263
 
@@ -7925,18 +7925,18 @@ state 263
     (139) valor_boolean -> . BOOLEAN
     (140) valor_variable -> . ID
 
-    INT             shift and go to state 43
-    DOUBLE          shift and go to state 44
-    STRING          shift and go to state 45
-    BOOLEAN         shift and go to state 46
+    INT             shift and go to state 45
+    DOUBLE          shift and go to state 43
+    STRING          shift and go to state 51
+    BOOLEAN         shift and go to state 44
     ID              shift and go to state 88
 
     valor                          shift and go to state 268
-    valor_int                      shift and go to state 47
-    valor_double                   shift and go to state 48
-    valor_string                   shift and go to state 49
-    valor_boolean                  shift and go to state 50
-    valor_variable                 shift and go to state 51
+    valor_int                      shift and go to state 46
+    valor_double                   shift and go to state 47
+    valor_string                   shift and go to state 48
+    valor_boolean                  shift and go to state 49
+    valor_variable                 shift and go to state 50
 
 state 264
 

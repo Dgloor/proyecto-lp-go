@@ -189,7 +189,7 @@ def t_ID(t):
 
 
 def t_STRING(t):
-    r'["\'].*["\']'
+    r'"[^"]*"'
     t.value = t.value.strip('"').strip("'")
     return t
 

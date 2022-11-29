@@ -377,3 +377,65 @@
 2022-11-29 19:39 -- eso(1, car(2)): None
 2022-11-29 19:46 -- funcion(dog(23)): None
 2022-11-29 19:46 -- funcion(sub(23),25): None
+2022-11-29 20:58 -- Error de sintaxis - Token: STRINGTYPE, Línea: 1, Col: 8
+2022-11-29 20:58 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 14
+2022-11-29 20:58 -- Error de sintaxis - Token: COMA, Línea: 1, Col: 21
+2022-11-29 20:58 -- Error de sintaxis - Token: STRING, Línea: 1, Col: 22
+2022-11-29 20:58 -- Error de sintaxis - Token: COMA, Línea: 1, Col: 30
+2022-11-29 20:58 -- Error de sintaxis - Token: STRING, Línea: 1, Col: 31
+2022-11-29 20:58 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 39
+2022-11-29 20:58 -- x := [5]string{"hola","buenas","tardes"}: None
+2022-11-29 20:58 -- Error de sintaxis - Token: STRINGTYPE, Línea: 1, Col: 8
+2022-11-29 20:58 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 14
+2022-11-29 20:58 -- Error de sintaxis - Token: COMA, Línea: 1, Col: 21
+2022-11-29 20:58 -- Error de sintaxis - Token: STRING, Línea: 1, Col: 22
+2022-11-29 20:58 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 26
+2022-11-29 20:58 -- x := [3]string{"hola","xd"}: None
+2022-11-29 21:00 -- Error de sintaxis - Token: STRINGTYPE, Línea: 1, Col: 7
+2022-11-29 21:00 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 13
+2022-11-29 21:00 -- Error de sintaxis - Token: COMA, Línea: 1, Col: 20
+2022-11-29 21:00 -- Error de sintaxis - Token: STRING, Línea: 1, Col: 21
+2022-11-29 21:00 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 25
+2022-11-29 21:00 -- x := []string{"hola","xd"}: None
+2022-11-29 21:02 -- x := []string{"hola","xd"}: None
+2022-11-29 21:06 -- Error de sintaxis - Token: I_CORCHETE, Línea: 1, Col: 6
+2022-11-29 21:06 -- Error de sintaxis - Token: INT, Línea: 1, Col: 7
+2022-11-29 21:06 -- Error de sintaxis - Token: D_CORCHETE, Línea: 1, Col: 8
+2022-11-29 21:06 -- Error de sintaxis - Token: I_CORCHETE, Línea: 1, Col: 15
+2022-11-29 21:06 -- Error de sintaxis - Token: D_CORCHETE, Línea: 1, Col: 17
+2022-11-29 21:06 -- Error de sintaxis - Token: INTEGER, Línea: 1, Col: 18
+2022-11-29 21:06 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 21
+2022-11-29 21:06 -- Error de sintaxis - Token: INT, Línea: 1, Col: 22
+2022-11-29 21:06 -- Error de sintaxis - Token: COMA, Línea: 1, Col: 24
+2022-11-29 21:06 -- Error de sintaxis - Token: INT, Línea: 1, Col: 26
+2022-11-29 21:06 -- Error de sintaxis - Token: COMA, Línea: 1, Col: 28
+2022-11-29 21:06 -- Error de sintaxis - Token: INT, Línea: 1, Col: 30
+2022-11-29 21:06 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 32
+2022-11-29 21:06 -- var y [5]int = [5]int{10, 20, 30}: None
+2022-11-29 21:09 -- Error de sintaxis - Token: INTEGER, Línea: 1, Col: 8
+2022-11-29 21:09 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 11
+2022-11-29 21:09 -- Error de sintaxis - Token: COMA, Línea: 1, Col: 14
+2022-11-29 21:09 -- Error de sintaxis - Token: INT, Línea: 1, Col: 16
+2022-11-29 21:09 -- Error de sintaxis - Token: COMA, Línea: 1, Col: 18
+2022-11-29 21:09 -- Error de sintaxis - Token: INT, Línea: 1, Col: 20
+2022-11-29 21:09 -- Error de sintaxis - Token: COMA, Línea: 1, Col: 22
+2022-11-29 21:09 -- Error de sintaxis - Token: INT, Línea: 1, Col: 24
+2022-11-29 21:09 -- Error de sintaxis - Token: COMA, Línea: 1, Col: 26
+2022-11-29 21:09 -- Error de sintaxis - Token: INT, Línea: 1, Col: 28
+2022-11-29 21:09 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 30
+2022-11-29 21:09 -- x := [5]int{10, 20, 30, 40, 50} : None
+2022-11-29 21:11 -- x := [5]int{10, 20, 30, 40, 50} : None
+2022-11-29 21:11 -- Error de sintaxis - Token: I_CORCHETE, Línea: 1, Col: 6
+2022-11-29 21:11 -- Error de sintaxis - Token: INT, Línea: 1, Col: 7
+2022-11-29 21:11 -- Error de sintaxis - Token: D_CORCHETE, Línea: 1, Col: 8
+2022-11-29 21:11 -- Error de sintaxis - Token: I_CORCHETE, Línea: 1, Col: 15
+2022-11-29 21:11 -- Error de sintaxis - Token: D_CORCHETE, Línea: 1, Col: 17
+2022-11-29 21:11 -- Error de sintaxis - Token: INTEGER, Línea: 1, Col: 18
+2022-11-29 21:11 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 21
+2022-11-29 21:11 -- Error de sintaxis - Token: INT, Línea: 1, Col: 22
+2022-11-29 21:11 -- Error de sintaxis - Token: COMA, Línea: 1, Col: 24
+2022-11-29 21:11 -- Error de sintaxis - Token: INT, Línea: 1, Col: 26
+2022-11-29 21:11 -- Error de sintaxis - Token: COMA, Línea: 1, Col: 28
+2022-11-29 21:11 -- Error de sintaxis - Token: INT, Línea: 1, Col: 30
+2022-11-29 21:11 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 32
+2022-11-29 21:11 -- var y [5]int = [5]int{10, 20, 30}: None
