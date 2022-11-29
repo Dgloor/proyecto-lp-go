@@ -75,11 +75,28 @@ def p_map_make(p):
 def p_map_valores(p):
     'instruccion : MAP I_CORCHETE type D_CORCHETE type I_LLAVE claves_valores D_LLAVE'
 
+def p_struct(p):
+    'instruccion : TYPE ID STRUCT I_LLAVE atributos D_LLAVE'
+
+def p_atributos(p):
+    '''atributos : atributo
+                | atributo atributos'''
+
+def p_atributo(p):
+    'atributo : ID type'
+
+def p_declaracion_struct(p):
+    'instruccion : init_struct'
+
+def p_init_struct(p):
+    '''init_struct : VAR ID ID ASIGNACION ID I_LLAVE valores D_LLAVE
+                    | ID DECLARACION_ASIGNACION ID I_LLAVE valores D_LLAVE'''
+
 def p_clave_valor(p):
     '''clave_valor : valor DOS_PUNTOS valor'''
 
 def p_multiple_clave_valor(p):
-    '''claves_valores : clave_valor 
+    '''claves_valores : clave_valor
           | clave_valor COMA claves_valores'''
 
 def p_condicion(p):
@@ -88,11 +105,14 @@ def p_condicion(p):
 
 def p_iteracion_for(p):
     'iteracion_for : ID '
+
+
 # def p_def_func(p):
 #   'func : FUNC ID I_PARENTESIS argfunc D_PARENTESIS'
 
 # def p_argumento_definicion(p):
 #   '''argfunc : type ID'''
+
 
 def p_multiples_valores(p):
     '''valores : valor
