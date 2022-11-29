@@ -55,16 +55,79 @@ def p_for_map(p):
 #Estructuras de Datos
 
 def p_array(p):
-    'instruccion : I_CORCHETE D_CORCHETE type I_LLAVE D_LLAVE'
+    '''instruccion : array_int
+    | array_double
+    | array_string
+    | array_boolean'''
   
 def p_array_length(p):
-    'instruccion : I_CORCHETE INT D_CORCHETE type I_LLAVE D_LLAVE'
+    '''instruccion : array_length_int
+    | array_length_double
+    | array_length_string
+    | array_length_boolean'''
 
 def p_array_con_valores(p):
-    'instruccion : I_CORCHETE D_CORCHETE type I_LLAVE valores D_LLAVE'
+    '''instruccion : array_con_valores_int
+    | array_con_valores_double
+    | array_con_valores_string
+    | array_con_valores_boolean'''
 
 def p_array_length_con_valores(p):
-    'instruccion : I_CORCHETE INT D_CORCHETE type I_LLAVE valores D_LLAVE'
+    '''instruccion : array_length_con_valores_int
+    | array_length_con_valores_double
+    | array_length_con_valores_string
+    | array_length_con_valores_boolean'''
+
+# Arreglo validacion por Daniel Torres
+def p_array_int(p):
+    'array_int : I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE'
+
+def p_array_double(p):
+    'array_double : I_CORCHETE D_CORCHETE DOUBLE I_LLAVE D_LLAVE'
+
+def p_array_string(p):
+    'array_string : I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE'
+
+def p_array_boolean(p):
+    'array_boolean : I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE D_LLAVE'
+
+def p_array_length_int(p):
+    'array_length_int : I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE'
+
+def p_array_length_double(p):
+    'array_length_double : I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE D_LLAVE'
+
+def p_array_length_string(p):
+    'array_length_string : I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE'
+
+def p_array_length_boolean(p):
+    'array_length_boolean : I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE D_LLAVE'
+
+def p_array_con_valores_int(p):
+    'array_con_valores_int : I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE'
+
+def p_array_con_valores_double(p):
+    'array_con_valores_double : I_CORCHETE D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE'
+
+def p_array_con_valores_string(p):
+    'array_con_valores_string : I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE'
+
+def p_array_con_valores_boolean(p):
+    'array_con_valores_boolean : I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE'
+
+def p_array_length_con_valores_int(p):
+    'array_length_con_valores_int : I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE'
+
+def p_array_length_con_valores_double(p):
+    'array_length_con_valores_double : I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE'
+
+def p_array_length_con_valores_string(p):
+    'array_length_con_valores_string : I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE'
+
+def p_array_length_con_valores_boolean(p):
+    'array_length_con_valores_boolean : I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE'
+# Fin de arreglo
+  
 
 def p_map(p):
     'instruccion : MAP I_CORCHETE type D_CORCHETE type I_LLAVE D_LLAVE'
@@ -104,8 +167,7 @@ def p_condicion(p):
                 | I_PARENTESIS valor D_PARENTESIS'''
 
 def p_iteracion_for(p):
-    'iteracion_for : ID '
-
+    'iteracion_for : ID'
 
 # def p_def_func(p):
 #   'func : FUNC ID I_PARENTESIS argfunc D_PARENTESIS'
@@ -117,6 +179,22 @@ def p_iteracion_for(p):
 def p_multiples_valores(p):
     '''valores : valor
           | valor COMA valores'''
+
+def p_multiples_valores_int(p):
+    '''valores_int : valor_int
+          | valor_int COMA valores_int'''
+
+def p_multiples_valores_double(p):
+    '''valores_double : valor_double
+          | valor_double COMA valores_double'''
+
+def p_multiples_valores_string(p):
+    '''valores_string : valor_string
+          | valor_string COMA valores_string'''
+
+def p_multiples_valores_boolean(p):
+    '''valores_boolean : valor_boolean
+          | valor_boolean COMA valores_boolean'''
   
 def p_operacion_mat(p):
     'valor : valor operacion_binaria valor'
@@ -162,10 +240,26 @@ def p_operacion_comp_simbolos(p):
           | MENOR'''
 
 def p_valores(p):
-    '''valor : INT
-          | DOUBLE
-          | STRING
-          | ID'''
+    '''valor : valor_int
+          | valor_double
+          | valor_string
+          | valor_boolean
+          | valor_variable'''
+
+def p_valores_int(p):
+    '''valor_int : INT'''
+
+def p_valores_double(p):
+    '''valor_double : DOUBLE'''
+
+def p_valores_string(p):
+    '''valor_string : STRING'''
+
+def p_valores_boolean(p):
+    '''valor_boolean : BOOLEAN'''
+
+def p_valores_variable(p):
+    '''valor_variable : ID'''
 
 # Error rule for syntax errors
 def p_error(p):
