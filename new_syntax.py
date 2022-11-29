@@ -122,49 +122,49 @@ def p_array_length_con_valores(p):
 
 # Arreglo validacion por Daniel Torres
 def p_array_int(p):
-    'array_int : I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE'
+    'array_int : I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE'
 
 def p_array_double(p):
     'array_double : I_CORCHETE D_CORCHETE DOUBLE I_LLAVE D_LLAVE'
 
 def p_array_string(p):
-    'array_string : I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE'
+    'array_string : I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE'
 
 def p_array_boolean(p):
     'array_boolean : I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE D_LLAVE'
 
 def p_array_length_int(p):
-    'array_length_int : I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE'
+    'array_length_int : I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE D_LLAVE'
 
 def p_array_length_double(p):
     'array_length_double : I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE D_LLAVE'
 
 def p_array_length_string(p):
-    'array_length_string : I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE'
+    'array_length_string : I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE'
 
 def p_array_length_boolean(p):
     'array_length_boolean : I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE D_LLAVE'
 
 def p_array_con_valores_int(p):
-    'array_con_valores_int : I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE'
+    'array_con_valores_int : I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE'
 
 def p_array_con_valores_double(p):
     'array_con_valores_double : I_CORCHETE D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE'
 
 def p_array_con_valores_string(p):
-    'array_con_valores_string : I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE'
+    'array_con_valores_string : I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE'
 
 def p_array_con_valores_boolean(p):
     'array_con_valores_boolean : I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE'
 
 def p_array_length_con_valores_int(p):
-    'array_length_con_valores_int : I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE'
+    'array_length_con_valores_int : I_CORCHETE INT D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE'
 
 def p_array_length_con_valores_double(p):
     'array_length_con_valores_double : I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE'
 
 def p_array_length_con_valores_string(p):
-    'array_length_con_valores_string : I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE'
+    'array_length_con_valores_string : I_CORCHETE INT D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE'
 
 def p_array_length_con_valores_boolean(p):
     'array_length_con_valores_boolean : I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE'
