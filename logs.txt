@@ -352,3 +352,28 @@
 2022-11-29 18:58 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 50
 2022-11-29 18:58 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 52
 2022-11-29 18:58 -- func simpleFucntion(eso int) { if(a==2){ return 2 } }: None
+2022-11-29 19:32 -- Error de sintaxis - Token: I_PARENTESIS, Línea: 1, Col: 3
+2022-11-29 19:32 -- Error de sintaxis - Token: ID, Línea: 1, Col: 4
+2022-11-29 19:32 -- Error de sintaxis - Token: COMA, Línea: 1, Col: 7
+2022-11-29 19:32 -- Error de sintaxis - Token: ID, Línea: 1, Col: 8
+2022-11-29 19:32 -- Error de sintaxis - Token: I_PARENTESIS, Línea: 1, Col: 12
+2022-11-29 19:32 -- Error de sintaxis - Token: INT, Línea: 1, Col: 13
+2022-11-29 19:32 -- Error de sintaxis - Token: D_PARENTESIS, Línea: 1, Col: 14
+2022-11-29 19:32 -- Error de sintaxis - Token: D_PARENTESIS, Línea: 1, Col: 15
+2022-11-29 19:32 -- car(eso,dump(1)): None
+2022-11-29 19:33 -- Error de sintaxis - Token: I_PARENTESIS, Línea: 1, Col: 3
+2022-11-29 19:33 -- Error de sintaxis - Token: INT, Línea: 1, Col: 4
+2022-11-29 19:33 -- Error de sintaxis - Token: COMA, Línea: 1, Col: 5
+2022-11-29 19:33 -- Error de sintaxis - Token: ID, Línea: 1, Col: 6
+2022-11-29 19:33 -- Error de sintaxis - Token: I_PARENTESIS, Línea: 1, Col: 9
+2022-11-29 19:33 -- Error de sintaxis - Token: INT, Línea: 1, Col: 10
+2022-11-29 19:33 -- Error de sintaxis - Token: D_PARENTESIS, Línea: 1, Col: 11
+2022-11-29 19:33 -- Error de sintaxis - Token: D_PARENTESIS, Línea: 1, Col: 12
+2022-11-29 19:33 -- car(1,eso(2)): None
+2022-11-29 19:39 -- eso(1): None
+2022-11-29 19:39 -- Error de sintaxis - Token: I_PARENTESIS, Línea: 1, Col: 10
+2022-11-29 19:39 -- Error de sintaxis - Token: INT, Línea: 1, Col: 11
+2022-11-29 19:39 -- Error de sintaxis - Token: D_PARENTESIS, Línea: 1, Col: 13
+2022-11-29 19:39 -- eso(1, car(2)): None
+2022-11-29 19:46 -- funcion(dog(23)): None
+2022-11-29 19:46 -- funcion(sub(23),25): None
