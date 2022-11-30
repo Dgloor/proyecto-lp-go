@@ -284,6 +284,7 @@ def p_incremento_decremento(p):
     '''resultado_inc_dec : ID operador_matematico
                         | valor_struct operador_matematico'''
     
+    #Diego Arteaga
     variable_inc_dec = p[1]
     # Esta condicion es para asignar el valor de la variable almacenada
     if variable_inc_dec in variables:

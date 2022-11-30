@@ -95,6 +95,7 @@ class Window(QMainWindow):
         try:
             codigo = self.input.toPlainText()
             self.check_empty(codigo)
+            codigo = codigo.replace('\n','')
 
             log_content(codigo, './logs/sintactico_logs.txt')
             parser.parse(codigo)
