@@ -128,17 +128,26 @@ def p_llamada_params(p):
 
 # Estructuras de Control
 
+def p_control_structs(p):
+    '''instruccion : if_struct
+    | if_else_struct
+    | many_elseif'''
 
 def p_if_condicion(p):
-    'instruccion : IF condicion I_LLAVE body D_LLAVE'
+    'if_struct : IF condicion body'
 
 
 def p_else_condicion(p):
-    'instruccion : ELSE I_LLAVE body D_LLAVE'
+    '''if_else_struct : if_struct ELSE body
+                      | many_elseif ELSE body
+                      | many_elseif'''
 
+def p_many_elseif(p):
+    '''many_elseif : else_if
+                   | else_if many_elseif'''
 
 def p_if_else_condicion(p):
-    'instruccion : ELSEIF condicion I_LLAVE body D_LLAVE'
+    'else_if : ELSEIF condicion body'
 
 
 def p_for_each(p):

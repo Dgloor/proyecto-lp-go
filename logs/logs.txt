@@ -480,3 +480,8 @@
 2022-11-30 03:28 -- a++: None
 2022-11-30 03:28 -- b++: None
 2022-11-30 03:28 -- a++: None
+2022-11-30 14:05 -- if con { var a = 2 }: None
+2022-11-30 14:05 -- else { var a int = 2 }: None
+2022-11-30 14:06 -- if con { var a = 2 }: None
+2022-11-30 14:06 -- else { var a int = 2 }: None
+2022-11-30 14:13 -- if con { var a = 2 } else { var a int = 2 }: None
