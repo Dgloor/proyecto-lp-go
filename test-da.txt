@@ -1,13 +1,44 @@
-func calcMat(x int) int {
-	var res int = (x + y) - 20 + 23.6
-	
-	if(res > 20){
-		return (res-10)
-	}else{
-		return res
+// Diego Arteaga
+
+type Person struct {
+	FirstName string
+	LastName  string
+	Age       int
+}
+
+type Point struct {
+	X float64
+	Y float64
+}
+
+func main() {
+
+	// Declarando una variable de tipo `struct`
+	var p Person // Declarando una variable del struct Person
+	fmt.Println(p)
+
+	// Declarando e inicializando una instancia del struct con struct literal
+	p1 := Person{"Enner", "Valencia", 33}
+	fmt.Println("Person1: ", p1)
+
+	// Nombrando los campos mientras se inicializa la variable
+	p2 := Person{ FirstName:"John", LastName:"Wick", Age: 45}
+
+	if(p2.Age > 45){
+		fmt.Println("FirstName: ", p2.FirstName)
+		fmt.Println("LastName: ", p2.LastName)
+		fmt.Println("Age: ", p2.Age)
 	}
 
-	for i := 1 ; i <= n; i++ {
-    	sum += i 
-  	}
+	fmt.Println("Person3: ", p3)
+	fmt.Println("Person3: ", p3)
+
+	p1 := Point{3.4, 5.2}
+	p2 := Point{3.4, 5.2}
+
+	if p1 == p2 {
+		fmt.Println("Point p1 and p2 are equal.")
+	} else {
+		fmt.Println("Point p1 and p2 are not equal.")
+	}
 }
