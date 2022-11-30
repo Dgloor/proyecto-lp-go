@@ -460,6 +460,8 @@ def p_valores_variable(p):
 
 
 def p_error(p):
+    error_message = f"Error de sintaxis - Token: {p.type}, Línea: {p.lineno}, Col: {p.lexpos}"
+    log_content(error_message, './logs/sintactico_logs.txt')
     raise AnalyzerException(
         "ERROR: Sintáxis no válida en la entrada!: " + str(p))
 

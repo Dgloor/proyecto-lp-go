@@ -457,6 +457,9 @@
 2022-11-30 01:55 -- if p1 == p2 { fmt.Println("Point p1 and p2 are equal.") }: None
 2022-11-30 01:55 -- else { fmt.Println("Point p1 and p2 are not equal.") }: None
 2022-11-30 01:55 -- if(p2.Age > 45){fmt.Println("FirstName: ", p2.FirstName)}: None
+<<<<<<< HEAD
+2022-11-29 23:04 -- hola: None
+=======
 2022-11-30 03:06 -- fmt.Println("FirstName: ", p2.FirstName): None
 2022-11-30 03:07 -- fmt.Println("FirstName: ", p2.FirstName): None
 2022-11-30 03:08 -- fmt.Println("FirstName: ", p2.FirstName): None
@@ -481,4 +484,8 @@
 2022-11-30 03:28 -- b++: None
 2022-11-30 03:28 -- a++: None
 2022-11-29 22:53 -- fmt.Println("Person1: ", p1): None
+<<<<<<< HEAD
 2022-11-29 23:28 -- if (cond) { eso = 2 }: None
+=======
+>>>>>>> 9b451cf18b14fd365ae6ad4e2d9c54f14e82d2d2
+>>>>>>> fa9a79e5d9e66724e476b2100ad67f150c22225a
