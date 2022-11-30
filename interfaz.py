@@ -1,12 +1,12 @@
-import sys
 from PyQt5.QtWidgets import QMainWindow, QToolBar, QAction, QLabel, QPlainTextEdit, QHBoxLayout
 from PyQt5.QtWidgets import QVBoxLayout, QWidget, QMessageBox, QApplication
 from PyQt5.QtGui import QFont
 from lexico import lexer, AnalyzerException
 from sintactico import parser
+from datetime import datetime
+import sys
 import re
 
-from datetime import datetime
 
 def log_content(content, filename):
     f =  open(filename, "a")
@@ -82,7 +82,7 @@ class Window(QMainWindow):
                 tok = lexer.token()
                 if not tok:
                     break
-                resultado += f'Token: {tok.type}="{tok.value}", Línea: {tok.lineno}, Col: {tok.lexpos}  \n'
+                resultado += f"Token: {tok.type}='{tok.value}', Línea: {tok.lineno}, Col: {tok.lexpos}\n"
                 log_content(resultado, 'lexico_logs.txt')
 
             self.output.setPlainText(resultado)
