@@ -214,8 +214,10 @@ def t_newline(t):
 
 # Error token
 def t_error(t):
-    print("Illegal character '%s'" % t.value[0])
-    t.lexer.skip(1)
+   raise AnalyzerException("Componente léxico no identificado '%s'" % t.value[0])
+    # print("Illegal character '%s'" % t.value[0])
+    # t.lexer.skip(1)
+
 
 
 # Ignore tokens
@@ -275,3 +277,7 @@ lexer = lex.lex()
 #   print(tok)
 
 # f_da.close()
+
+class AnalyzerException(Exception):
+    def __init__(self, message):
+        super().__init__(message)
