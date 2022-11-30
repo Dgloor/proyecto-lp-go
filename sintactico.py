@@ -3,10 +3,6 @@ import ply.yacc as sintactico
 # from main import log_content
 from lexico import tokens, AnalyzerException
 
-variables = {}
-booleanos = ("true", "false")
-
-
 
 def log_content(content, filename):
     f = open(filename, "a")
