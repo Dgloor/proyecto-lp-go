@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtWidgets import QMainWindow, QToolBar, QAction, QLabel, QPlainTextEdit, QHBoxLayout
 from PyQt5.QtWidgets import QVBoxLayout, QWidget, QMessageBox, QApplication
 from PyQt5.QtGui import QFont
-from lexico import lexer
+from lexico import lexer, AnalyzerException
 from sintactico import parser
 import re
 

@@ -187,8 +187,8 @@ def p_array_length_con_valores_boolean(p):
 
 # Definicion Variable por Daniel Torres
 
-def p_def_variable(p):
-    '''instruccion : def_varib '''
+# def p_def_variable(p):
+#     '''instruccion : def_varib '''
   
 
 def p_map(p):
