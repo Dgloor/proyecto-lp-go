@@ -75,7 +75,7 @@ class Window(QMainWindow):
                 tok = lexer.token()
                 if not tok:
                     break
-                resultado += f'Token: {tok.type}= "{tok.value}", Línea: {tok.lineno}, Col: {tok.lexpos}  \n'
+                resultado += f'Token: {tok.type}="{tok.value}", Línea: {tok.lineno}, Col: {tok.lexpos}  \n'
 
             self.output.setPlainText(resultado)
         except Exception as e:
