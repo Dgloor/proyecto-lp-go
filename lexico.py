@@ -2,109 +2,109 @@ import ply.lex as lex
 
 # Reserved words
 reserved = {
-  # Danny Loor
-  'break': 'BREAK',
-  'case': 'CASE',
-  'chan': 'CHAN',
-  'continue': 'CONTINUE',
-  'default': 'DEFAULT',
-  'defer': 'DEFER',
-  'fallthrough': 'FALLTHROUGH',
-  'for': 'FOR',
-  'func': 'FUNC',
-  'range': 'RANGE',
-  'return': 'RETURN',
-  'select': 'SELECT',
-  'struct': 'STRUCT',
-  'type': 'TYPE',
-  'make': 'MAKE',
+    # Danny Loor
+    'break': 'BREAK',
+    'case': 'CASE',
+    'chan': 'CHAN',
+    'continue': 'CONTINUE',
+    'default': 'DEFAULT',
+    'defer': 'DEFER',
+    'fallthrough': 'FALLTHROUGH',
+    'for': 'FOR',
+    'func': 'FUNC',
+    'range': 'RANGE',
+    'return': 'RETURN',
+    'select': 'SELECT',
+    'struct': 'STRUCT',
+    'type': 'TYPE',
+    'make': 'MAKE',
 
-  ## Daniel Torres
-  'int': 'INTEGER',
-  'go': 'GO',
-  'goto': 'GOTO',
-  'if': 'IF',
-  'import': 'IMPORT',
-  'interface': 'INTERFACE',
-  'map': 'MAP',
-  'package': 'PACKAGE',
+    # Daniel Torres
+    'int': 'INTEGER',
+    'go': 'GO',
+    'goto': 'GOTO',
+    'if': 'IF',
+    'import': 'IMPORT',
+    'interface': 'INTERFACE',
+    'map': 'MAP',
+    'package': 'PACKAGE',
 
-  ## Diego Arteaga
-  'bool': 'BOOL',
-  'string': 'STRINGTYPE',
-  'else': 'ELSE',
-  'var': 'VAR',
-  'const': 'CONST',
-  'switch': 'SWITCH',
-  'float32': 'FLOAT32',
-  'float64': 'FLOAT64',
+    # Diego Arteaga
+    'bool': 'BOOL',
+    'string': 'STRINGTYPE',
+    'else': 'ELSE',
+    'var': 'VAR',
+    'const': 'CONST',
+    'switch': 'SWITCH',
+    'float32': 'FLOAT32',
+    'float64': 'FLOAT64',
 }
 
 # Tokens
 tokens = [
 
-  # OPERADORES MATEMATICOS
-  'ADICION',
-  'RESTA',
-  'MULTIPLICACION',
-  'DIVISION',
-  'MODULO',
-  'INCREMENTO',
-  'DECREMENTO',
+    # OPERADORES MATEMATICOS
+    'ADICION',
+    'RESTA',
+    'MULTIPLICACION',
+    'DIVISION',
+    'MODULO',
+    'INCREMENTO',
+    'DECREMENTO',
 
-  # OPERADORES DE ASIGNACIÓN
-  'ASIGNACION',
-  'ASIGNACION_ADICION',
-  'ASIGNACION_RESTA',
-  'ASIGNACION_MULTI',
-  'DECLARACION_ASIGNACION',
-  'ASIGNACION_DIVISION',
-  'ASIGNACION_MODULO',
+    # OPERADORES DE ASIGNACIÓN
+    'ASIGNACION',
+    'ASIGNACION_ADICION',
+    'ASIGNACION_RESTA',
+    'ASIGNACION_MULTI',
+    'DECLARACION_ASIGNACION',
+    'ASIGNACION_DIVISION',
+    'ASIGNACION_MODULO',
 
-  # OPERADORES DE COMPARACIÓN
-  'MENOR_IGUAL',
-  'IGUAL',
-  'DIFERENTE',
-  'MAYOR',
-  'MENOR',
-  'MAYOR_IGUAL',
+    # OPERADORES DE COMPARACIÓN
+    'MENOR_IGUAL',
+    'IGUAL',
+    'DIFERENTE',
+    'MAYOR',
+    'MENOR',
+    'MAYOR_IGUAL',
 
-  # TIPOS DE DATOS
-  'INT',
-  'DOUBLE',
-  'STRING',
-  'BOOLEAN',
+    # TIPOS DE DATOS
+    'INT',
+    'DOUBLE',
+    'STRING',
+    'BOOLEAN',
 
-  # COMPONENTES
-  'DOS_PUNTOS',
-  'PUNTO_COMA',
-  'I_LLAVE',
-  'D_LLAVE',
-  'COMA',
-  'I_CORCHETE',
-  'D_CORCHETE',
-  'IDENTIFICADOR',
-  'PUNTO',
-  'I_PARENTESIS',
-  'D_PARENTESIS',
+    # COMPONENTES
+    'DOS_PUNTOS',
+    'PUNTO_COMA',
+    'I_LLAVE',
+    'D_LLAVE',
+    'COMA',
+    'I_CORCHETE',
+    'D_CORCHETE',
+    'IDENTIFICADOR',
+    'PUNTO',
+    'I_PARENTESIS',
+    'D_PARENTESIS',
 
-  # OPERADORES LÓGICOS
-  'AND',
-  'OR',
-  'NOT',
+    # OPERADORES LÓGICOS
+    'AND',
+    'OR',
+    'NOT',
 
-  'PRINTLN',
-  'PRINTF',
-  'PRINT',
+    'PRINTLN',
+    'PRINTF',
+    'PRINT',
 
-  # IDs
-  'ID',
+    # IDs
+    'ID',
 
-  # Auxiliar
-  'ELSEIF',
+    # Auxiliar
+    'ELSEIF',
 ] + list(reserved.values())
 
-## Daniel Torres
+# Daniel Torres
 t_ADICION = r'\+'
 t_RESTA = r'-'
 
@@ -122,7 +122,7 @@ t_COMA = r','
 
 t_AND = r'&&'
 
-## Danny Loor
+# Danny Loor
 t_MULTIPLICACION = r'\*'
 t_DIVISION = r'/'
 t_MODULO = r'%'
@@ -139,7 +139,7 @@ t_PUNTO = r'\.'
 
 t_OR = r'\|\|'
 
-## Diego Arteaga
+# Diego Arteaga
 t_INCREMENTO = r"\+\+"
 t_DECREMENTO = r"--"
 
@@ -158,6 +158,7 @@ t_D_PARENTESIS = r'\)'
 # def t_FMTFUNC(t):
 #   r'fmt\.'
 
+
 def t_PRINTLN(t):
     r'fmt\.Println'
     return t
@@ -166,6 +167,7 @@ def t_PRINTLN(t):
 def t_PRINTF(t):
     r'fmt\.Printf'
     return t
+
 
 def t_PRINT(t):
     r'fmt\.Print'
@@ -214,10 +216,8 @@ def t_newline(t):
 
 # Error token
 def t_error(t):
-   raise AnalyzerException("Componente léxico no identificado '%s'" % t.value[0])
-    # print("Illegal character '%s'" % t.value[0])
-    # t.lexer.skip(1)
-
+    raise AnalyzerException(
+        "Componente léxico no identificado '%s'" % t.value[0])
 
 
 # Ignore tokens
@@ -277,6 +277,7 @@ lexer = lex.lex()
 #   print(tok)
 
 # f_da.close()
+
 
 class AnalyzerException(Exception):
     def __init__(self, message):
