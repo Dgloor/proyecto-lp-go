@@ -458,6 +458,7 @@
 2022-11-30 01:55 -- else { fmt.Println("Point p1 and p2 are not equal.") }: None
 2022-11-30 01:55 -- if(p2.Age > 45){fmt.Println("FirstName: ", p2.FirstName)}: None
 2022-11-29 22:39 -- x:  
+<<<<<<< HEAD
 2022-11-29 22:44 -- h: o
 2022-11-29 22:44 -- h: o
 2022-11-29 22:44 -- h: o
@@ -503,6 +504,15 @@ si
 2022-11-29 23:14 -- var x =2: None
 2022-11-29 23:14 -- var x =2
 : None
-2022-11-29 23:17 -- Error de sintaxis - Token: IGUAL, Línea: 1, Col: 5
-2022-11-29 23:17 -- Error de sintaxis - Token: IGUAL, Línea: 1, Col: 5
+2022-11-29 23:17 -- Error de sintaxis - Token: IGUAL, Lï¿½nea: 1, Col: 5
+2022-11-29 23:17 -- Error de sintaxis - Token: IGUAL, Lï¿½nea: 1, Col: 5
 2022-11-29 23:18 -- holaaaa: None
+2022-11-29 22:52 -- p: 1
+2022-11-29 22:53 -- p: 1
+2022-11-29 22:54 -- f: m
+2022-11-29 22:54 -- v: a
+2022-11-29 23:00 -- x:  
+2022-11-29 23:01 -- y:  
+2022-11-29 23:01 -- y:  
+2022-11-29 23:01 -- y:  
+2022-11-29 23:02 -- y:
