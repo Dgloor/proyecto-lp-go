@@ -184,6 +184,11 @@ def p_array_length_con_valores_string(p):
 def p_array_length_con_valores_boolean(p):
     'array_length_con_valores_boolean : array_length BOOLEAN I_LLAVE valores_boolean D_LLAVE'
 # Fin de arreglo
+
+# Definicion Variable por Daniel Torres
+
+def p_def_variable(p):
+    '''instruccion : def_varib '''
   
 
 def p_map(p):
