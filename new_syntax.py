@@ -44,14 +44,28 @@ def p_impresion(p):
     'instruccion : print I_PARENTESIS valores D_PARENTESIS'
 
 def p_declaracion(p):  #puede reconocer a=20
-    '''instruccion : VAR ID type ASIGNACION valor
-                   | VAR ID ASIGNACION valor
-                   | VAR ID ASIGNACION instruccion
-                   | VAR ID array_type_spec ASIGNACION instruccion'''
+    '''instruccion : declaracion_comun
+                   | decla_header ASIGNACION instruccion
+                   | decla_header array_type_spec ASIGNACION instruccion
+                   | empty_struct
+                   | empty_array'''
 
 def p_asignacion(p):
     '''instruccion : ID asignacion valor
           | ID asignacion instruccion'''
+
+def p_declaraciones_comunes(p):
+    '''declaracion_comun : decla_header type ASIGNACION valor
+                  | decla_header ASIGNACION valor'''
+
+def p_declara_empty_struct_var(p): #Diego Arteaga - Structs
+    'empty_struct : decla_header ID'
+
+def p_declara_empty_array(p):
+    'empty_array : decla_header array_type_spec'
+
+def p_declara_header(p):
+    '''decla_header : VAR ID'''
 
 def p_funcion(p):
     'funcion : FUNC ID cuerpo_fun'
@@ -195,8 +209,20 @@ def p_declaracion_struct(p):
     'instruccion : init_struct'
 
 def p_init_struct(p):
-    '''init_struct : VAR ID ID ASIGNACION ID I_LLAVE valores D_LLAVE
-                    | ID DECLARACION_ASIGNACION ID I_LLAVE valores D_LLAVE'''
+    '''init_struct : empty_struct ASIGNACION ID I_LLAVE valores D_LLAVE
+                    | ID DECLARACION_ASIGNACION ID I_LLAVE valores D_LLAVE
+                    | empty_struct ASIGNACION ID I_LLAVE atributos_nombrados D_LLAVE
+                    | ID DECLARACION_ASIGNACION ID I_LLAVE atributos_nombrados D_LLAVE'''
+
+def p_atributos_nombrados(p):
+    '''atributos_nombrados : declara_atributo
+                    | declara_atributo COMA atributos_nombrados'''
+
+def p_valor_var_struct(p):
+    'valor_struct : ID PUNTO ID'
+
+def p_nombrandos_struct(p):
+    'declara_atributo : ID DOS_PUNTOS expression'
 
 def p_clave_valor(p):
     '''clave_valor : valor DOS_PUNTOS valor'''
@@ -213,7 +239,7 @@ def p_iteracion_for(p):
     'iteracion_for : ID'
 
 def p_expression_term(p):
-    '''expression : valores
+    '''expression : valor
                   | resultado
                   | llamada_func
                   | I_PARENTESIS resultado D_PARENTESIS'''
@@ -304,7 +330,8 @@ def p_valores(p):
           | valor_double
           | valor_string
           | valor_boolean
-          | valor_variable'''
+          | valor_variable
+          | valor_struct'''
 
 def p_valores_int(p):
     '''valor_int : INT'''
