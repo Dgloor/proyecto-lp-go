@@ -523,3 +523,14 @@ si
 2022-11-29 23:02 -- y:
 >>>>>>> fa9a79e5d9e66724e476b2100ad67f150c22225a
 2022-11-29 23:32 -- Error de sintaxis - Token: D_LLAVE, L�nea: 1, Col: 9
+2022-11-30 14:28 -- Error de sintaxis - Token: ELSEIF, Línea: 1, Col: 21
+2022-11-30 14:29 -- Error de sintaxis - Token: ID, Línea: 1, Col: 21
+2022-11-30 14:32 -- Error de sintaxis - Token: ELSEIF, Línea: 1, Col: 21
+2022-11-30 14:33 -- Error de sintaxis - Token: ELSEIF, Línea: 1, Col: 21
+2022-11-30 14:37 -- Error de sintaxis - Token: AND, Línea: 1, Col: 7
+2022-11-30 14:39 -- Error de sintaxis - Token: BOOLEAN, Línea: 1, Col: 3
+2022-11-30 14:41 -- Error de sintaxis - Token: BOOLEAN, Línea: 1, Col: 3
+2022-11-30 14:42 -- Error de sintaxis - Token: ELSEIF, Línea: 1, Col: 11
+2022-11-30 14:43 -- Error de sintaxis - Token: ELSEIF, Línea: 1, Col: 11
+2022-11-30 14:43 -- Error de sintaxis - Token: ELSEIF, Línea: 1, Col: 11
+2022-11-30 14:44 -- Error de sintaxis - Token: ELSEIF, Línea: 1, Col: 11

@@ -130,8 +130,7 @@ def p_llamada_params(p):
 
 def p_control_structs(p):
     '''instruccion : if_struct
-    | if_else_struct
-    | many_elseif'''
+    | if_else_struct'''
 
 def p_if_condicion(p):
     'if_struct : IF condicion body'
@@ -147,7 +146,7 @@ def p_many_elseif(p):
                    | else_if many_elseif'''
 
 def p_if_else_condicion(p):
-    'else_if : ELSEIF condicion body'
+    'else_if : ELSE IF condicion body'
 
 
 def p_for_each(p):
@@ -155,7 +154,7 @@ def p_for_each(p):
 
 
 def p_for_condicion(p):
-    'instruccion : FOR instruccion PUNTO_COMA valor PUNTO_COMA ID operador_matematico I_LLAVE body D_LLAVE'
+   'instruccion : FOR instruccion PUNTO_COMA valor PUNTO_COMA ID operador_matematico I_LLAVE body D_LLAVE'
 
 
 def p_for_map(p):
@@ -323,8 +322,8 @@ def p_multiple_clave_valor(p):
 
 
 def p_condicion(p):
-    '''condicion : valor
-                | I_PARENTESIS valor D_PARENTESIS'''
+    '''condicion : expression
+                | I_PARENTESIS expression D_PARENTESIS'''
 
 
 def p_iteracion_for(p):
@@ -436,6 +435,9 @@ def p_operacion_comp_simbolos(p):
           | MAYOR_IGUAL
           | MENOR'''
 
+def p_operacion_logica(p):
+    '''operacion_binaria : AND
+          | OR'''
 
 def p_valores(p):
     '''valor : valor_int
