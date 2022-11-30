@@ -60,8 +60,7 @@ class Window(QMainWindow):
     def analisis_lexico(self):
         try:
             codigo = self.input.toPlainText()
-            if not re.match(r"(\n|\t|\s)*[^\n\t\s]+", codigo):
-                raise AnalyzerException("ERROR: La entrada está vacía.")
+            self.check_empty(codigo)
 
             lexer.input(codigo)
             resultado = ""
@@ -77,10 +76,31 @@ class Window(QMainWindow):
             self.show_error(str(e))
 
     def analisis_sintactico(self):
-        pass
+        try:
+            codigo = self.input.toPlainText()
+            self.check_empty(codigo)
+
+            resultado = ""
+
+            self.output.setPlainText(resultado)
+        except Exception as e:
+            self.show_error(str(e))
 
     def analisis_semantico(self):
-        pass
+        try:
+            codigo = self.input.toPlainText()
+            self.check_empty(codigo)
+            
+            resultado = ""
+
+            self.output.setPlainText(resultado)
+        except Exception as e:
+            self.show_error(str(e))
+
+    def check_empty(self, codigo):
+        if not re.match(r"(\n|\t|\s)*[^\n\t\s]+", codigo):
+            raise AnalyzerException("ERROR: La entrada está vacía.")
+
 
     def limpiar_todo(self):
         self.input.setPlainText("")
