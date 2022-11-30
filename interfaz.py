@@ -1,10 +1,17 @@
-import sys
 from PyQt5.QtWidgets import QMainWindow, QToolBar, QAction, QLabel, QPlainTextEdit, QHBoxLayout
 from PyQt5.QtWidgets import QVBoxLayout, QWidget, QMessageBox, QApplication
 from PyQt5.QtGui import QFont
-from lexico import lexer
+from lexico import lexer, AnalyzerException
 from sintactico import parser
+from datetime import datetime
+import sys
 import re
+
+
+def log_content(content, filename):
+    f =  open(filename, "a")
+    f.write("{0} -- {1}: {2}\n".format(datetime.now().strftime("%Y-%m-%d %H:%M"), content[0], content[1]))
+    f.close()
 
 
 class Window(QMainWindow):
@@ -75,7 +82,8 @@ class Window(QMainWindow):
                 tok = lexer.token()
                 if not tok:
                     break
-                resultado += f'Token: {tok.type}="{tok.value}", Línea: {tok.lineno}, Col: {tok.lexpos}  \n'
+                resultado += f"Token: {tok.type}='{tok.value}', Línea: {tok.lineno}, Col: {tok.lexpos}\n"
+                log_content(resultado, 'lexico_logs.txt')
 
             self.output.setPlainText(resultado)
         except Exception as e:
@@ -86,6 +94,7 @@ class Window(QMainWindow):
             codigo = self.input.toPlainText()
             self.check_empty(codigo)
 
+            log_content(codigo, 'sintactico_logs.txt')
             parser.parse(codigo)
             resultado = "No se presentaron errores durante el análisis sintáctico."
             self.output.setPlainText(resultado)
@@ -96,6 +105,8 @@ class Window(QMainWindow):
         try:
             codigo = self.input.toPlainText()
             self.check_empty(codigo)
+
+            log_content(codigo, 'semantico_logs.txt')
 
             resultado = ""
             self.output.setPlainText(resultado)
