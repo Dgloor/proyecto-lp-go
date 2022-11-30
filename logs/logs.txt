@@ -457,3 +457,4 @@
 2022-11-30 01:55 -- if p1 == p2 { fmt.Println("Point p1 and p2 are equal.") }: None
 2022-11-30 01:55 -- else { fmt.Println("Point p1 and p2 are not equal.") }: None
 2022-11-30 01:55 -- if(p2.Age > 45){fmt.Println("FirstName: ", p2.FirstName)}: None
+2022-11-29 23:04 -- hola: None

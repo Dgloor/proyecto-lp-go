@@ -10,3 +10,329 @@
 2022-11-29 22:39 -- T: o
 2022-11-29 22:39 -- T: o
 2022-11-29 22:39 -- T: o
+2022-11-29 22:44 -- T: o
+2022-11-29 22:47 -- Token: ID='hola', Línea: 1, Col: 0
+
+2022-11-29 22:50 -- Token: ID='hola', Línea: 1, Col: 0
+
+2022-11-29 22:50 -- Token: ID='holaaaa', Línea: 1, Col: 0
+
+2022-11-29 22:57 -- Token: ID='hola', Línea: 1, Col: 0
+
+2022-11-29 22:58 -- Token: ID='hola', Línea: 1, Col: 0
+
+2022-11-29 22:58 -- Token: ID='hola', Línea: 1, Col: 0
+
+2022-11-29 22:58 -- Token: ID='hola', Línea: 1, Col: 0
+
+2022-11-29 22:58 -- Token: ID='hola', Línea: 1, Col: 0
+
+2022-11-29 22:58 -- Token: ID='hola', Línea: 1, Col: 0
+
+2022-11-29 22:58 -- Token: ID='hola', Línea: 1, Col: 0
+
+2022-11-29 22:58 -- Token: ID='hola', Línea: 1, Col: 0
+Token: ID='que', Línea: 2, Col: 5
+
+2022-11-29 22:58 -- Token: ID='hola', Línea: 1, Col: 0
+Token: ID='que', Línea: 2, Col: 5
+Token: ID='haces', Línea: 2, Col: 9
+
+2022-11-29 22:58 -- Token: ID='hola', Línea: 1, Col: 0
+Token: ID='que', Línea: 2, Col: 5
+Token: ID='haces', Línea: 2, Col: 9
+Token: ID='si', Línea: 3, Col: 15
+
+2022-11-29 23:02 -- Token: ID='hola', Línea: 1, Col: 0
+2022-11-29 23:11 -- Token: VAR='var', Línea: 1, Col: 0
+2022-11-29 23:11 -- Token: VAR='var', Línea: 1, Col: 0
+Token: ID='x', Línea: 1, Col: 4
+2022-11-29 23:11 -- Token: VAR='var', Línea: 1, Col: 0
+Token: ID='x', Línea: 1, Col: 4
+Token: ASIGNACION='=', Línea: 1, Col: 6
+2022-11-29 23:11 -- Token: VAR='var', Línea: 1, Col: 0
+Token: ID='x', Línea: 1, Col: 4
+Token: ASIGNACION='=', Línea: 1, Col: 6
+Token: INT='2', Línea: 1, Col: 8
+2022-11-29 23:12 -- Token: VAR='var', Línea: 1, Col: 0
+2022-11-29 23:12 -- Token: VAR='var', Línea: 1, Col: 0
+Token: ID='x', Línea: 1, Col: 4
+2022-11-29 23:12 -- Token: VAR='var', Línea: 1, Col: 0
+Token: ID='x', Línea: 1, Col: 4
+Token: ASIGNACION='=', Línea: 1, Col: 6
+2022-11-29 23:12 -- Token: VAR='var', Línea: 1, Col: 0
+Token: ID='x', Línea: 1, Col: 4
+Token: ASIGNACION='=', Línea: 1, Col: 6
+Token: INT='2', Línea: 1, Col: 8
+2022-11-29 23:12 -- Token: VAR='var', Línea: 1, Col: 0
+Token: ID='x', Línea: 1, Col: 4
+Token: ASIGNACION='=', Línea: 1, Col: 6
+Token: INT='2', Línea: 1, Col: 8
+Token: VAR='var', Línea: 2, Col: 10
+2022-11-29 23:12 -- Token: VAR='var', Línea: 1, Col: 0
+Token: ID='x', Línea: 1, Col: 4
+Token: ASIGNACION='=', Línea: 1, Col: 6
+Token: INT='2', Línea: 1, Col: 8
+Token: VAR='var', Línea: 2, Col: 10
+Token: ID='x', Línea: 2, Col: 14
+2022-11-29 23:12 -- Token: VAR='var', Línea: 1, Col: 0
+Token: ID='x', Línea: 1, Col: 4
+Token: ASIGNACION='=', Línea: 1, Col: 6
+Token: INT='2', Línea: 1, Col: 8
+Token: VAR='var', Línea: 2, Col: 10
+Token: ID='x', Línea: 2, Col: 14
+Token: ASIGNACION='=', Línea: 2, Col: 16
+2022-11-29 23:12 -- Token: VAR='var', Línea: 1, Col: 0
+Token: ID='x', Línea: 1, Col: 4
+Token: ASIGNACION='=', Línea: 1, Col: 6
+Token: INT='2', Línea: 1, Col: 8
+Token: VAR='var', Línea: 2, Col: 10
+Token: ID='x', Línea: 2, Col: 14
+Token: ASIGNACION='=', Línea: 2, Col: 16
+Token: INT='2', Línea: 2, Col: 18
+2022-11-29 23:12 -- Token: VAR='var', Línea: 1, Col: 0
+Token: ID='x', Línea: 1, Col: 4
+Token: ASIGNACION='=', Línea: 1, Col: 6
+Token: INT='2', Línea: 1, Col: 8
+Token: VAR='var', Línea: 2, Col: 10
+Token: ID='x', Línea: 2, Col: 14
+Token: ASIGNACION='=', Línea: 2, Col: 16
+Token: INT='2', Línea: 2, Col: 18
+Token: VAR='var', Línea: 3, Col: 20
+2022-11-29 23:12 -- Token: VAR='var', Línea: 1, Col: 0
+Token: ID='x', Línea: 1, Col: 4
+Token: ASIGNACION='=', Línea: 1, Col: 6
+Token: INT='2', Línea: 1, Col: 8
+Token: VAR='var', Línea: 2, Col: 10
+Token: ID='x', Línea: 2, Col: 14
+Token: ASIGNACION='=', Línea: 2, Col: 16
+Token: INT='2', Línea: 2, Col: 18
+Token: VAR='var', Línea: 3, Col: 20
+Token: ID='x', Línea: 3, Col: 24
+2022-11-29 23:12 -- Token: VAR='var', Línea: 1, Col: 0
+Token: ID='x', Línea: 1, Col: 4
+Token: ASIGNACION='=', Línea: 1, Col: 6
+Token: INT='2', Línea: 1, Col: 8
+Token: VAR='var', Línea: 2, Col: 10
+Token: ID='x', Línea: 2, Col: 14
+Token: ASIGNACION='=', Línea: 2, Col: 16
+Token: INT='2', Línea: 2, Col: 18
+Token: VAR='var', Línea: 3, Col: 20
+Token: ID='x', Línea: 3, Col: 24
+Token: ASIGNACION='=', Línea: 3, Col: 26
+2022-11-29 23:12 -- Token: VAR='var', Línea: 1, Col: 0
+Token: ID='x', Línea: 1, Col: 4
+Token: ASIGNACION='=', Línea: 1, Col: 6
+Token: INT='2', Línea: 1, Col: 8
+Token: VAR='var', Línea: 2, Col: 10
+Token: ID='x', Línea: 2, Col: 14
+Token: ASIGNACION='=', Línea: 2, Col: 16
+Token: INT='2', Línea: 2, Col: 18
+Token: VAR='var', Línea: 3, Col: 20
+Token: ID='x', Línea: 3, Col: 24
+Token: ASIGNACION='=', Línea: 3, Col: 26
+Token: INT='2', Línea: 3, Col: 28
+2022-11-29 23:12 -- Token: VAR='var', Línea: 1, Col: 0
+Token: ID='x', Línea: 1, Col: 4
+Token: ASIGNACION='=', Línea: 1, Col: 6
+Token: INT='2', Línea: 1, Col: 8
+Token: VAR='var', Línea: 2, Col: 10
+Token: ID='x', Línea: 2, Col: 14
+Token: ASIGNACION='=', Línea: 2, Col: 16
+Token: INT='2', Línea: 2, Col: 18
+Token: VAR='var', Línea: 3, Col: 20
+Token: ID='x', Línea: 3, Col: 24
+Token: ASIGNACION='=', Línea: 3, Col: 26
+Token: INT='2', Línea: 3, Col: 28
+Token: VAR='var', Línea: 4, Col: 30
+2022-11-29 23:12 -- Token: VAR='var', Línea: 1, Col: 0
+Token: ID='x', Línea: 1, Col: 4
+Token: ASIGNACION='=', Línea: 1, Col: 6
+Token: INT='2', Línea: 1, Col: 8
+Token: VAR='var', Línea: 2, Col: 10
+Token: ID='x', Línea: 2, Col: 14
+Token: ASIGNACION='=', Línea: 2, Col: 16
+Token: INT='2', Línea: 2, Col: 18
+Token: VAR='var', Línea: 3, Col: 20
+Token: ID='x', Línea: 3, Col: 24
+Token: ASIGNACION='=', Línea: 3, Col: 26
+Token: INT='2', Línea: 3, Col: 28
+Token: VAR='var', Línea: 4, Col: 30
+Token: ID='x', Línea: 4, Col: 34
+2022-11-29 23:12 -- Token: VAR='var', Línea: 1, Col: 0
+Token: ID='x', Línea: 1, Col: 4
+Token: ASIGNACION='=', Línea: 1, Col: 6
+Token: INT='2', Línea: 1, Col: 8
+Token: VAR='var', Línea: 2, Col: 10
+Token: ID='x', Línea: 2, Col: 14
+Token: ASIGNACION='=', Línea: 2, Col: 16
+Token: INT='2', Línea: 2, Col: 18
+Token: VAR='var', Línea: 3, Col: 20
+Token: ID='x', Línea: 3, Col: 24
+Token: ASIGNACION='=', Línea: 3, Col: 26
+Token: INT='2', Línea: 3, Col: 28
+Token: VAR='var', Línea: 4, Col: 30
+Token: ID='x', Línea: 4, Col: 34
+Token: ASIGNACION='=', Línea: 4, Col: 36
+2022-11-29 23:12 -- Token: VAR='var', Línea: 1, Col: 0
+Token: ID='x', Línea: 1, Col: 4
+Token: ASIGNACION='=', Línea: 1, Col: 6
+Token: INT='2', Línea: 1, Col: 8
+Token: VAR='var', Línea: 2, Col: 10
+Token: ID='x', Línea: 2, Col: 14
+Token: ASIGNACION='=', Línea: 2, Col: 16
+Token: INT='2', Línea: 2, Col: 18
+Token: VAR='var', Línea: 3, Col: 20
+Token: ID='x', Línea: 3, Col: 24
+Token: ASIGNACION='=', Línea: 3, Col: 26
+Token: INT='2', Línea: 3, Col: 28
+Token: VAR='var', Línea: 4, Col: 30
+Token: ID='x', Línea: 4, Col: 34
+Token: ASIGNACION='=', Línea: 4, Col: 36
+Token: INT='2', Línea: 4, Col: 38
+2022-11-29 23:12 -- Token: VAR='var', Línea: 4, Col: 0
+2022-11-29 23:12 -- Token: VAR='var', Línea: 4, Col: 0
+Token: ID='x', Línea: 4, Col: 4
+2022-11-29 23:12 -- Token: VAR='var', Línea: 4, Col: 0
+Token: ID='x', Línea: 4, Col: 4
+Token: ASIGNACION='=', Línea: 4, Col: 6
+2022-11-29 23:12 -- Token: VAR='var', Línea: 4, Col: 0
+Token: ID='x', Línea: 4, Col: 4
+Token: ASIGNACION='=', Línea: 4, Col: 6
+Token: INT='2', Línea: 4, Col: 8
+2022-11-29 23:12 -- Token: VAR='var', Línea: 4, Col: 0
+Token: ID='x', Línea: 4, Col: 4
+Token: ASIGNACION='=', Línea: 4, Col: 6
+Token: INT='2', Línea: 4, Col: 8
+Token: VAR='var', Línea: 5, Col: 10
+2022-11-29 23:12 -- Token: VAR='var', Línea: 4, Col: 0
+Token: ID='x', Línea: 4, Col: 4
+Token: ASIGNACION='=', Línea: 4, Col: 6
+Token: INT='2', Línea: 4, Col: 8
+Token: VAR='var', Línea: 5, Col: 10
+Token: ID='x', Línea: 5, Col: 14
+2022-11-29 23:12 -- Token: VAR='var', Línea: 4, Col: 0
+Token: ID='x', Línea: 4, Col: 4
+Token: ASIGNACION='=', Línea: 4, Col: 6
+Token: INT='2', Línea: 4, Col: 8
+Token: VAR='var', Línea: 5, Col: 10
+Token: ID='x', Línea: 5, Col: 14
+Token: ASIGNACION='=', Línea: 5, Col: 16
+2022-11-29 23:12 -- Token: VAR='var', Línea: 4, Col: 0
+Token: ID='x', Línea: 4, Col: 4
+Token: ASIGNACION='=', Línea: 4, Col: 6
+Token: INT='2', Línea: 4, Col: 8
+Token: VAR='var', Línea: 5, Col: 10
+Token: ID='x', Línea: 5, Col: 14
+Token: ASIGNACION='=', Línea: 5, Col: 16
+Token: INT='2', Línea: 5, Col: 18
+2022-11-29 23:12 -- Token: VAR='var', Línea: 4, Col: 0
+Token: ID='x', Línea: 4, Col: 4
+Token: ASIGNACION='=', Línea: 4, Col: 6
+Token: INT='2', Línea: 4, Col: 8
+Token: VAR='var', Línea: 5, Col: 10
+Token: ID='x', Línea: 5, Col: 14
+Token: ASIGNACION='=', Línea: 5, Col: 16
+Token: INT='2', Línea: 5, Col: 18
+Token: VAR='var', Línea: 6, Col: 20
+2022-11-29 23:12 -- Token: VAR='var', Línea: 4, Col: 0
+Token: ID='x', Línea: 4, Col: 4
+Token: ASIGNACION='=', Línea: 4, Col: 6
+Token: INT='2', Línea: 4, Col: 8
+Token: VAR='var', Línea: 5, Col: 10
+Token: ID='x', Línea: 5, Col: 14
+Token: ASIGNACION='=', Línea: 5, Col: 16
+Token: INT='2', Línea: 5, Col: 18
+Token: VAR='var', Línea: 6, Col: 20
+Token: ID='x', Línea: 6, Col: 24
+2022-11-29 23:12 -- Token: VAR='var', Línea: 4, Col: 0
+Token: ID='x', Línea: 4, Col: 4
+Token: ASIGNACION='=', Línea: 4, Col: 6
+Token: INT='2', Línea: 4, Col: 8
+Token: VAR='var', Línea: 5, Col: 10
+Token: ID='x', Línea: 5, Col: 14
+Token: ASIGNACION='=', Línea: 5, Col: 16
+Token: INT='2', Línea: 5, Col: 18
+Token: VAR='var', Línea: 6, Col: 20
+Token: ID='x', Línea: 6, Col: 24
+Token: ASIGNACION='=', Línea: 6, Col: 26
+2022-11-29 23:12 -- Token: VAR='var', Línea: 4, Col: 0
+Token: ID='x', Línea: 4, Col: 4
+Token: ASIGNACION='=', Línea: 4, Col: 6
+Token: INT='2', Línea: 4, Col: 8
+Token: VAR='var', Línea: 5, Col: 10
+Token: ID='x', Línea: 5, Col: 14
+Token: ASIGNACION='=', Línea: 5, Col: 16
+Token: INT='2', Línea: 5, Col: 18
+Token: VAR='var', Línea: 6, Col: 20
+Token: ID='x', Línea: 6, Col: 24
+Token: ASIGNACION='=', Línea: 6, Col: 26
+Token: INT='2', Línea: 6, Col: 28
+2022-11-29 23:12 -- Token: VAR='var', Línea: 4, Col: 0
+Token: ID='x', Línea: 4, Col: 4
+Token: ASIGNACION='=', Línea: 4, Col: 6
+Token: INT='2', Línea: 4, Col: 8
+Token: VAR='var', Línea: 5, Col: 10
+Token: ID='x', Línea: 5, Col: 14
+Token: ASIGNACION='=', Línea: 5, Col: 16
+Token: INT='2', Línea: 5, Col: 18
+Token: VAR='var', Línea: 6, Col: 20
+Token: ID='x', Línea: 6, Col: 24
+Token: ASIGNACION='=', Línea: 6, Col: 26
+Token: INT='2', Línea: 6, Col: 28
+Token: VAR='var', Línea: 7, Col: 30
+2022-11-29 23:12 -- Token: VAR='var', Línea: 4, Col: 0
+Token: ID='x', Línea: 4, Col: 4
+Token: ASIGNACION='=', Línea: 4, Col: 6
+Token: INT='2', Línea: 4, Col: 8
+Token: VAR='var', Línea: 5, Col: 10
+Token: ID='x', Línea: 5, Col: 14
+Token: ASIGNACION='=', Línea: 5, Col: 16
+Token: INT='2', Línea: 5, Col: 18
+Token: VAR='var', Línea: 6, Col: 20
+Token: ID='x', Línea: 6, Col: 24
+Token: ASIGNACION='=', Línea: 6, Col: 26
+Token: INT='2', Línea: 6, Col: 28
+Token: VAR='var', Línea: 7, Col: 30
+Token: ID='x', Línea: 7, Col: 34
+2022-11-29 23:12 -- Token: VAR='var', Línea: 4, Col: 0
+Token: ID='x', Línea: 4, Col: 4
+Token: ASIGNACION='=', Línea: 4, Col: 6
+Token: INT='2', Línea: 4, Col: 8
+Token: VAR='var', Línea: 5, Col: 10
+Token: ID='x', Línea: 5, Col: 14
+Token: ASIGNACION='=', Línea: 5, Col: 16
+Token: INT='2', Línea: 5, Col: 18
+Token: VAR='var', Línea: 6, Col: 20
+Token: ID='x', Línea: 6, Col: 24
+Token: ASIGNACION='=', Línea: 6, Col: 26
+Token: INT='2', Línea: 6, Col: 28
+Token: VAR='var', Línea: 7, Col: 30
+Token: ID='x', Línea: 7, Col: 34
+Token: ASIGNACION='=', Línea: 7, Col: 36
+2022-11-29 23:12 -- Token: VAR='var', Línea: 4, Col: 0
+Token: ID='x', Línea: 4, Col: 4
+Token: ASIGNACION='=', Línea: 4, Col: 6
+Token: INT='2', Línea: 4, Col: 8
+Token: VAR='var', Línea: 5, Col: 10
+Token: ID='x', Línea: 5, Col: 14
+Token: ASIGNACION='=', Línea: 5, Col: 16
+Token: INT='2', Línea: 5, Col: 18
+Token: VAR='var', Línea: 6, Col: 20
+Token: ID='x', Línea: 6, Col: 24
+Token: ASIGNACION='=', Línea: 6, Col: 26
+Token: INT='2', Línea: 6, Col: 28
+Token: VAR='var', Línea: 7, Col: 30
+Token: ID='x', Línea: 7, Col: 34
+Token: ASIGNACION='=', Línea: 7, Col: 36
+Token: INT='2', Línea: 7, Col: 38
+2022-11-29 23:13 -- Token: VAR='var', Linea: 1, Col: 0
+2022-11-29 23:13 -- Token: VAR='var', Linea: 1, Col: 0
+Token: ID='x', Linea: 1, Col: 4
+2022-11-29 23:13 -- Token: VAR='var', Linea: 1, Col: 0
+Token: ID='x', Linea: 1, Col: 4
+Token: ASIGNACION='=', Linea: 1, Col: 6
+2022-11-29 23:13 -- Token: VAR='var', Linea: 1, Col: 0
+Token: ID='x', Linea: 1, Col: 4
+Token: ASIGNACION='=', Linea: 1, Col: 6
+Token: INT='2', Linea: 1, Col: 7

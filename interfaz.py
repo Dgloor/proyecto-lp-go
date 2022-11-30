@@ -7,8 +7,12 @@ from datetime import datetime
 import sys
 import re
 
+def log_content_line(content, filename):
+    f = open(filename, "a")
+    f.write("{0} -- {1}".format(datetime.now().strftime("%Y-%m-%d %H:%M"), content))
+    f.close()
 
-def log_content(content, filename):
+def log_content_result(content, filename):
     f = open(filename, "a")
     f.write("{0} -- {1}: {2}\n".format(datetime.now().strftime("%Y-%m-%d %H:%M"),
             content[0], content[1]))
@@ -83,8 +87,8 @@ class Window(QMainWindow):
                 tok = lexer.token()
                 if not tok:
                     break
-                resultado += f"Token: {tok.type}='{tok.value}', Línea: {tok.lineno}, Col: {tok.lexpos}\n"
-                log_content(resultado, './logs/lexico_logs.txt')
+                resultado += f"Token: {tok.type}='{tok.value}', Linea: {tok.lineno}, Col: {tok.lexpos}\n"
+                log_content_line(resultado, './logs/lexico_logs.txt')
 
             self.output.setPlainText(resultado)
         except Exception as e:
@@ -94,9 +98,10 @@ class Window(QMainWindow):
         try:
             codigo = self.input.toPlainText()
             self.check_empty(codigo)
+            content = [codigo]
+            content.append(parser.parse(codigo))
+            log_content_result(content, './logs/sintactico_logs.txt')
 
-            log_content(codigo, './logs/sintactico_logs.txt')
-            parser.parse(codigo)
             resultado = "No se presentaron errores durante el análisis sintáctico."
             self.output.setPlainText(resultado)
         except Exception as e:
@@ -106,8 +111,9 @@ class Window(QMainWindow):
         try:
             codigo = self.input.toPlainText()
             self.check_empty(codigo)
-
-            log_content(codigo, './logs/semantico_logs.txt')
+            content = [codigo]
+            content.append(parser.parse(codigo))
+            log_content_result(content, './logs/semantico_logs.txt')
 
             resultado = ""
             self.output.setPlainText(resultado)
