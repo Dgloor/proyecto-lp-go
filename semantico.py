@@ -241,7 +241,7 @@ def p_array_length_con_valores_boolean(p):
 # def p_def_variable(p):
 #     '''instruccion : def_varib '''
   
-
+# Maps - Danny Loor
 def p_map(p):
     'instruccion : MAP I_CORCHETE type D_CORCHETE type I_LLAVE D_LLAVE'
 
@@ -280,6 +280,7 @@ def p_valor_var_struct(p):
 def p_nombrandos_struct(p):
     'declara_atributo : ID DOS_PUNTOS expression'
 
+# Maps - Dannh Loor
 def p_clave_valor(p):
     '''clave_valor : valor DOS_PUNTOS valor'''
 
