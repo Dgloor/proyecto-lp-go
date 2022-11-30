@@ -1,6 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QMainWindow, QToolBar, QAction, QLabel, QPlainTextEdit, QHBoxLayout
 from PyQt5.QtWidgets import QVBoxLayout, QWidget, QMessageBox, QApplication
+from PyQt5.QtGui import QFont
 from lexico import *
 from sintactico import parser
 import re
@@ -9,6 +10,9 @@ import re
 class Window(QMainWindow):
     def __init__(self):
         super().__init__()
+
+        # Características
+        self.font_size = 12
 
         # Acciones
         toolbar_herramientas = QToolBar()
@@ -34,12 +38,16 @@ class Window(QMainWindow):
 
         # Editor de código
         self.label_input = QLabel("Editor")
+        self.label_input.setFont(QFont('Arial', 10))
         self.input = QPlainTextEdit()
+        self.input.setFont(QFont('Consolas', 11))
 
         # Salida análisis
         self.label_output = QLabel("Salida Análisis")
+        self.label_output.setFont(QFont('Arial', 10))
         self.output = QPlainTextEdit()
         self.output.setReadOnly(True)
+        self.output.setFont(QFont('Consolas', 11))
 
         # Contenedor principal
         self.layout = QHBoxLayout()
@@ -67,8 +75,7 @@ class Window(QMainWindow):
                 tok = lexer.token()
                 if not tok:
                     break
-                resultado += str(tok.type) + " " + str(tok.value) + \
-                    " "+str(tok.lineno)+" "+str(tok.lexpos)+"\n"
+                resultado += f'Token: {tok.type}= "{tok.value}", Línea: {tok.lineno}, Col: {tok.lexpos}  \n'
 
             self.output.setPlainText(resultado)
         except Exception as e:
