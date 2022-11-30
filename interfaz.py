@@ -1,9 +1,8 @@
 import sys
-from PyQt5.QtWidgets import *
-from PyQt5.QtGui import QKeySequence
-from PyQt5 import Qt
+from PyQt5.QtWidgets import QMainWindow, QToolBar, QAction, QLabel, QPlainTextEdit, QHBoxLayout
+from PyQt5.QtWidgets import QVBoxLayout, QWidget, QMessageBox, QApplication
 from lexico import *
-#from sintactico import *
+from sintactico import parser
 import re
 
 
@@ -80,8 +79,8 @@ class Window(QMainWindow):
             codigo = self.input.toPlainText()
             self.check_empty(codigo)
 
-            resultado = ""
-
+            parser.parse(codigo)
+            resultado = "No se presentaron errores durante el análisis sintáctico."
             self.output.setPlainText(resultado)
         except Exception as e:
             self.show_error(str(e))
@@ -90,9 +89,8 @@ class Window(QMainWindow):
         try:
             codigo = self.input.toPlainText()
             self.check_empty(codigo)
-            
-            resultado = ""
 
+            resultado = ""
             self.output.setPlainText(resultado)
         except Exception as e:
             self.show_error(str(e))
@@ -101,6 +99,8 @@ class Window(QMainWindow):
         if not re.match(r"(\n|\t|\s)*[^\n\t\s]+", codigo):
             raise AnalyzerException("ERROR: La entrada está vacía.")
 
+    def limpiar_salida(self):
+        self.output.setPlainText("")
 
     def limpiar_todo(self):
         self.input.setPlainText("")
