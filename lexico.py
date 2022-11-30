@@ -101,7 +101,7 @@ tokens = [
     'ID',
 
     # Auxiliar
-    'ELSEIF',
+
 ] + list(reserved.values())
 
 # Daniel Torres
@@ -174,13 +174,14 @@ def t_PRINT(t):
     return t
 
 
-def t_ELSEIF(t):
-    r'else\sif'
-    return t
-
+#def t_ELSEIF(t):
+ #   r'else[\s]if'
+ #   t.type = reserved.get(t.value, 'ELSEIF')
+  #  return t
 
 def t_BOOLEAN(t):
     r'(true|false)'
+    t.value = True if t.value == 'true' else False
     return t
 
 

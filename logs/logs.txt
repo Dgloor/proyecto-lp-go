@@ -497,3 +497,9 @@
 >>>>>>> 9b451cf18b14fd365ae6ad4e2d9c54f14e82d2d2
 >>>>>>> fa9a79e5d9e66724e476b2100ad67f150c22225a
 >>>>>>> origin/main
+2022-11-30 14:41 -- var a = true: None
+2022-11-30 14:41 -- if true {}: None
+2022-11-30 14:41 -- if false {}: None
+2022-11-30 14:42 -- if true {}: None
+2022-11-30 14:48 -- if con { var a = 2 } else if false {}: None
+2022-11-30 14:49 -- if con { var a = 2 } else if false { var a int = 2 } else {}: None
