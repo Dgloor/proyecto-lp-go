@@ -11,6 +11,29 @@ precedence = (
     ('left', 'MULTIPLICACION', 'DIVISION'),
 )
 
+def oparation_number(operador, p_valor, s_valor):
+    if operador == '+':
+        return p_valor + s_valor
+    if operador == '-':
+        return p_valor - s_valor
+    elif operador == '*':
+        return p_valor * s_valor
+    elif operador == '/':
+        return p_valor / s_valor
+    elif operador == '%':
+        return p_valor % s_valor
+
+def operation(operador, p_valor, s_valor):
+    p_valor = str(p_valor)
+    s_valor = str(s_valor)
+    if p_valor.find(".") == -1 and s_valor.find(".") == -1:
+        if (p_valor.isdigit() and s_valor.isdigit()):
+            p_valor = int(p_valor)
+            s_valor = int(s_valor)
+            return oparation_number(operador, p_valor, s_valor)
+    else:
+        return oparation_number(operador, float(p_valor), float(s_valor))
+
 def log_content(content, filename):
     f = open(filename, "a")
     f.write("{0} -- {1}\n".format(datetime.now().strftime("%Y-%m-%d %H:%M"), content))
@@ -276,9 +299,24 @@ def p_expression_term(p):
                   | resultado
                   | llamada_func
                   | I_PARENTESIS resultado D_PARENTESIS'''
+    if len(p) == 2:
+        p[0] = p[1]
+    else:
+        p[0] = p[2]
 
 def p_expression_operation(p):
     'resultado : expression operacion_binaria expression'
+    #Diego Arteaga
+    var1 = p[3]
+    var2 = p[1]
+    # Esta condicion es para asignar el valor de la variable almacenada
+    if var1 in booleanos or var2 in booleanos:
+        return
+    if var1 in variables:
+        var1 = variables[var1]
+    if var2 in variables:
+        var2 = variables[var2]
+    p[0] = str(operation(p[2], var2, var1))
 
 def p_incremento_decremento(p):
     '''resultado_inc_dec : ID operador_matematico
@@ -287,16 +325,19 @@ def p_incremento_decremento(p):
     #Diego Arteaga
     variable_inc_dec = p[1]
     # Esta condicion es para asignar el valor de la variable almacenada
-    if variable_inc_dec in variables:
-        variable_inc_dec = variables[variable_inc_dec]
-    if (not variable_inc_dec.isdigit()) and variable_inc_dec.find(".") == -1:
-        return
-    variable_inc_dec = int(variable_inc_dec) if variable_inc_dec.find(".") == -1 else float(variable_inc_dec)
-    if p[2] == '++':
-        variables[p[1]] = variable_inc_dec + 1
-    elif p[2] == '--':
-        variables[p[1]] = variable_inc_dec - 1
-    p[0] = str(variables[p[1]])
+    try:
+        if variable_inc_dec in variables:
+            variable_inc_dec = variables[variable_inc_dec]
+        if (not variable_inc_dec.isdigit()) and variable_inc_dec.find(".") == -1:
+            return
+        variable_inc_dec = int(variable_inc_dec) if variable_inc_dec.find(".") == -1 else float(variable_inc_dec)
+        if p[2] == '++':
+            variables[p[1]] = variable_inc_dec + 1
+        elif p[2] == '--':
+            variables[p[1]] = variable_inc_dec - 1
+        p[0] = str(variables[p[1]])
+    except:
+        raise AnalyzerException("ERROR: Error semántico en la operación de decremento e incremento: " + p)
 
 def p_multiples_valores(p):
     '''valores : valor

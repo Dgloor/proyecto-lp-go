@@ -522,3 +522,4 @@ si
 =======
 2022-11-29 23:02 -- y:
 >>>>>>> fa9a79e5d9e66724e476b2100ad67f150c22225a
+2022-11-29 23:32 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 9
