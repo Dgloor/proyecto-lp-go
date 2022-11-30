@@ -3,6 +3,9 @@ import ply.yacc as sintactico
 # from main import log_content
 from lexico import tokens, AnalyzerException
 
+variables = {}
+booleanos = ("true", "false")
+
 
 
 def log_content(content, filename):
@@ -68,19 +71,41 @@ def p_declara_header(p):
     '''decla_header : VAR ID'''
 
 def p_funcion(p):
-    'funcion : FUNC ID cuerpo_fun'
+    '''funcion : FUNC ID cuerpo_fun
+               | funcion_no_type'''
+
+def p_funct_notype(p):
+    'funcion_no_type : FUNC ID parametros_sin_tipo body'
 
 def p_body_fm(p):
     '''cuerpo_fun : parametrosMetodo body'''
 
 def p_parametros_metodo(p):
-    '''parametrosMetodo : I_PARENTESIS parametros D_PARENTESIS type
-                        | I_PARENTESIS parametros D_PARENTESIS'''
+    '''parametrosMetodo : parametrosMetodoInt
+                        | parametrosMetodoString
+                        | parametrosMetodoDouble
+                        | parametrosMetodoBool
+                        | parametros_sin_tipo'''
+
+def p_parametros_metodo_int(p):
+    'parametrosMetodoInt : parametros_sin_tipo INTEGER'
+
+def p_parametros_metodo_string(p):
+    'parametrosMetodoString : parametros_sin_tipo STRINGTYPE'
+
+def p_parametros_metodo_double(p):
+    'parametrosMetodoDouble : parametros_sin_tipo floating_type'
+
+def p_parametro_metodo_bool(p):
+    'parametrosMetodoBool : ID BOOL'
+
+def p_parametros_metodo_notype(p):
+    '''parametros_sin_tipo : I_PARENTESIS parametros D_PARENTESIS'''
 
 def p_parametros(p):
     '''parametros : atributo
                   | atributo COMA parametros
-                  | '''
+                  | valores type'''
 
 def p_llamada_func(p):
     'llamada_func : ID I_PARENTESIS llamada_params D_PARENTESIS'
@@ -248,7 +273,8 @@ def p_expression_operation(p):
     'resultado : expression operacion_binaria expression'
 
 def p_incremento_decremento(p):
-    'resultado_inc_dec : ID operador_matematico'
+    '''resultado_inc_dec : ID operador_matematico
+                        | valor_struct operador_matematico'''
 
 def p_multiples_valores(p):
     '''valores : valor
