@@ -31,41 +31,22 @@ def p_varias_instrucciones(p):
                             | instruccion varias_instrucciones'''
 
 def p_expression_result(p):
-    '''instruct_expression : RETURN valor
-                            | RETURN resultado'''
-
-
-def p_instrucciones(p):
-    '''instruccion : llamada_func
-                     | resultado_inc_dec
-                     | expression'''
+    '''instruct_expression : RETURN valor'''
 
 def p_impresion(p):
     'instruccion : print I_PARENTESIS valores D_PARENTESIS'
 
 def p_declaracion(p):  #puede reconocer a=20
-    '''instruccion : declaracion_comun
-                   | decla_header ASIGNACION instruccion
-                   | decla_header array_type_spec ASIGNACION instruccion
-                   | empty_struct
-                   | empty_array'''
+    '''instruccion : VAR ID type ASIGNACION valor
+                   | VAR ID ASIGNACION valor
+                   | VAR ID ASIGNACION instruccion'''
 
 def p_asignacion(p):
     '''instruccion : ID asignacion valor
           | ID asignacion instruccion'''
 
-def p_declaraciones_comunes(p):
-    '''declaracion_comun : decla_header type ASIGNACION valor
-                  | decla_header ASIGNACION valor'''
-
-def p_declara_empty_struct_var(p): #Diego Arteaga - Structs
-    'empty_struct : decla_header ID'
-
-def p_declara_empty_array(p):
-    'empty_array : decla_header array_type_spec'
-
-def p_declara_header(p):
-    '''decla_header : VAR ID'''
+def p_incremento_decremento(p):
+    'instruccion : ID operador_matematico'
 
 def p_funcion(p):
     'funcion : FUNC ID cuerpo_fun'
@@ -81,13 +62,6 @@ def p_parametros(p):
     '''parametros : atributo
                   | atributo COMA parametros
                   | '''
-
-def p_llamada_func(p):
-    'llamada_func : ID I_PARENTESIS llamada_params D_PARENTESIS'
-
-def p_llamada_params(p):
-    '''llamada_params : expression
-                      | expression COMA llamada_params'''
 
 #Estructuras de Control
 
@@ -137,52 +111,52 @@ def p_array_length_con_valores(p):
 
 # Arreglo validacion por Daniel Torres
 def p_array_int(p):
-    'array_int : I_CORCHETE D_CORCHETE INTEGER I_LLAVE D_LLAVE'
+    'array_int : I_CORCHETE D_CORCHETE INT I_LLAVE D_LLAVE'
 
 def p_array_double(p):
-    'array_double : I_CORCHETE D_CORCHETE floating_type I_LLAVE D_LLAVE'
+    'array_double : I_CORCHETE D_CORCHETE DOUBLE I_LLAVE D_LLAVE'
 
 def p_array_string(p):
-    'array_string : I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE D_LLAVE'
+    'array_string : I_CORCHETE D_CORCHETE STRING I_LLAVE D_LLAVE'
 
 def p_array_boolean(p):
     'array_boolean : I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE D_LLAVE'
 
 def p_array_length_int(p):
-    'array_length_int : array_length INTEGER I_LLAVE D_LLAVE'
+    'array_length_int : I_CORCHETE INT D_CORCHETE INT I_LLAVE D_LLAVE'
 
 def p_array_length_double(p):
-    'array_length_double : array_length floating_type I_LLAVE D_LLAVE'
+    'array_length_double : I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE D_LLAVE'
 
 def p_array_length_string(p):
-    'array_length_string : array_length STRINGTYPE I_LLAVE D_LLAVE'
+    'array_length_string : I_CORCHETE INT D_CORCHETE STRING I_LLAVE D_LLAVE'
 
 def p_array_length_boolean(p):
-    'array_length_boolean : array_length BOOLEAN I_LLAVE D_LLAVE'
+    'array_length_boolean : I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE D_LLAVE'
 
 def p_array_con_valores_int(p):
-    'array_con_valores_int : I_CORCHETE D_CORCHETE INTEGER I_LLAVE valores_int D_LLAVE'
+    'array_con_valores_int : I_CORCHETE D_CORCHETE INT I_LLAVE valores_int D_LLAVE'
 
 def p_array_con_valores_double(p):
-    'array_con_valores_double : I_CORCHETE D_CORCHETE floating_type I_LLAVE valores_double D_LLAVE'
+    'array_con_valores_double : I_CORCHETE D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE'
 
 def p_array_con_valores_string(p):
-    'array_con_valores_string : I_CORCHETE D_CORCHETE STRINGTYPE I_LLAVE valores_string D_LLAVE'
+    'array_con_valores_string : I_CORCHETE D_CORCHETE STRING I_LLAVE valores_string D_LLAVE'
 
 def p_array_con_valores_boolean(p):
     'array_con_valores_boolean : I_CORCHETE D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE'
 
 def p_array_length_con_valores_int(p):
-    'array_length_con_valores_int : array_length INTEGER I_LLAVE valores_int D_LLAVE'
+    'array_length_con_valores_int : I_CORCHETE INT D_CORCHETE INT I_LLAVE valores_int D_LLAVE'
 
 def p_array_length_con_valores_double(p):
-    'array_length_con_valores_double : array_length floating_type I_LLAVE valores_double D_LLAVE'
+    'array_length_con_valores_double : I_CORCHETE INT D_CORCHETE DOUBLE I_LLAVE valores_double D_LLAVE'
 
 def p_array_length_con_valores_string(p):
-    'array_length_con_valores_string : array_length STRINGTYPE I_LLAVE valores_string D_LLAVE'
+    'array_length_con_valores_string : I_CORCHETE INT D_CORCHETE STRING I_LLAVE valores_string D_LLAVE'
 
 def p_array_length_con_valores_boolean(p):
-    'array_length_con_valores_boolean : array_length BOOLEAN I_LLAVE valores_boolean D_LLAVE'
+    'array_length_con_valores_boolean : I_CORCHETE INT D_CORCHETE BOOLEAN I_LLAVE valores_boolean D_LLAVE'
 # Fin de arreglo
   
 
@@ -209,20 +183,8 @@ def p_declaracion_struct(p):
     'instruccion : init_struct'
 
 def p_init_struct(p):
-    '''init_struct : empty_struct ASIGNACION ID I_LLAVE valores D_LLAVE
-                    | ID DECLARACION_ASIGNACION ID I_LLAVE valores D_LLAVE
-                    | empty_struct ASIGNACION ID I_LLAVE atributos_nombrados D_LLAVE
-                    | ID DECLARACION_ASIGNACION ID I_LLAVE atributos_nombrados D_LLAVE'''
-
-def p_atributos_nombrados(p):
-    '''atributos_nombrados : declara_atributo
-                    | declara_atributo COMA atributos_nombrados'''
-
-def p_valor_var_struct(p):
-    'valor_struct : ID PUNTO ID'
-
-def p_nombrandos_struct(p):
-    'declara_atributo : ID DOS_PUNTOS expression'
+    '''init_struct : VAR ID ID ASIGNACION ID I_LLAVE valores D_LLAVE
+                    | ID DECLARACION_ASIGNACION ID I_LLAVE valores D_LLAVE'''
 
 def p_clave_valor(p):
     '''clave_valor : valor DOS_PUNTOS valor'''
@@ -237,18 +199,6 @@ def p_condicion(p):
 
 def p_iteracion_for(p):
     'iteracion_for : ID'
-
-def p_expression_term(p):
-    '''expression : valor
-                  | resultado
-                  | llamada_func
-                  | I_PARENTESIS resultado D_PARENTESIS'''
-
-def p_expression_operation(p):
-    'resultado : expression operacion_binaria expression'
-
-def p_incremento_decremento(p):
-    'resultado_inc_dec : ID operador_matematico'
 
 def p_multiples_valores(p):
     '''valores : valor
@@ -278,23 +228,11 @@ def p_print_options(p):
           | PRINTF
           | PRINT'''
 
-def p_tipo_array(p):
-    '''array_type_spec : array_length INTEGER
-          | array_length STRINGTYPE
-          | array_length BOOLEAN
-          | array_length floating_type'''
-
-def p_array_length_notype(p):
-    'array_length : I_CORCHETE INT D_CORCHETE'
-
 def p_tipo(p):
     '''type : BOOL
           | STRINGTYPE
           | INTEGER
-          | floating_type'''
-
-def p_tipo_flotante(p):
-    ''' floating_type : FLOAT32
+          | FLOAT32
           | FLOAT64'''
 
 def p_operacion_mat_var(p):
@@ -330,8 +268,7 @@ def p_valores(p):
           | valor_double
           | valor_string
           | valor_boolean
-          | valor_variable
-          | valor_struct'''
+          | valor_variable'''
 
 def p_valores_int(p):
     '''valor_int : INT'''
