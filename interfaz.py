@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QVBoxLayout, QWidget, QMessageBox, QApplication
 from PyQt5.QtGui import QFont
 from lexico import lexer, AnalyzerException
 from sintactico import parser
+from semantico import parser_sem
 from datetime import datetime
 import sys
 import re
@@ -107,9 +108,10 @@ class Window(QMainWindow):
             codigo = self.input.toPlainText()
             self.check_empty(codigo)
 
+            parser_sem.parse(codigo)
             log_content(codigo, './logs/semantico_logs.txt')
 
-            resultado = ""
+            resultado = "No se presentaron errores durante el análisis semántico."
             self.output.setPlainText(resultado)
         except Exception as e:
             self.show_error(str(e))

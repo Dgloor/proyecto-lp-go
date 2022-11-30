@@ -283,6 +283,19 @@ def p_expression_operation(p):
 def p_incremento_decremento(p):
     '''resultado_inc_dec : ID operador_matematico
                         | valor_struct operador_matematico'''
+    
+    variable_inc_dec = p[1]
+    # Esta condicion es para asignar el valor de la variable almacenada
+    if variable_inc_dec in variables:
+        variable_inc_dec = variables[variable_inc_dec]
+    if (not variable_inc_dec.isdigit()) and variable_inc_dec.find(".") == -1:
+        return
+    variable_inc_dec = int(variable_inc_dec) if variable_inc_dec.find(".") == -1 else float(variable_inc_dec)
+    if p[2] == '++':
+        variables[p[1]] = variable_inc_dec + 1
+    elif p[2] == '--':
+        variables[p[1]] = variable_inc_dec - 1
+    p[0] = str(variables[p[1]])
 
 def p_multiples_valores(p):
     '''valores : valor
@@ -384,13 +397,13 @@ def p_valores_variable(p):
 
 # Error rule for syntax errors
 def p_error(p):
-    raise AnalyzerException("ERROR: Sintáxis no válida en la entrada!: " + str(p))
+    raise AnalyzerException("ERROR: Sintáxis no válida en la entrada!: " + p)
 
 
 # Build the parser
-parser = sintactico.yacc()
+parser_sem = sintactico.yacc()
 
 
 def valida_regla(s):
-    result = parser.parse(s)
+    result = parser_sem.parse(s)
     print(result)
