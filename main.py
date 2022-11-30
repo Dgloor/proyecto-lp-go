@@ -14,4 +14,4 @@ while True:
     if not s: continue
     content = [s]
     content.append(sintactico.valida_regla(s))
-    log_content(content, 'logs.txt')
+    log_content(content, './logs/logs.txt')
