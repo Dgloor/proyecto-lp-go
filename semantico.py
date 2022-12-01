@@ -88,9 +88,9 @@ def p_declaracion(p):  # puede reconocer a=20
 
 def p_asignacion(p):
     '''instruccion : ID asignacion valor
-          | ID asignacion instruccion'''
-
-
+          | ID asignacion instruccion
+          | valor_struct asignacion valor
+          | valor_struct asignacion instruccion'''
 
 
 def p_declaraciones_comunes(p):
@@ -153,7 +153,8 @@ def p_parametros_metodo_notype(p):
 def p_parametros(p):
     '''parametros : atributo
                   | atributo COMA parametros
-                  | valores type'''
+                  | valores type
+                  | '''
 
 def p_llamada_func(p):
     'llamada_func : ID I_PARENTESIS llamada_params D_PARENTESIS'
@@ -320,7 +321,8 @@ def p_valor_var_struct(p):
 
 def p_nombrandos_struct(p):
     '''declara_atributo : ID DOS_PUNTOS expression
-                      | ID DOS_PUNTOS expression_bool'''
+                      | ID DOS_PUNTOS expression_bool
+                      | ID DOS_PUNTOS valor'''
 
 # Maps - Dannh Loor
 def p_clave_valor(p):
@@ -342,6 +344,7 @@ def p_condicion(p):
 def p_expression_bool(p):
     '''expression_bool : valor_boolean
                   | valor_variable
+                  | valor_struct
                   | resultado_bool
                   | llamada_func
                   | compare_expressions
@@ -359,6 +362,7 @@ def p_expression_term(p):
     '''expression : valor_int
                   | valor_double
                   | valor_variable
+                  | valor_struct
                   | resultado
                   | llamada_func
                   | I_PARENTESIS resultado D_PARENTESIS'''
