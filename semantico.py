@@ -160,7 +160,8 @@ def p_llamada_params(p):
     '''llamada_params : expression
                       | expression COMA llamada_params
                       | expression_bool
-                      | expression_bool COMA llamada_params'''
+                      | expression_bool COMA llamada_params
+                      | valores_string'''
 
 #Estructuras de Control
 
