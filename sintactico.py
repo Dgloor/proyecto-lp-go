@@ -50,6 +50,10 @@ def p_impresion(p):
 
 def p_declaracion(p):  # puede reconocer a=20
     '''instruccion : declaracion_comun
+                   | declara_int
+                   | declara_double
+                   | declara_string
+                   | declara_bool
                    | decla_header ASIGNACION instruccion
                    | decla_header array_type_spec ASIGNACION instruccion
                    | empty_struct
@@ -62,8 +66,19 @@ def p_asignacion(p):
 
 
 def p_declaraciones_comunes(p):
-    '''declaracion_comun : decla_header type ASIGNACION valor
-                  | decla_header ASIGNACION valor'''
+    '''declaracion_comun : decla_header ASIGNACION valor'''
+
+def p_declaracion_int(p):
+    'declara_int : decla_header INT ASIGNACION valor_int'
+
+def p_declaracion_double(p):
+    'declara_double : decla_header floating_type ASIGNACION valor_double'
+
+def p_declaracion_string(p):
+    'declara_string : decla_header STRINGTYPE ASIGNACION valor_string'
+
+def p_declaracion_boolean(p):
+    'declara_bool : decla_header BOOL ASIGNACION valor_boolean'
 
 
 def p_declara_empty_struct_var(p):  # Diego Arteaga - Structs
