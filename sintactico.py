@@ -34,8 +34,9 @@ def p_varias_instrucciones(p):
 
 
 def p_expression_result(p):
-    '''instruct_expression : RETURN valor
-                            | RETURN resultado'''
+    '''instruct_expression : RETURN valor_string
+                            | RETURN expression
+                            | RETURN expression_bool'''
 
 
 def p_instrucciones(p):
@@ -140,7 +141,9 @@ def p_llamada_func(p):
 
 def p_llamada_params(p):
     '''llamada_params : expression
-                      | expression COMA llamada_params'''
+                      | expression COMA llamada_params
+                      | expression_bool
+                      | expression_bool COMA llamada_params'''
 
 # Estructuras de Control
 
@@ -323,9 +326,9 @@ def p_atributos_nombrados(p):
 def p_valor_var_struct(p):
     'valor_struct : ID PUNTO ID'
 
-
 def p_nombrandos_struct(p):
-    'declara_atributo : ID DOS_PUNTOS expression'
+    '''declara_atributo : ID DOS_PUNTOS expression
+                      | ID DOS_PUNTOS expression_bool'''
 
 
 def p_clave_valor(p):
@@ -338,23 +341,41 @@ def p_multiple_clave_valor(p):
 
 
 def p_condicion(p):
-    '''condicion : expression
-                | I_PARENTESIS expression D_PARENTESIS'''
+    '''condicion : expression_bool
+                | I_PARENTESIS expression_bool D_PARENTESIS'''
 
 
 # def p_iteracion_for(p):
 #     'iteracion_for : ID'
 
 
+def p_expression_bool(p):
+    '''expression_bool : valor_boolean
+                  | valor_variable
+                  | resultado_bool
+                  | llamada_func
+                  | compare_expressions
+                  | I_PARENTESIS resultado_bool D_PARENTESIS
+                  | I_PARENTESIS compare_expressions D_PARENTESIS'''
+
+def p_resultado_bool(p):
+    '''resultado_bool : expression_bool operacion_binaria_logica expression_bool'''
+
+def p_compare_express(p):
+    '''compare_expressions : expression operacion_binaria_comparativa expression'''
+
+
 def p_expression_term(p):
-    '''expression : valor
+    '''expression : valor_int
+                  | valor_double
+                  | valor_variable
                   | resultado
                   | llamada_func
                   | I_PARENTESIS resultado D_PARENTESIS'''
 
 
 def p_expression_operation(p):
-    'resultado : expression operacion_binaria expression'
+    'resultado : expression operacion_binaria_matematica expression'
 
 
 def p_incremento_decremento(p):
@@ -434,9 +455,13 @@ def p_operadores_asignacion(p):
           | ASIGNACION_DIVISION
           | ASIGNACION_MODULO'''
 
+def p_mores_operaciones(p):
+    '''operacion_binaria : operacion_binaria_comparativa
+          | operacion_binaria_logica
+          | operacion_binaria_matematica'''
 
 def p_operacion_mat_simbolos(p):
-    '''operacion_binaria : ADICION
+    '''operacion_binaria_matematica : ADICION
           | RESTA
           | MULTIPLICACION
           | DIVISION
@@ -444,7 +469,7 @@ def p_operacion_mat_simbolos(p):
 
 
 def p_operacion_comp_simbolos(p):
-    '''operacion_binaria : MENOR_IGUAL
+    '''operacion_binaria_comparativa : MENOR_IGUAL
           | IGUAL
           | DIFERENTE
           | MAYOR
@@ -452,7 +477,7 @@ def p_operacion_comp_simbolos(p):
           | MENOR'''
 
 def p_operacion_logica(p):
-    '''operacion_binaria : AND
+    '''operacion_binaria_logica : AND
           | OR'''
 
 def p_valores(p):

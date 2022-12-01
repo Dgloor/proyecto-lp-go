@@ -553,3 +553,18 @@ si
 2022-11-30 21:11 -- Error de sintaxis - Token: INTEGER, Línea: 2, Col: 4
 2022-11-30 21:12 -- primes := [6]int{2, 3, 5, 7, 11, 13}: None
 2022-11-30 21:18 -- primes := "eso" + "weso": None
+2022-11-30 23:25 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 8
+2022-11-30 23:25 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 8
+2022-11-30 23:25 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 8
+2022-11-30 23:25 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 20
+2022-11-30 23:25 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 19
+2022-11-30 23:26 -- Error de sintaxis - Token: D_LLAVE, Línea: 1, Col: 19
+2022-11-30 23:26 -- if true { var a = 2 }: None
+2022-11-30 23:26 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 7
+2022-11-30 23:26 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 12
+2022-11-30 23:31 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 7
+2022-11-30 23:31 -- Error de sintaxis - Token: I_LLAVE, Línea: 1, Col: 7
+2022-11-30 23:31 -- if 3 < 2 { var a = 2 }: None
+2022-11-30 23:31 -- if 3 < 2 { return a }: None
+2022-11-30 23:31 -- if 3 < 2 { return true }: None
+2022-11-30 23:32 -- if  true{ 	return true }: None

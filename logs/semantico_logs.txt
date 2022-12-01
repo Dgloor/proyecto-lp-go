@@ -33,3 +33,9 @@ a++: None
 2022-11-30 21:18 -- primes := "eso" + "weso": None
 2022-11-30 21:28 -- var a string = "hola": None
 2022-11-30 21:29 -- var a int = 2: None
+2022-11-30 23:31 -- if 3 < 2 { var a = 2 }: None
+2022-11-30 23:31 -- if 3 < 2 { return a }: None
+2022-11-30 23:31 -- if 3 < 2 { return true }: None
+2022-11-30 23:32 -- if true{ 
+	return true 
+}: None
