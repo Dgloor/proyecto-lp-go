@@ -36,7 +36,8 @@ def p_varias_instrucciones(p):
 def p_expression_result(p):
     '''instruct_expression : RETURN valor_string
                             | RETURN expression
-                            | RETURN expression_bool'''
+                            | RETURN expression_bool
+                            | RETURN instruccion'''
 
 
 def p_instrucciones(p):
@@ -70,16 +71,17 @@ def p_declaraciones_comunes(p):
     '''declaracion_comun : decla_header ASIGNACION valor'''
 
 def p_declaracion_int(p):
-    'declara_int : decla_header INT ASIGNACION valor_int'
+    'declara_int : decla_header INTEGER ASIGNACION expression'
 
 def p_declaracion_double(p):
-    'declara_double : decla_header floating_type ASIGNACION valor_double'
+    'declara_double : decla_header floating_type ASIGNACION expression'
 
 def p_declaracion_string(p):
-    'declara_string : decla_header STRINGTYPE ASIGNACION valor_string'
+    '''declara_string : decla_header STRINGTYPE ASIGNACION valor_string
+                    | decla_header STRINGTYPE ASIGNACION llamada_func'''
 
 def p_declaracion_boolean(p):
-    'declara_bool : decla_header BOOL ASIGNACION valor_boolean'
+    'declara_bool : decla_header BOOL ASIGNACION expression_bool'
 
 
 def p_declara_empty_struct_var(p):  # Diego Arteaga - Structs
@@ -143,7 +145,9 @@ def p_llamada_params(p):
     '''llamada_params : expression
                       | expression COMA llamada_params
                       | expression_bool
-                      | expression_bool COMA llamada_params'''
+                      | expression_bool COMA llamada_params
+                      | valores
+                      | '''
 
 # Estructuras de Control
 
@@ -356,7 +360,8 @@ def p_expression_bool(p):
                   | llamada_func
                   | compare_expressions
                   | I_PARENTESIS resultado_bool D_PARENTESIS
-                  | I_PARENTESIS compare_expressions D_PARENTESIS'''
+                  | I_PARENTESIS compare_expressions D_PARENTESIS
+                  | not expression_bool'''
 
 def p_resultado_bool(p):
     '''resultado_bool : expression_bool operacion_binaria_logica expression_bool'''
@@ -479,6 +484,10 @@ def p_operacion_comp_simbolos(p):
 def p_operacion_logica(p):
     '''operacion_binaria_logica : AND
           | OR'''
+
+def p_not(p):
+    'not : NOT'
+
 
 def p_valores(p):
     '''valor : valor_int

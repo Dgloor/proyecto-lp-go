@@ -149,6 +149,7 @@ t_ASIGNACION_MODULO = r"%="
 
 t_MENOR = r"<"
 t_MAYOR_IGUAL = r">="
+t_NOT = r"\!"
 
 t_I_PARENTESIS = r'\('
 t_D_PARENTESIS = r'\)'
