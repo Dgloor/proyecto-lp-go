@@ -503,3 +503,5 @@
 2022-11-30 14:42 -- if true {}: None
 2022-11-30 14:48 -- if con { var a = 2 } else if false {}: None
 2022-11-30 14:49 -- if con { var a = 2 } else if false { var a int = 2 } else {}: None
+2022-11-30 21:04 -- var a = 1 + 2: None
+2022-11-30 21:05 -- var a = suma(2) + resta(23): None

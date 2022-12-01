@@ -372,8 +372,8 @@ def p_multiples_valores_boolean(p):
           | valor_boolean COMA valores_boolean'''
 
 
-def p_operacion_mat(p):
-    'valor : valor operacion_binaria valor'
+# def p_operacion_mat(p):
+#     'valor : valor operacion_binaria valor'
 
 
 def p_print_options(p):

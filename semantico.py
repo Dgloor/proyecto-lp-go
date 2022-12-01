@@ -143,20 +143,35 @@ def p_llamada_params(p):
 
 #Estructuras de Control
 
+def p_control_structs(p):
+    '''instruccion : if_struct
+    | if_else_struct'''
+
+#if - Diego Arteaga
 def p_if_condicion(p):
-    'instruccion : IF condicion I_LLAVE body D_LLAVE'
+    'if_struct : IF condicion body'
+
 
 def p_else_condicion(p):
-    'instruccion : ELSE I_LLAVE body D_LLAVE'
+    '''if_else_struct : if_struct ELSE body
+                      | many_elseif ELSE body
+                      | many_elseif'''
+
+def p_many_elseif(p):
+    '''many_elseif : else_if
+                   | else_if many_elseif'''
 
 def p_if_else_condicion(p):
-    'instruccion : ELSEIF condicion I_LLAVE body D_LLAVE'
+    'else_if : ELSE IF condicion body'
+
 
 def p_for_each(p):
     'instruccion : FOR ID DECLARACION_ASIGNACION RANGE ID I_LLAVE body D_LLAVE'
 
+
 def p_for_condicion(p):
-    'instruccion : FOR instruccion PUNTO_COMA valor PUNTO_COMA ID operador_matematico I_LLAVE body D_LLAVE'
+   'instruccion : FOR instruccion PUNTO_COMA valor PUNTO_COMA ID operador_matematico I_LLAVE body D_LLAVE'
+
 
 def p_for_map(p):
     'instruccion : FOR ID COMA ID DECLARACION_ASIGNACION RANGE ID I_LLAVE body D_LLAVE'
@@ -289,12 +304,13 @@ def p_multiple_clave_valor(p):
     '''claves_valores : clave_valor
           | clave_valor COMA claves_valores'''
 
-def p_condicion(p):
-    '''condicion : valor
-                | I_PARENTESIS valor D_PARENTESIS'''
 
-def p_iteracion_for(p):
-    'iteracion_for : ID'
+def p_condicion(p):
+    '''condicion : expression
+                | I_PARENTESIS expression D_PARENTESIS'''
+
+# def p_iteracion_for(p):
+#     'iteracion_for : ID'
 
 def p_expression_term(p):
     '''expression : valor
@@ -361,8 +377,8 @@ def p_multiples_valores_boolean(p):
     '''valores_boolean : valor_boolean
           | valor_boolean COMA valores_boolean'''
   
-def p_operacion_mat(p):
-    'valor : valor operacion_binaria valor'
+# def p_operacion_mat(p):
+#     'valor : valor operacion_binaria valor'
 
 def p_print_options(p):
     '''print : PRINTLN
@@ -415,6 +431,10 @@ def p_operacion_comp_simbolos(p):
           | MAYOR
           | MAYOR_IGUAL
           | MENOR'''
+
+def p_operacion_logica(p):
+    '''operacion_binaria : AND
+          | OR'''
 
 def p_valores(p):
     '''valor : valor_int
