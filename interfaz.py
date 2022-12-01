@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QVBoxLayout, QWidget, QMessageBox, QApplication
 from PyQt5.QtGui import QFont
 from lexico import lexer, AnalyzerException
 from sintactico import parser
-from semantico import parser_sem
+# from semantico import parser_sem
 from datetime import datetime
 import sys
 import re

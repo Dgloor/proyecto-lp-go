@@ -16,7 +16,8 @@ def log_content(content, filename):
 def p_go(p):
     '''go : instruccion
             | funcion go
-            | funcion'''
+            | funcion
+            | instruccion go'''
 
 
 def p_body(p):
@@ -326,8 +327,8 @@ def p_condicion(p):
                 | I_PARENTESIS expression D_PARENTESIS'''
 
 
-def p_iteracion_for(p):
-    'iteracion_for : ID'
+# def p_iteracion_for(p):
+#     'iteracion_for : ID'
 
 
 def p_expression_term(p):

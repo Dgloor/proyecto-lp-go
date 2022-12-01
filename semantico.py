@@ -46,7 +46,8 @@ def log_content(content, filename):
 def p_go(p):
     '''go : instruccion
             | funcion go
-            | funcion'''
+            | funcion
+            | instruccion go'''
 
 def p_body(p):
     '''body : instruccion
